@@ -658,7 +658,7 @@ typedef struct XMFLOAT4X3
 // 4x3 Row-major Matrix: 32 bit floating point components aligned on a 16 byte boundary
 typedef XM_ALIGNED_STRUCT(16) XMFLOAT4X3A
 {
-		union
+	union
 	{
 		struct
 		{
@@ -1672,10 +1672,10 @@ XMGLOBALCONST XMVECTORF32 g_UShortMax = { { { 65535.0f, 65535.0f, 65535.0f, 6553
 
 #pragma warning(push)
 #pragma warning(disable:4201 4365 4324 4996)
-	// C4201: nonstandard extension used
-	// C4365: Off by default noise
-	// C4324: alignment padding warnings
-	// C4996: deprecation warnings
+// C4201: nonstandard extension used
+// C4365: Off by default noise
+// C4324: alignment padding warnings
+// C4996: deprecation warnings
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -1683,535 +1683,535 @@ XMGLOBALCONST XMVECTORF32 g_UShortMax = { { { 65535.0f, 65535.0f, 65535.0f, 6553
 #pragma clang diagnostic ignored "-Wnested-anon-types"
 #endif
 
-		//------------------------------------------------------------------------------
-		// ARGB Color; 8-8-8-8 bit unsigned normalized integer components packed into
-		// a 32 bit integer.  The normalized color is packed into 32 bits using 8 bit
-		// unsigned, normalized integers for the alpha, red, green, and blue components.
-		// The alpha component is stored in the most significant bits and the blue
-		// component in the least significant bits (A8R8G8B8):
-		// [32] aaaaaaaa rrrrrrrr gggggggg bbbbbbbb [0]
-	typedef struct XMCOLOR
+//------------------------------------------------------------------------------
+// ARGB Color; 8-8-8-8 bit unsigned normalized integer components packed into
+// a 32 bit integer.  The normalized color is packed into 32 bits using 8 bit
+// unsigned, normalized integers for the alpha, red, green, and blue components.
+// The alpha component is stored in the most significant bits and the blue
+// component in the least significant bits (A8R8G8B8):
+// [32] aaaaaaaa rrrrrrrr gggggggg bbbbbbbb [0]
+typedef struct XMCOLOR
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint8_t b;  // Blue:    0/255 to 255/255
-				uint8_t g;  // Green:   0/255 to 255/255
-				uint8_t r;  // Red:     0/255 to 255/255
-				uint8_t a;  // Alpha:   0/255 to 255/255
-			};
-			uint32_t c;
+			uint8_t b;  // Blue:    0/255 to 255/255
+			uint8_t g;  // Green:   0/255 to 255/255
+			uint8_t r;  // Red:     0/255 to 255/255
+			uint8_t a;  // Alpha:   0/255 to 255/255
 		};
-	} XMCOLOR;
+		uint32_t c;
+	};
+} XMCOLOR;
 
-	//------------------------------------------------------------------------------
-	// 16 bit floating point number consisting of a sign bit, a 5 bit biased
-	// exponent, and a 10 bit mantissa
-	typedef uint16_t HALF;
+//------------------------------------------------------------------------------
+// 16 bit floating point number consisting of a sign bit, a 5 bit biased
+// exponent, and a 10 bit mantissa
+typedef uint16_t HALF;
 
-	//------------------------------------------------------------------------------
-	// 2D Vector; 16 bit floating point components
-	typedef struct XMHALF2
+//------------------------------------------------------------------------------
+// 2D Vector; 16 bit floating point components
+typedef struct XMHALF2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				HALF x;
-				HALF y;
-			};
-			uint32_t v;
+			HALF x;
+			HALF y;
 		};
-	} XMHALF2;
+		uint32_t v;
+	};
+} XMHALF2;
 
-	//------------------------------------------------------------------------------
-	// 2D Vector; 16 bit signed normalized integer components
-	typedef struct XMSHORTN2
+//------------------------------------------------------------------------------
+// 2D Vector; 16 bit signed normalized integer components
+typedef struct XMSHORTN2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int16_t x;
-				int16_t y;
-			};
-			uint32_t v;
+			int16_t x;
+			int16_t y;
 		};
+		uint32_t v;
+	};
 
-	} XMSHORTN2;
+} XMSHORTN2;
 
-	// 2D Vector; 16 bit signed integer components
-	typedef struct XMSHORT2
+// 2D Vector; 16 bit signed integer components
+typedef struct XMSHORT2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int16_t x;
-				int16_t y;
-			};
-			uint32_t v;
+			int16_t x;
+			int16_t y;
 		};
-	} XMSHORT2;
+		uint32_t v;
+	};
+} XMSHORT2;
 
-	// 2D Vector; 16 bit unsigned normalized integer components
-	typedef struct XMUSHORTN2
+// 2D Vector; 16 bit unsigned normalized integer components
+typedef struct XMUSHORTN2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x;
-				uint16_t y;
-			};
-			uint32_t v;
+			uint16_t x;
+			uint16_t y;
 		};
-	} XMUSHORTN2;
+		uint32_t v;
+	};
+} XMUSHORTN2;
 
-	// 2D Vector; 16 bit unsigned integer components
-	typedef struct XMUSHORT2
+// 2D Vector; 16 bit unsigned integer components
+typedef struct XMUSHORT2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x;
-				uint16_t y;
-			};
-			uint32_t v;
+			uint16_t x;
+			uint16_t y;
 		};
-	} XMUSHORT2;
+		uint32_t v;
+	};
+} XMUSHORT2;
 
-	//------------------------------------------------------------------------------
-	// 2D Vector; 8 bit signed normalized integer components
-	typedef struct XMBYTEN2
+//------------------------------------------------------------------------------
+// 2D Vector; 8 bit signed normalized integer components
+typedef struct XMBYTEN2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int8_t x;
-				int8_t y;
-			};
-			uint16_t v;
+			int8_t x;
+			int8_t y;
 		};
-	} XMBYTEN2;
+		uint16_t v;
+	};
+} XMBYTEN2;
 
-	// 2D Vector; 8 bit signed integer components
-	typedef struct XMBYTE2
+// 2D Vector; 8 bit signed integer components
+typedef struct XMBYTE2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int8_t x;
-				int8_t y;
-			};
-			uint16_t v;
+			int8_t x;
+			int8_t y;
 		};
-	} XMBYTE2;
+		uint16_t v;
+	};
+} XMBYTE2;
 
-	// 2D Vector; 8 bit unsigned normalized integer components
-	typedef struct XMUBYTEN2
+// 2D Vector; 8 bit unsigned normalized integer components
+typedef struct XMUBYTEN2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint8_t x;
-				uint8_t y;
-			};
-			uint16_t v;
+			uint8_t x;
+			uint8_t y;
 		};
-	} XMUBYTEN2;
+		uint16_t v;
+	};
+} XMUBYTEN2;
 
-	// 2D Vector; 8 bit unsigned integer components
-	typedef struct XMUBYTE2
+// 2D Vector; 8 bit unsigned integer components
+typedef struct XMUBYTE2
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint8_t x;
-				uint8_t y;
-			};
-			uint16_t v;
+			uint8_t x;
+			uint8_t y;
 		};
-	} XMUBYTE2;
+		uint16_t v;
+	};
+} XMUBYTE2;
 
-	//------------------------------------------------------------------------------
-	// 3D vector: 5/6/5 unsigned integer components
-	typedef struct XMU565
+//------------------------------------------------------------------------------
+// 3D vector: 5/6/5 unsigned integer components
+typedef struct XMU565
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x : 5;    // 0 to 31
-				uint16_t y : 6;    // 0 to 63
-				uint16_t z : 5;    // 0 to 31
-			};
-			uint16_t v;
+			uint16_t x : 5;    // 0 to 31
+			uint16_t y : 6;    // 0 to 63
+			uint16_t z : 5;    // 0 to 31
 		};
-	} XMU565;
+		uint16_t v;
+	};
+} XMU565;
 
-	//------------------------------------------------------------------------------
-	// 3D vector: 11/11/10 floating-point components
-	// The 3D vector is packed into 32 bits as follows: a 5-bit biased exponent
-	// and 6-bit mantissa for x component, a 5-bit biased exponent and
-	// 6-bit mantissa for y component, a 5-bit biased exponent and a 5-bit
-	// mantissa for z. The z component is stored in the most significant bits
-	// and the x component in the least significant bits. No sign bits so
-	// all partial-precision numbers are positive.
-	// (Z10Y11X11): [32] ZZZZZzzz zzzYYYYY yyyyyyXX XXXxxxxx [0]
-	typedef struct XMFLOAT3PK
+//------------------------------------------------------------------------------
+// 3D vector: 11/11/10 floating-point components
+// The 3D vector is packed into 32 bits as follows: a 5-bit biased exponent
+// and 6-bit mantissa for x component, a 5-bit biased exponent and
+// 6-bit mantissa for y component, a 5-bit biased exponent and a 5-bit
+// mantissa for z. The z component is stored in the most significant bits
+// and the x component in the least significant bits. No sign bits so
+// all partial-precision numbers are positive.
+// (Z10Y11X11): [32] ZZZZZzzz zzzYYYYY yyyyyyXX XXXxxxxx [0]
+typedef struct XMFLOAT3PK
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint32_t xm : 6; // x-mantissa
-				uint32_t xe : 5; // x-exponent
-				uint32_t ym : 6; // y-mantissa
-				uint32_t ye : 5; // y-exponent
-				uint32_t zm : 5; // z-mantissa
-				uint32_t ze : 5; // z-exponent
-			};
-			uint32_t v;
+			uint32_t xm : 6; // x-mantissa
+			uint32_t xe : 5; // x-exponent
+			uint32_t ym : 6; // y-mantissa
+			uint32_t ye : 5; // y-exponent
+			uint32_t zm : 5; // z-mantissa
+			uint32_t ze : 5; // z-exponent
 		};
-	} XMFLOAT3PK;
+		uint32_t v;
+	};
+} XMFLOAT3PK;
 
-	//------------------------------------------------------------------------------
-	// 3D vector: 9/9/9 floating-point components with shared 5-bit exponent
-	// The 3D vector is packed into 32 bits as follows: a 5-bit biased exponent
-	// with 9-bit mantissa for the x, y, and z component. The shared exponent
-	// is stored in the most significant bits and the x component mantissa is in
-	// the least significant bits. No sign bits so all partial-precision numbers
-	// are positive.
-	// (E5Z9Y9X9): [32] EEEEEzzz zzzzzzyy yyyyyyyx xxxxxxxx [0]
-	typedef struct XMFLOAT3SE
+//------------------------------------------------------------------------------
+// 3D vector: 9/9/9 floating-point components with shared 5-bit exponent
+// The 3D vector is packed into 32 bits as follows: a 5-bit biased exponent
+// with 9-bit mantissa for the x, y, and z component. The shared exponent
+// is stored in the most significant bits and the x component mantissa is in
+// the least significant bits. No sign bits so all partial-precision numbers
+// are positive.
+// (E5Z9Y9X9): [32] EEEEEzzz zzzzzzyy yyyyyyyx xxxxxxxx [0]
+typedef struct XMFLOAT3SE
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint32_t xm : 9; // x-mantissa
-				uint32_t ym : 9; // y-mantissa
-				uint32_t zm : 9; // z-mantissa
-				uint32_t e : 5; // shared exponent
-			};
-			uint32_t v;
+			uint32_t xm : 9; // x-mantissa
+			uint32_t ym : 9; // y-mantissa
+			uint32_t zm : 9; // z-mantissa
+			uint32_t e : 5; // shared exponent
 		};
-	} XMFLOAT3SE;
+		uint32_t v;
+	};
+} XMFLOAT3SE;
 
-	//------------------------------------------------------------------------------
-	// 4D Vector; 16 bit floating point components
-	typedef struct XMHALF4
+//------------------------------------------------------------------------------
+// 4D Vector; 16 bit floating point components
+typedef struct XMHALF4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				HALF x;
-				HALF y;
-				HALF z;
-				HALF w;
-			};
-			uint64_t v;
+			HALF x;
+			HALF y;
+			HALF z;
+			HALF w;
 		};
-	} XMHALF4;
+		uint64_t v;
+	};
+} XMHALF4;
 
-	//------------------------------------------------------------------------------
-	// 4D Vector; 16 bit signed normalized integer components
-	typedef struct XMSHORTN4
+//------------------------------------------------------------------------------
+// 4D Vector; 16 bit signed normalized integer components
+typedef struct XMSHORTN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int16_t x;
-				int16_t y;
-				int16_t z;
-				int16_t w;
-			};
-			uint64_t v;
+			int16_t x;
+			int16_t y;
+			int16_t z;
+			int16_t w;
 		};
-	} XMSHORTN4;
+		uint64_t v;
+	};
+} XMSHORTN4;
 
-	// 4D Vector; 16 bit signed integer components
-	typedef struct XMSHORT4
+// 4D Vector; 16 bit signed integer components
+typedef struct XMSHORT4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int16_t x;
-				int16_t y;
-				int16_t z;
-				int16_t w;
-			};
-			uint64_t v;
+			int16_t x;
+			int16_t y;
+			int16_t z;
+			int16_t w;
 		};
-	} XMSHORT4;
+		uint64_t v;
+	};
+} XMSHORT4;
 
-	// 4D Vector; 16 bit unsigned normalized integer components
-	typedef struct XMUSHORTN4
+// 4D Vector; 16 bit unsigned normalized integer components
+typedef struct XMUSHORTN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x;
-				uint16_t y;
-				uint16_t z;
-				uint16_t w;
-			};
-			uint64_t v;
+			uint16_t x;
+			uint16_t y;
+			uint16_t z;
+			uint16_t w;
 		};
-	} XMUSHORTN4;
+		uint64_t v;
+	};
+} XMUSHORTN4;
 
-	// 4D Vector; 16 bit unsigned integer components
-	typedef struct XMUSHORT4
+// 4D Vector; 16 bit unsigned integer components
+typedef struct XMUSHORT4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x;
-				uint16_t y;
-				uint16_t z;
-				uint16_t w;
-			};
-			uint64_t v;
+			uint16_t x;
+			uint16_t y;
+			uint16_t z;
+			uint16_t w;
 		};
-	} XMUSHORT4;
+		uint64_t v;
+	};
+} XMUSHORT4;
 
-	//------------------------------------------------------------------------------
-	// 4D Vector; 10-10-10-2 bit normalized components packed into a 32 bit integer
-	// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit unsigned,
-	// normalized integer for the w component and 10 bit signed, normalized
-	// integers for the z, y, and x components.  The w component is stored in the
-	// most significant bits and the x component in the least significant bits
-	// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
-	typedef struct XMXDECN4
+//------------------------------------------------------------------------------
+// 4D Vector; 10-10-10-2 bit normalized components packed into a 32 bit integer
+// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit unsigned,
+// normalized integer for the w component and 10 bit signed, normalized
+// integers for the z, y, and x components.  The w component is stored in the
+// most significant bits and the x component in the least significant bits
+// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
+typedef struct XMXDECN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int32_t x : 10;    // -511/511 to 511/511
-				int32_t y : 10;    // -511/511 to 511/511
-				int32_t z : 10;    // -511/511 to 511/511
-				uint32_t w : 2;     //      0/3 to     3/3
-			};
-			uint32_t v;
+			int32_t x : 10;    // -511/511 to 511/511
+			int32_t y : 10;    // -511/511 to 511/511
+			int32_t z : 10;    // -511/511 to 511/511
+			uint32_t w : 2;     //      0/3 to     3/3
 		};
-	} XMXDECN4;
+		uint32_t v;
+	};
+} XMXDECN4;
 
-	// 4D Vector; 10-10-10-2 bit components packed into a 32 bit integer
-	// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit unsigned
-	// integer for the w component and 10 bit signed integers for the
-	// z, y, and x components.  The w component is stored in the
-	// most significant bits and the x component in the least significant bits
-	// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
-	typedef struct XM_DEPRECATED XMXDEC4
+// 4D Vector; 10-10-10-2 bit components packed into a 32 bit integer
+// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit unsigned
+// integer for the w component and 10 bit signed integers for the
+// z, y, and x components.  The w component is stored in the
+// most significant bits and the x component in the least significant bits
+// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
+typedef struct XM_DEPRECATED XMXDEC4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int32_t x : 10;    // -511 to 511
-				int32_t y : 10;    // -511 to 511
-				int32_t z : 10;    // -511 to 511
-				uint32_t w : 2;     // 0 to 3
-			};
-			uint32_t v;
+			int32_t x : 10;    // -511 to 511
+			int32_t y : 10;    // -511 to 511
+			int32_t z : 10;    // -511 to 511
+			uint32_t w : 2;     // 0 to 3
 		};
-	} XMXDEC4;
+		uint32_t v;
+	};
+} XMXDEC4;
 
-	// 4D Vector; 10-10-10-2 bit normalized components packed into a 32 bit integer
-	// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit signed,
-	// normalized integer for the w component and 10 bit signed, normalized
-	// integers for the z, y, and x components.  The w component is stored in the
-	// most significant bits and the x component in the least significant bits
-	// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
-	typedef struct XM_DEPRECATED XMDECN4
+// 4D Vector; 10-10-10-2 bit normalized components packed into a 32 bit integer
+// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit signed,
+// normalized integer for the w component and 10 bit signed, normalized
+// integers for the z, y, and x components.  The w component is stored in the
+// most significant bits and the x component in the least significant bits
+// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
+typedef struct XM_DEPRECATED XMDECN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int32_t x : 10;    // -511/511 to 511/511
-				int32_t y : 10;    // -511/511 to 511/511
-				int32_t z : 10;    // -511/511 to 511/511
-				int32_t w : 2;     //     -1/1 to     1/1
-			};
-			uint32_t v;
+			int32_t x : 10;    // -511/511 to 511/511
+			int32_t y : 10;    // -511/511 to 511/511
+			int32_t z : 10;    // -511/511 to 511/511
+			int32_t w : 2;     //     -1/1 to     1/1
 		};
-	} XMDECN4;
+		uint32_t v;
+	};
+} XMDECN4;
 
-	// 4D Vector; 10-10-10-2 bit components packed into a 32 bit integer
-	// The 4D Vector is packed into 32 bits as follows: a 2 bit signed,
-	// integer for the w component and 10 bit signed integers for the
-	// z, y, and x components.  The w component is stored in the
-	// most significant bits and the x component in the least significant bits
-	// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
-	typedef struct XM_DEPRECATED XMDEC4
+// 4D Vector; 10-10-10-2 bit components packed into a 32 bit integer
+// The 4D Vector is packed into 32 bits as follows: a 2 bit signed,
+// integer for the w component and 10 bit signed integers for the
+// z, y, and x components.  The w component is stored in the
+// most significant bits and the x component in the least significant bits
+// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
+typedef struct XM_DEPRECATED XMDEC4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int32_t  x : 10;    // -511 to 511
-				int32_t  y : 10;    // -511 to 511
-				int32_t  z : 10;    // -511 to 511
-				int32_t  w : 2;     //   -1 to   1
-			};
-			uint32_t v;
+			int32_t  x : 10;    // -511 to 511
+			int32_t  y : 10;    // -511 to 511
+			int32_t  z : 10;    // -511 to 511
+			int32_t  w : 2;     //   -1 to   1
 		};
-	} XMDEC4;
+		uint32_t v;
+	};
+} XMDEC4;
 
-	// 4D Vector; 10-10-10-2 bit normalized components packed into a 32 bit integer
-	// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit unsigned,
-	// normalized integer for the w component and 10 bit unsigned, normalized
-	// integers for the z, y, and x components.  The w component is stored in the
-	// most significant bits and the x component in the least significant bits
-	// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
-	typedef struct XMUDECN4
+// 4D Vector; 10-10-10-2 bit normalized components packed into a 32 bit integer
+// The normalized 4D Vector is packed into 32 bits as follows: a 2 bit unsigned,
+// normalized integer for the w component and 10 bit unsigned, normalized
+// integers for the z, y, and x components.  The w component is stored in the
+// most significant bits and the x component in the least significant bits
+// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
+typedef struct XMUDECN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint32_t x : 10;    // 0/1023 to 1023/1023
-				uint32_t y : 10;    // 0/1023 to 1023/1023
-				uint32_t z : 10;    // 0/1023 to 1023/1023
-				uint32_t w : 2;     //    0/3 to       3/3
-			};
-			uint32_t v;
+			uint32_t x : 10;    // 0/1023 to 1023/1023
+			uint32_t y : 10;    // 0/1023 to 1023/1023
+			uint32_t z : 10;    // 0/1023 to 1023/1023
+			uint32_t w : 2;     //    0/3 to       3/3
 		};
-	} XMUDECN4;
+		uint32_t v;
+	};
+} XMUDECN4;
 
-	// 4D Vector; 10-10-10-2 bit components packed into a 32 bit integer
-	// The 4D Vector is packed into 32 bits as follows: a 2 bit unsigned,
-	// integer for the w component and 10 bit unsigned integers
-	// for the z, y, and x components.  The w component is stored in the
-	// most significant bits and the x component in the least significant bits
-	// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
-	typedef struct XMUDEC4
+// 4D Vector; 10-10-10-2 bit components packed into a 32 bit integer
+// The 4D Vector is packed into 32 bits as follows: a 2 bit unsigned,
+// integer for the w component and 10 bit unsigned integers
+// for the z, y, and x components.  The w component is stored in the
+// most significant bits and the x component in the least significant bits
+// (W2Z10Y10X10): [32] wwzzzzzz zzzzyyyy yyyyyyxx xxxxxxxx [0]
+typedef struct XMUDEC4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint32_t x : 10;    // 0 to 1023
-				uint32_t y : 10;    // 0 to 1023
-				uint32_t z : 10;    // 0 to 1023
-				uint32_t w : 2;     // 0 to    3
-			};
-			uint32_t v;
+			uint32_t x : 10;    // 0 to 1023
+			uint32_t y : 10;    // 0 to 1023
+			uint32_t z : 10;    // 0 to 1023
+			uint32_t w : 2;     // 0 to    3
 		};
-	} XMUDEC4;
+		uint32_t v;
+	};
+} XMUDEC4;
 
-	//------------------------------------------------------------------------------
-	// 4D Vector; 8 bit signed normalized integer components
-	typedef struct XMBYTEN4
+//------------------------------------------------------------------------------
+// 4D Vector; 8 bit signed normalized integer components
+typedef struct XMBYTEN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int8_t x;
-				int8_t y;
-				int8_t z;
-				int8_t w;
-			};
-			uint32_t v;
+			int8_t x;
+			int8_t y;
+			int8_t z;
+			int8_t w;
 		};
-	} XMBYTEN4;
+		uint32_t v;
+	};
+} XMBYTEN4;
 
-	// 4D Vector; 8 bit signed integer components
-	typedef struct XMBYTE4
+// 4D Vector; 8 bit signed integer components
+typedef struct XMBYTE4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				int8_t x;
-				int8_t y;
-				int8_t z;
-				int8_t w;
-			};
-			uint32_t v;
+			int8_t x;
+			int8_t y;
+			int8_t z;
+			int8_t w;
 		};
-	} XMBYTE4;
+		uint32_t v;
+	};
+} XMBYTE4;
 
-	// 4D Vector; 8 bit unsigned normalized integer components
-	typedef struct XMUBYTEN4
+// 4D Vector; 8 bit unsigned normalized integer components
+typedef struct XMUBYTEN4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint8_t x;
-				uint8_t y;
-				uint8_t z;
-				uint8_t w;
-			};
-			uint32_t v;
+			uint8_t x;
+			uint8_t y;
+			uint8_t z;
+			uint8_t w;
 		};
-	} XMUBYTEN4;
+		uint32_t v;
+	};
+} XMUBYTEN4;
 
-	// 4D Vector; 8 bit unsigned integer components
-	typedef struct XMUBYTE4
+// 4D Vector; 8 bit unsigned integer components
+typedef struct XMUBYTE4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint8_t x;
-				uint8_t y;
-				uint8_t z;
-				uint8_t w;
-			};
-			uint32_t v;
+			uint8_t x;
+			uint8_t y;
+			uint8_t z;
+			uint8_t w;
 		};
-	} XMUBYTE4;
+		uint32_t v;
+	};
+} XMUBYTE4;
 
-	//------------------------------------------------------------------------------
-	// 4D vector; 4 bit unsigned integer components
-	typedef struct XMUNIBBLE4
+//------------------------------------------------------------------------------
+// 4D vector; 4 bit unsigned integer components
+typedef struct XMUNIBBLE4
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x : 4;    // 0 to 15
-				uint16_t y : 4;    // 0 to 15
-				uint16_t z : 4;    // 0 to 15
-				uint16_t w : 4;    // 0 to 15
-			};
-			uint16_t v;
+			uint16_t x : 4;    // 0 to 15
+			uint16_t y : 4;    // 0 to 15
+			uint16_t z : 4;    // 0 to 15
+			uint16_t w : 4;    // 0 to 15
 		};
-	} XMUNIBBLE4;
+		uint16_t v;
+	};
+} XMUNIBBLE4;
 
-	//------------------------------------------------------------------------------
-	// 4D vector: 5/5/5/1 unsigned integer components
-	typedef struct XMU555
+//------------------------------------------------------------------------------
+// 4D vector: 5/5/5/1 unsigned integer components
+typedef struct XMU555
+{
+	union
 	{
-		union
+		struct
 		{
-			struct
-			{
-				uint16_t x : 5;    // 0 to 31
-				uint16_t y : 5;    // 0 to 31
-				uint16_t z : 5;    // 0 to 31
-				uint16_t w : 1;    // 0 or 1
-			};
-			uint16_t v;
+			uint16_t x : 5;    // 0 to 31
+			uint16_t y : 5;    // 0 to 31
+			uint16_t z : 5;    // 0 to 31
+			uint16_t w : 1;    // 0 or 1
 		};
-	} XMU555;
+		uint16_t v;
+	};
+} XMU555;
 
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -2220,76 +2220,76 @@ XMGLOBALCONST XMVECTORF32 g_UShortMax = { { { 65535.0f, 65535.0f, 65535.0f, 6553
 #pragma warning(pop)
 
 
-	/****************************************************************************
-	 *
-	 * Data conversion operations
-	 *
-	 ****************************************************************************/
+/****************************************************************************
+ *
+ * Data conversion operations
+ *
+ ****************************************************************************/
 
-	float XMConvertHalfToFloat ( HALF Value );
+float XMConvertHalfToFloat ( HALF Value );
 	
-	float *XMConvertHalfToFloatStream ( _Out_writes_bytes_ ( sizeof ( float ) + OutputStride * ( HalfCount - 1 ) ) float *pOutputStream ,
-										_In_ size_t OutputStride ,
-										_In_reads_bytes_ ( sizeof ( HALF ) + InputStride * ( HalfCount - 1 ) ) const HALF *pInputStream ,
-										_In_ size_t InputStride , 
-										_In_ size_t HalfCount );
-	HALF            XMConvertFloatToHalf ( float Value );
-	HALF *XMConvertFloatToHalfStream ( _Out_writes_bytes_ ( sizeof ( HALF ) + OutputStride * ( FloatCount - 1 ) ) HALF *pOutputStream ,
-									   _In_ size_t OutputStride ,
-									   _In_reads_bytes_ ( sizeof ( float ) + InputStride * ( FloatCount - 1 ) ) const float *pInputStream ,
-									   _In_ size_t InputStride , 
-									   _In_ size_t FloatCount );
+float *XMConvertHalfToFloatStream ( _Out_writes_bytes_ ( sizeof ( float ) + OutputStride * ( HalfCount - 1 ) ) float *pOutputStream ,
+									_In_ size_t OutputStride ,
+									_In_reads_bytes_ ( sizeof ( HALF ) + InputStride * ( HalfCount - 1 ) ) const HALF *pInputStream ,
+									_In_ size_t InputStride ,
+									_In_ size_t HalfCount );
+HALF            XMConvertFloatToHalf ( float Value );
+HALF *XMConvertFloatToHalfStream ( _Out_writes_bytes_ ( sizeof ( HALF ) + OutputStride * ( FloatCount - 1 ) ) HALF *pOutputStream ,
+								   _In_ size_t OutputStride ,
+								   _In_reads_bytes_ ( sizeof ( float ) + InputStride * ( FloatCount - 1 ) ) const float *pInputStream ,
+								   _In_ size_t InputStride ,
+								   _In_ size_t FloatCount );
 
-	/****************************************************************************
-	 *
-	 * Load operations
-	 *
-	 ****************************************************************************/
+/****************************************************************************
+ *
+ * Load operations
+ *
+ ****************************************************************************/
 
-	XMVECTOR    XM_CALLCONV     XMLoadColor ( _In_ const XMCOLOR *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadColor ( _In_ const XMCOLOR *pSource );
 
-	XMVECTOR    XM_CALLCONV     XMLoadHalf2 ( _In_ const XMHALF2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadShortN2 ( _In_ const XMSHORTN2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadShort2 ( _In_ const XMSHORT2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUShortN2 ( _In_ const XMUSHORTN2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUShort2 ( _In_ const XMUSHORT2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadByteN2 ( _In_ const XMBYTEN2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadByte2 ( _In_ const XMBYTE2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUByteN2 ( _In_ const XMUBYTEN2 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUByte2 ( _In_ const XMUBYTE2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadHalf2 ( _In_ const XMHALF2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadShortN2 ( _In_ const XMSHORTN2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadShort2 ( _In_ const XMSHORT2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUShortN2 ( _In_ const XMUSHORTN2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUShort2 ( _In_ const XMUSHORT2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadByteN2 ( _In_ const XMBYTEN2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadByte2 ( _In_ const XMBYTE2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUByteN2 ( _In_ const XMUBYTEN2 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUByte2 ( _In_ const XMUBYTE2 *pSource );
 
-	XMVECTOR    XM_CALLCONV     XMLoadU565 ( _In_ const XMU565 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadFloat3PK ( _In_ const XMFLOAT3PK *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadFloat3SE ( _In_ const XMFLOAT3SE *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadU565 ( _In_ const XMU565 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadFloat3PK ( _In_ const XMFLOAT3PK *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadFloat3SE ( _In_ const XMFLOAT3SE *pSource );
 
-	XMVECTOR    XM_CALLCONV     XMLoadHalf4 ( _In_ const XMHALF4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadShortN4 ( _In_ const XMSHORTN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadShort4 ( _In_ const XMSHORT4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUShortN4 ( _In_ const XMUSHORTN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUShort4 ( _In_ const XMUSHORT4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadXDecN4 ( _In_ const XMXDECN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUDecN4 ( _In_ const XMUDECN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUDecN4_XR ( _In_ const XMUDECN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUDec4 ( _In_ const XMUDEC4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadByteN4 ( _In_ const XMBYTEN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadByte4 ( _In_ const XMBYTE4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUByteN4 ( _In_ const XMUBYTEN4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUByte4 ( _In_ const XMUBYTE4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadUNibble4 ( _In_ const XMUNIBBLE4 *pSource );
-	XMVECTOR    XM_CALLCONV     XMLoadU555 ( _In_ const XMU555 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadHalf4 ( _In_ const XMHALF4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadShortN4 ( _In_ const XMSHORTN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadShort4 ( _In_ const XMSHORT4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUShortN4 ( _In_ const XMUSHORTN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUShort4 ( _In_ const XMUSHORT4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadXDecN4 ( _In_ const XMXDECN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUDecN4 ( _In_ const XMUDECN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUDecN4_XR ( _In_ const XMUDECN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUDec4 ( _In_ const XMUDEC4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadByteN4 ( _In_ const XMBYTEN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadByte4 ( _In_ const XMBYTE4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUByteN4 ( _In_ const XMUBYTEN4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUByte4 ( _In_ const XMUBYTE4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadUNibble4 ( _In_ const XMUNIBBLE4 *pSource );
+XMVECTOR    XM_CALLCONV     XMLoadU555 ( _In_ const XMU555 *pSource );
 
 #pragma warning(push)
 #pragma warning(disable : 4996)
-	// C4996: ignore deprecation warning
+// C4996: ignore deprecation warning
 
 #ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-	XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadDecN4 ( _In_ const XMDECN4 *pSource );
-	XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadDec4 ( _In_ const XMDEC4 *pSource );
-	XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadXDec4 ( _In_ const XMXDEC4 *pSource );
+XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadDecN4 ( _In_ const XMDECN4 *pSource );
+XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadDec4 ( _In_ const XMDEC4 *pSource );
+XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadXDec4 ( _In_ const XMXDEC4 *pSource );
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
@@ -2297,56 +2297,56 @@ XMGLOBALCONST XMVECTORF32 g_UShortMax = { { { 65535.0f, 65535.0f, 65535.0f, 6553
 
 #pragma warning(pop)
 
-	/****************************************************************************
-	 *
-	 * Store operations
-	 *
-	 ****************************************************************************/
+/****************************************************************************
+ *
+ * Store operations
+ *
+ ****************************************************************************/
 
-	void    XM_CALLCONV     XMStoreColor ( _Out_ XMCOLOR *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreColor ( _Out_ XMCOLOR *pDestination , _In_ FXMVECTOR V );
 
-	void    XM_CALLCONV     XMStoreHalf2 ( _Out_ XMHALF2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreShortN2 ( _Out_ XMSHORTN2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreShort2 ( _Out_ XMSHORT2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUShortN2 ( _Out_ XMUSHORTN2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUShort2 ( _Out_ XMUSHORT2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreByteN2 ( _Out_ XMBYTEN2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreByte2 ( _Out_ XMBYTE2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUByteN2 ( _Out_ XMUBYTEN2 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUByte2 ( _Out_ XMUBYTE2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreHalf2 ( _Out_ XMHALF2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreShortN2 ( _Out_ XMSHORTN2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreShort2 ( _Out_ XMSHORT2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUShortN2 ( _Out_ XMUSHORTN2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUShort2 ( _Out_ XMUSHORT2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreByteN2 ( _Out_ XMBYTEN2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreByte2 ( _Out_ XMBYTE2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUByteN2 ( _Out_ XMUBYTEN2 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUByte2 ( _Out_ XMUBYTE2 *pDestination , _In_ FXMVECTOR V );
 
-	void    XM_CALLCONV     XMStoreU565 ( _Out_ XMU565 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreFloat3PK ( _Out_ XMFLOAT3PK *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreFloat3SE ( _Out_ XMFLOAT3SE *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreU565 ( _Out_ XMU565 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreFloat3PK ( _Out_ XMFLOAT3PK *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreFloat3SE ( _Out_ XMFLOAT3SE *pDestination , _In_ FXMVECTOR V );
 
-	void    XM_CALLCONV     XMStoreHalf4 ( _Out_ XMHALF4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreShortN4 ( _Out_ XMSHORTN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreShort4 ( _Out_ XMSHORT4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUShortN4 ( _Out_ XMUSHORTN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUShort4 ( _Out_ XMUSHORT4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreXDecN4 ( _Out_ XMXDECN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUDecN4 ( _Out_ XMUDECN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUDecN4_XR ( _Out_ XMUDECN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUDec4 ( _Out_ XMUDEC4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreByteN4 ( _Out_ XMBYTEN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreByte4 ( _Out_ XMBYTE4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUByteN4 ( _Out_ XMUBYTEN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUByte4 ( _Out_ XMUBYTE4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreUNibble4 ( _Out_ XMUNIBBLE4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_CALLCONV     XMStoreU555 ( _Out_ XMU555 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreHalf4 ( _Out_ XMHALF4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreShortN4 ( _Out_ XMSHORTN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreShort4 ( _Out_ XMSHORT4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUShortN4 ( _Out_ XMUSHORTN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUShort4 ( _Out_ XMUSHORT4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreXDecN4 ( _Out_ XMXDECN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUDecN4 ( _Out_ XMUDECN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUDecN4_XR ( _Out_ XMUDECN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUDec4 ( _Out_ XMUDEC4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreByteN4 ( _Out_ XMBYTEN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreByte4 ( _Out_ XMBYTE4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUByteN4 ( _Out_ XMUBYTEN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUByte4 ( _Out_ XMUBYTE4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreUNibble4 ( _Out_ XMUNIBBLE4 *pDestination , _In_ FXMVECTOR V );
+void    XM_CALLCONV     XMStoreU555 ( _Out_ XMU555 *pDestination , _In_ FXMVECTOR V );
 
 #pragma warning(push)
 #pragma warning(disable : 4996)
-	// C4996: ignore deprecation warning
+// C4996: ignore deprecation warning
 
 #ifdef __GNUC__
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-	void    XM_DEPRECATED XM_CALLCONV XMStoreDecN4 ( _Out_ XMDECN4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_DEPRECATED XM_CALLCONV XMStoreDec4 ( _Out_ XMDEC4 *pDestination , _In_ FXMVECTOR V );
-	void    XM_DEPRECATED XM_CALLCONV XMStoreXDec4 ( _Out_ XMXDEC4 *pDestination , _In_ FXMVECTOR V );
+void    XM_DEPRECATED XM_CALLCONV XMStoreDecN4 ( _Out_ XMDECN4 *pDestination , _In_ FXMVECTOR V );
+void    XM_DEPRECATED XM_CALLCONV XMStoreDec4 ( _Out_ XMDEC4 *pDestination , _In_ FXMVECTOR V );
+void    XM_DEPRECATED XM_CALLCONV XMStoreXDec4 ( _Out_ XMXDEC4 *pDestination , _In_ FXMVECTOR V );
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
@@ -2371,65 +2371,65 @@ XMGLOBALCONST XMVECTORF32 g_UShortMax = { { { 65535.0f, 65535.0f, 65535.0f, 6553
 inline XMVECTOR XM_CALLCONV XMVectorEndian ( FXMVECTOR V )
 {
 #if defined(_XM_ARM_NEON_INTRINSICS_) && !defined(_XM_NO_INTRINSICS_)
-		static const XMVECTORU32 idx = { { { 0x00010203u, 0x04050607u, 0x08090A0Bu, 0x0C0D0E0Fu } } };
+	static const XMVECTORU32 idx = { { { 0x00010203u, 0x04050607u, 0x08090A0Bu, 0x0C0D0E0Fu } } };
 
-		uint8x8x2_t tbl;
-		tbl.val[0] = vreinterpret_u8_f32(vget_low_f32(V));
-		tbl.val[1] = vreinterpret_u8_f32(vget_high_f32(V));
+	uint8x8x2_t tbl;
+	tbl.val[0] = vreinterpret_u8_f32(vget_low_f32(V));
+	tbl.val[1] = vreinterpret_u8_f32(vget_high_f32(V));
 
-		const uint8x8_t rL = vtbl2_u8(tbl, vget_low_u32(idx));
-		const uint8x8_t rH = vtbl2_u8(tbl, vget_high_u32(idx));
-		return vcombine_f32(vreinterpret_f32_u8(rL), vreinterpret_f32_u8(rH));
+	const uint8x8_t rL = vtbl2_u8(tbl, vget_low_u32(idx));
+	const uint8x8_t rH = vtbl2_u8(tbl, vget_high_u32(idx));
+	return vcombine_f32(vreinterpret_f32_u8(rL), vreinterpret_f32_u8(rH));
 #else
-		XMVECTORU32 E;
-		E.v = V;
-		uint32_t value = E.u[0];
-		E.u[0] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
-		value = E.u[1];
-		E.u[1] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
-		value = E.u[2];
-		E.u[2] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
-		value = E.u[3];
-		E.u[3] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
-		return E.v;
+	XMVECTORU32 E;
+	E.v = V;
+	uint32_t value = E.u[0];
+	E.u[0] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
+	value = E.u[1];
+	E.u[1] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
+	value = E.u[2];
+	E.u[2] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
+	value = E.u[3];
+	E.u[3] = ((value << 24) | ((value & 0xFF00) << 8) | ((value & 0xFF0000) >> 8) | (value >> 24));
+	return E.v;
 #endif
-	}
+}
 
 
 #if (defined(_M_IX86) || defined(_M_X64) || __i386__ || __x86_64__) && !defined(_M_HYBRID_X86_ARM64)
 
-			inline bool XMVerifySSSE3Support()
-			{
-				// Should return true on AMD Bulldozer, Intel Core i7/i5/i3, Intel Atom, or later processors
+inline bool XMVerifySSSE3Support()
+{
+	// Should return true on AMD Bulldozer, Intel Core i7/i5/i3, Intel Atom, or later processors
 
-				// See http://msdn.microsoft.com/en-us/library/hskdteyh.aspx
-				int CPUInfo[4] = { -1 };
+	// See http://msdn.microsoft.com/en-us/library/hskdteyh.aspx
+	int CPUInfo[4] = { -1 };
 #if defined(__clang__) || defined(__GNUC__)
-				__cpuid(0, CPUInfo[0], CPUInfo[1], CPUInfo[2], CPUInfo[3]);
+	__cpuid(0, CPUInfo[0], CPUInfo[1], CPUInfo[2], CPUInfo[3]);
 #else
-				__cpuid(CPUInfo, 0);
+	__cpuid(CPUInfo, 0);
 #endif
 
-				if (CPUInfo[0] < 1)
-					return false;
+	if (CPUInfo[0] < 1)
+		return false;
 
 #if defined(__clang__) || defined(__GNUC__)
-				__cpuid(1, CPUInfo[0], CPUInfo[1], CPUInfo[2], CPUInfo[3]);
+	__cpuid(1, CPUInfo[0], CPUInfo[1], CPUInfo[2], CPUInfo[3]);
 #else
-				__cpuid(CPUInfo, 1);
+	__cpuid(CPUInfo, 1);
 #endif
 
-				// Check for SSSE3 instruction set.
-				return ((CPUInfo[2] & 0x200) != 0);
-			}
+	// Check for SSSE3 instruction set.
+	return ((CPUInfo[2] & 0x200) != 0);
+}
 
-			inline XMVECTOR XM_CALLCONV XMVectorEndianSSE3 ( FXMVECTOR V )
-			{
-				static const XMVECTORU32 idx = { { { 0x00010203u, 0x04050607u, 0x08090A0Bu, 0x0C0D0E0Fu } } };
+inline XMVECTOR XM_CALLCONV XMVectorEndianSSE3 ( FXMVECTOR V )
+{
+	static const XMVECTORU32 idx = { { { 0x00010203u, 0x04050607u, 0x08090A0Bu, 0x0C0D0E0Fu } } };
 
-				__m128i Result = _mm_shuffle_epi8 ( _mm_castps_si128 ( V ), _mm_castps_si128 ( idx.v ) );
-				return _mm_castsi128_ps ( Result );
-			}
+	__m128i Result = _mm_shuffle_epi8 ( _mm_castps_si128 ( V ), _mm_castps_si128 ( idx.v ) );
+	return _mm_castsi128_ps ( Result );
+}
 #endif // X86 || X64
 
 #endif // !if 0
@@ -2512,7 +2512,7 @@ inline XMVECTOR XM_CALLCONV XMVectorMultiplyAddAVX2
 	FXMVECTOR V1 ,
 	FXMVECTOR V2 ,
 	FXMVECTOR V3
-)
+	)
 {
 	return _mm_fmadd_ps ( V1 , V2 , V3 );
 }
@@ -2522,7 +2522,7 @@ inline XMVECTOR XM_CALLCONV XMVectorNegativeMultiplySubtractAVX2
 	FXMVECTOR V1 ,
 	FXMVECTOR V2 ,
 	FXMVECTOR V3
-)
+	)
 {
 	return _mm_fnmadd_ps ( V1 , V2 , V3 );
 }
@@ -2589,7 +2589,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformAVX2
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_fmadd_ps ( vResult , M.r [ 1 ] , M.r [ 3 ] );
@@ -2672,7 +2672,7 @@ inline XMVECTOR XM_CALLCONV XMVector3ProjectAVX2
 	CXMMATRIX Projection ,
 	CXMMATRIX View ,
 	CXMMATRIX World
-)
+	)
 {
 	const float HalfViewportWidth = ViewportWidth * 0.5f;
 	const float HalfViewportHeight = ViewportHeight * 0.5f;
@@ -2702,7 +2702,7 @@ inline XMVECTOR XM_CALLCONV XMVector3UnprojectAVX2
 	CXMMATRIX Projection ,
 	CXMMATRIX View ,
 	CXMMATRIX World
-)
+	)
 {
 	static const XMVECTORF32 D = { { { -1.0f, 1.0f, 0.0f, 0.0f } } };
 
@@ -2730,7 +2730,7 @@ inline XMVECTOR XM_CALLCONV XMVector4TransformAVX2
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 3 , 3 , 3 , 3 ) ); // W
 	vResult = _mm_mul_ps ( vResult , M.r [ 3 ] );
@@ -2802,7 +2802,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixMultiplyTransposeAVX2
 (
 	FXMMATRIX M1 ,
 	CXMMATRIX M2
-)
+	)
 {
 	// Use vW to hold the original row
 	XMVECTOR vW = M1.r [ 0 ];
@@ -2896,7 +2896,7 @@ inline float *XMConvertHalfToFloatStreamAVX2
 	_In_reads_bytes_ ( 2 + InputStride * ( HalfCount - 1 ) ) const HALF *pInputStream ,
 	_In_ size_t      InputStride ,
 	_In_ size_t      HalfCount
-)
+	)
 {
 	assert ( pOutputStream );
 	assert ( pInputStream );
@@ -3076,7 +3076,7 @@ inline HALF *XMConvertFloatToHalfStreamAVX2
 	_In_reads_bytes_ ( sizeof ( float ) + InputStride * ( FloatCount - 1 ) ) const float *pInputStream ,
 	_In_ size_t       InputStride ,
 	_In_ size_t       FloatCount
-)
+	)
 {
 
 	assert ( pOutputStream );
@@ -3304,7 +3304,7 @@ inline bool XMVerifyFMA4Support ( )
 	// Should return true for AMD Bulldozer processors
 	// with OS support for AVX (Windows 7 Service Pack 1, Windows Server 2008 R2 Service Pack 1, Windows 8, Windows Server 2012)
 
-   // See http://msdn.microsoft.com/en-us/library/hskdteyh.aspx
+	// See http://msdn.microsoft.com/en-us/library/hskdteyh.aspx
 	int CPUInfo [ 4 ] = { -1 };
 #if defined(__clang__) || defined(__GNUC__)
 	__cpuid ( 0 , CPUInfo [ 0 ] , CPUInfo [ 1 ] , CPUInfo [ 2 ] , CPUInfo [ 3 ] );
@@ -3354,7 +3354,7 @@ inline XMVECTOR XM_CALLCONV XMVectorMultiplyAddFMA4
 	FXMVECTOR V1 ,
 	FXMVECTOR V2 ,
 	FXMVECTOR V3
-)
+	)
 {
 	return _mm_macc_ps ( V1 , V2 , V3 );
 }
@@ -3364,7 +3364,7 @@ inline XMVECTOR XM_CALLCONV XMVectorNegativeMultiplySubtractFMA4
 	FXMVECTOR V1 ,
 	FXMVECTOR V2 ,
 	FXMVECTOR V3
-)
+	)
 {
 	return _mm_nmacc_ps ( V1 , V2 , V3 );
 }
@@ -3378,7 +3378,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformFMA4
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_macc_ps ( vResult , M.r [ 1 ] , M.r [ 3 ] );
@@ -3391,7 +3391,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformCoordFMA4
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_macc_ps ( vResult , M.r [ 1 ] , M.r [ 3 ] );
@@ -3406,7 +3406,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformNormalFMA4
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_mul_ps ( vResult , M.r [ 1 ] );
@@ -3458,15 +3458,15 @@ inline XMVECTOR XM_CALLCONV XMVector3TransformNormalFMA4 ( FXMVECTOR V, CXMMATRI
 XMMATRIX XM_CALLCONV XMMatrixMultiplyFMA4 ( CXMMATRIX M1 , CXMMATRIX M2 );
 
 inline XMVECTOR XM_CALLCONV XMVector3ProjectFMA4 ( FXMVECTOR V,
-											   float    ViewportX,
-											   float    ViewportY,
-											   float    ViewportWidth,
-											   float    ViewportHeight,
-											   float    ViewportMinZ,
-											   float    ViewportMaxZ,
-											   CXMMATRIX Projection,
-											   CXMMATRIX View,
-											   CXMMATRIX World )
+												   float    ViewportX,
+												   float    ViewportY,
+												   float    ViewportWidth,
+												   float    ViewportHeight,
+												   float    ViewportMinZ,
+												   float    ViewportMaxZ,
+												   CXMMATRIX Projection,
+												   CXMMATRIX View,
+												   CXMMATRIX World )
 {
 	const float HalfViewportWidth = ViewportWidth * 0.5f;
 	const float HalfViewportHeight = ViewportHeight * 0.5f;
@@ -3496,7 +3496,7 @@ inline XMVECTOR XM_CALLCONV XMVector3UnprojectFMA4
 	CXMMATRIX Projection ,
 	CXMMATRIX View ,
 	CXMMATRIX World
-)
+	)
 {
 	static const XMVECTORF32 D = { { { -1.0f, 1.0f, 0.0f, 0.0f } } };
 
@@ -3592,7 +3592,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixMultiplyTransposeFMA4
 (
 	FXMMATRIX M1 ,
 	CXMMATRIX M2
-)
+	)
 {
 	// Use vW to hold the original row
 	XMVECTOR vW = M1.r [ 0 ];
@@ -3706,7 +3706,7 @@ inline XMVECTOR XM_CALLCONV XMVectorMultiplyAddFMA3
 	FXMVECTOR V1 ,
 	FXMVECTOR V2 ,
 	FXMVECTOR V3
-)
+	)
 {
 	return _mm_fmadd_ps ( V1 , V2 , V3 );
 }
@@ -3716,7 +3716,7 @@ inline XMVECTOR XM_CALLCONV XMVectorNegativeMultiplySubtractFMA3
 	FXMVECTOR V1 ,
 	FXMVECTOR V2 ,
 	FXMVECTOR V3
-)
+	)
 {
 	return _mm_fnmadd_ps ( V1 , V2 , V3 );
 }
@@ -3730,7 +3730,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformFMA3
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_fmadd_ps ( vResult , M.r [ 1 ] , M.r [ 3 ] );
@@ -3743,7 +3743,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformCoordFMA3
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_fmadd_ps ( vResult , M.r [ 1 ] , M.r [ 3 ] );
@@ -3758,7 +3758,7 @@ inline XMVECTOR XM_CALLCONV XMVector2TransformNormalFMA3
 (
 	FXMVECTOR V ,
 	CXMMATRIX M
-)
+	)
 {
 	XMVECTOR vResult = _mm_permute_ps ( V , _MM_SHUFFLE ( 1 , 1 , 1 , 1 ) ); // Y
 	vResult = _mm_mul_ps ( vResult , M.r [ 1 ] );
@@ -3821,7 +3821,7 @@ inline XMVECTOR XM_CALLCONV XMVector3ProjectFMA3
 	CXMMATRIX Projection ,
 	CXMMATRIX View ,
 	CXMMATRIX World
-)
+	)
 {
 	const float HalfViewportWidth = ViewportWidth * 0.5f;
 	const float HalfViewportHeight = ViewportHeight * 0.5f;
@@ -3851,7 +3851,7 @@ inline XMVECTOR XM_CALLCONV XMVector3UnprojectFMA3
 	CXMMATRIX Projection ,
 	CXMMATRIX View ,
 	CXMMATRIX World
-)
+	)
 {
 	static const XMVECTORF32 D = { { { -1.0f, 1.0f, 0.0f, 0.0f } } };
 
@@ -4072,7 +4072,7 @@ inline float *XMConvertHalfToFloatStreamF16C
 	_In_reads_bytes_ ( 2 + InputStride * ( HalfCount - 1 ) ) const HALF *pInputStream ,
 	_In_ size_t      InputStride ,
 	_In_ size_t      HalfCount
-)
+	)
 {
 	assert ( pOutputStream );
 	assert ( pInputStream );
@@ -4252,7 +4252,7 @@ inline HALF *XMConvertFloatToHalfStreamF16C
 	_In_reads_bytes_ ( sizeof ( float ) + InputStride * ( FloatCount - 1 ) ) const float *pInputStream ,
 	_In_ size_t       InputStride ,
 	_In_ size_t       FloatCount
-)
+	)
 {
 	assert ( pOutputStream );
 	assert ( pInputStream );
@@ -5125,7 +5125,7 @@ HRESULT SHProjectCubeMap (
  *
  ****************************************************************************/
 
- // Enumeration for stereo channels (left and right).
+// Enumeration for stereo channels (left and right).
 typedef enum STEREO_CHANNEL
 {
 	STEREO_CHANNEL_LEFT = 0 ,
@@ -6084,7 +6084,7 @@ inline XMVECTOR XM_CALLCONV XMLoadInt4A ( const uint32_t *pSource )
 	return vreinterpretq_f32_u32 ( vld1q_u32 ( pSource ) );
 #endif
 #elif defined ( _XM_SSE_INTRINSICS_ )
-__m128i V = _mm_load_si128  ( ( const __m128i* ) pSource );
+	__m128i V = _mm_load_si128  ( ( const __m128i* ) pSource );
 	return _mm_castsi128_ps ( V );
 #endif
 }
@@ -10760,145 +10760,145 @@ inline XMVECTOR XM_CALLCONV XMVectorExp ( FXMVECTOR V )
 
 inline __m128i multi_sll_epi32(__m128i value, __m128i count)
 {
-		__m128i v = _mm_shuffle_epi32(value, _MM_SHUFFLE(0, 0, 0, 0));
-		__m128i c = _mm_shuffle_epi32(count, _MM_SHUFFLE(0, 0, 0, 0));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r0 = _mm_sll_epi32(v, c);
+	__m128i v = _mm_shuffle_epi32(value, _MM_SHUFFLE(0, 0, 0, 0));
+	__m128i c = _mm_shuffle_epi32(count, _MM_SHUFFLE(0, 0, 0, 0));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r0 = _mm_sll_epi32(v, c);
 
-		v = _mm_shuffle_epi32(value, _MM_SHUFFLE(1, 1, 1, 1));
-		c = _mm_shuffle_epi32(count, _MM_SHUFFLE(1, 1, 1, 1));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r1 = _mm_sll_epi32(v, c);
+	v = _mm_shuffle_epi32(value, _MM_SHUFFLE(1, 1, 1, 1));
+	c = _mm_shuffle_epi32(count, _MM_SHUFFLE(1, 1, 1, 1));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r1 = _mm_sll_epi32(v, c);
 
-		v = _mm_shuffle_epi32(value, _MM_SHUFFLE(2, 2, 2, 2));
-		c = _mm_shuffle_epi32(count, _MM_SHUFFLE(2, 2, 2, 2));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r2 = _mm_sll_epi32(v, c);
+	v = _mm_shuffle_epi32(value, _MM_SHUFFLE(2, 2, 2, 2));
+	c = _mm_shuffle_epi32(count, _MM_SHUFFLE(2, 2, 2, 2));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r2 = _mm_sll_epi32(v, c);
 
-		v = _mm_shuffle_epi32(value, _MM_SHUFFLE(3, 3, 3, 3));
-		c = _mm_shuffle_epi32(count, _MM_SHUFFLE(3, 3, 3, 3));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r3 = _mm_sll_epi32(v, c);
+	v = _mm_shuffle_epi32(value, _MM_SHUFFLE(3, 3, 3, 3));
+	c = _mm_shuffle_epi32(count, _MM_SHUFFLE(3, 3, 3, 3));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r3 = _mm_sll_epi32(v, c);
 
-		// (r0,r0,r1,r1)
-		__m128 r01 = _mm_shuffle_ps(_mm_castsi128_ps(r0), _mm_castsi128_ps(r1), _MM_SHUFFLE(0, 0, 0, 0));
-		// (r2,r2,r3,r3)
-		__m128 r23 = _mm_shuffle_ps(_mm_castsi128_ps(r2), _mm_castsi128_ps(r3), _MM_SHUFFLE(0, 0, 0, 0));
-		// (r0,r1,r2,r3)
-		__m128 result = _mm_shuffle_ps(r01, r23, _MM_SHUFFLE(2, 0, 2, 0));
-		return _mm_castps_si128(result);
+	// (r0,r0,r1,r1)
+	__m128 r01 = _mm_shuffle_ps(_mm_castsi128_ps(r0), _mm_castsi128_ps(r1), _MM_SHUFFLE(0, 0, 0, 0));
+	// (r2,r2,r3,r3)
+	__m128 r23 = _mm_shuffle_ps(_mm_castsi128_ps(r2), _mm_castsi128_ps(r3), _MM_SHUFFLE(0, 0, 0, 0));
+	// (r0,r1,r2,r3)
+	__m128 result = _mm_shuffle_ps(r01, r23, _MM_SHUFFLE(2, 0, 2, 0));
+	return _mm_castps_si128(result);
 }
 
-	inline __m128i multi_srl_epi32(__m128i value, __m128i count)
-	{
-		__m128i v = _mm_shuffle_epi32(value, _MM_SHUFFLE(0, 0, 0, 0));
-		__m128i c = _mm_shuffle_epi32(count, _MM_SHUFFLE(0, 0, 0, 0));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r0 = _mm_srl_epi32(v, c);
+inline __m128i multi_srl_epi32(__m128i value, __m128i count)
+{
+	__m128i v = _mm_shuffle_epi32(value, _MM_SHUFFLE(0, 0, 0, 0));
+	__m128i c = _mm_shuffle_epi32(count, _MM_SHUFFLE(0, 0, 0, 0));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r0 = _mm_srl_epi32(v, c);
 
-		v = _mm_shuffle_epi32(value, _MM_SHUFFLE(1, 1, 1, 1));
-		c = _mm_shuffle_epi32(count, _MM_SHUFFLE(1, 1, 1, 1));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r1 = _mm_srl_epi32(v, c);
+	v = _mm_shuffle_epi32(value, _MM_SHUFFLE(1, 1, 1, 1));
+	c = _mm_shuffle_epi32(count, _MM_SHUFFLE(1, 1, 1, 1));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r1 = _mm_srl_epi32(v, c);
 
-		v = _mm_shuffle_epi32(value, _MM_SHUFFLE(2, 2, 2, 2));
-		c = _mm_shuffle_epi32(count, _MM_SHUFFLE(2, 2, 2, 2));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r2 = _mm_srl_epi32(v, c);
+	v = _mm_shuffle_epi32(value, _MM_SHUFFLE(2, 2, 2, 2));
+	c = _mm_shuffle_epi32(count, _MM_SHUFFLE(2, 2, 2, 2));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r2 = _mm_srl_epi32(v, c);
 
-		v = _mm_shuffle_epi32(value, _MM_SHUFFLE(3, 3, 3, 3));
-		c = _mm_shuffle_epi32(count, _MM_SHUFFLE(3, 3, 3, 3));
-		c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
-		__m128i r3 = _mm_srl_epi32(v, c);
+	v = _mm_shuffle_epi32(value, _MM_SHUFFLE(3, 3, 3, 3));
+	c = _mm_shuffle_epi32(count, _MM_SHUFFLE(3, 3, 3, 3));
+	c = _mm_and_si128(c, _mm_castps_si128 ( g_XMMaskX.v ) );
+	__m128i r3 = _mm_srl_epi32(v, c);
 
-		// (r0,r0,r1,r1)
-		__m128 r01 = _mm_shuffle_ps(_mm_castsi128_ps(r0), _mm_castsi128_ps(r1), _MM_SHUFFLE(0, 0, 0, 0));
-		// (r2,r2,r3,r3)
-		__m128 r23 = _mm_shuffle_ps(_mm_castsi128_ps(r2), _mm_castsi128_ps(r3), _MM_SHUFFLE(0, 0, 0, 0));
-		// (r0,r1,r2,r3)
-		__m128 result = _mm_shuffle_ps(r01, r23, _MM_SHUFFLE(2, 0, 2, 0));
-		return _mm_castps_si128(result);
-	}
+	// (r0,r0,r1,r1)
+	__m128 r01 = _mm_shuffle_ps(_mm_castsi128_ps(r0), _mm_castsi128_ps(r1), _MM_SHUFFLE(0, 0, 0, 0));
+	// (r2,r2,r3,r3)
+	__m128 r23 = _mm_shuffle_ps(_mm_castsi128_ps(r2), _mm_castsi128_ps(r3), _MM_SHUFFLE(0, 0, 0, 0));
+	// (r0,r1,r2,r3)
+	__m128 result = _mm_shuffle_ps(r01, r23, _MM_SHUFFLE(2, 0, 2, 0));
+	return _mm_castps_si128(result);
+}
 
-	inline __m128i GetLeadingBit(const __m128i value)
-	{
-		static const XMVECTORI32 g_XM0000FFFF = { { { 0x0000FFFF, 0x0000FFFF, 0x0000FFFF, 0x0000FFFF } } };
-		static const XMVECTORI32 g_XM000000FF = { { { 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF } } };
-		static const XMVECTORI32 g_XM0000000F = { { { 0x0000000F, 0x0000000F, 0x0000000F, 0x0000000F } } };
-		static const XMVECTORI32 g_XM00000003 = { { { 0x00000003, 0x00000003, 0x00000003, 0x00000003 } } };
+inline __m128i GetLeadingBit(const __m128i value)
+{
+	static const XMVECTORI32 g_XM0000FFFF = { { { 0x0000FFFF, 0x0000FFFF, 0x0000FFFF, 0x0000FFFF } } };
+	static const XMVECTORI32 g_XM000000FF = { { { 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF } } };
+	static const XMVECTORI32 g_XM0000000F = { { { 0x0000000F, 0x0000000F, 0x0000000F, 0x0000000F } } };
+	static const XMVECTORI32 g_XM00000003 = { { { 0x00000003, 0x00000003, 0x00000003, 0x00000003 } } };
 
-		__m128i v = value, r, c, b, s;
+	__m128i v = value, r, c, b, s;
 
-		c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM0000FFFF.v ) );   // c = (v > 0xFFFF)
-		b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
-		r = _mm_slli_epi32(b, 4);               // r = (b << 4)
-		v = multi_srl_epi32(v, r);              // v = (v >> r)
+	c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM0000FFFF.v ) );   // c = (v > 0xFFFF)
+	b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
+	r = _mm_slli_epi32(b, 4);               // r = (b << 4)
+	v = multi_srl_epi32(v, r);              // v = (v >> r)
 
-		c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM000000FF.v ) );   // c = (v > 0xFF)
-		b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
-		s = _mm_slli_epi32(b, 3);               // s = (b << 3)
-		v = multi_srl_epi32(v, s);              // v = (v >> s)
-		r = _mm_or_si128(r, s);                 // r = (r | s)
+	c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM000000FF.v ) );   // c = (v > 0xFF)
+	b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
+	s = _mm_slli_epi32(b, 3);               // s = (b << 3)
+	v = multi_srl_epi32(v, s);              // v = (v >> s)
+	r = _mm_or_si128(r, s);                 // r = (r | s)
 
-		c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM0000000F.v ) );   // c = (v > 0xF)
-		b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
-		s = _mm_slli_epi32(b, 2);               // s = (b << 2)
-		v = multi_srl_epi32(v, s);              // v = (v >> s)
-		r = _mm_or_si128(r, s);                 // r = (r | s)
+	c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM0000000F.v ) );   // c = (v > 0xF)
+	b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
+	s = _mm_slli_epi32(b, 2);               // s = (b << 2)
+	v = multi_srl_epi32(v, s);              // v = (v >> s)
+	r = _mm_or_si128(r, s);                 // r = (r | s)
 
-		c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM00000003.v ) );   // c = (v > 0x3)
-		b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
-		s = _mm_slli_epi32(b, 1);               // s = (b << 1)
-		v = multi_srl_epi32(v, s);              // v = (v >> s)
-		r = _mm_or_si128(r, s);                 // r = (r | s)
+	c = _mm_cmpgt_epi32(v, _mm_castps_si128 ( g_XM00000003.v ) );   // c = (v > 0x3)
+	b = _mm_srli_epi32(c, 31);              // b = (c ? 1 : 0)
+	s = _mm_slli_epi32(b, 1);               // s = (b << 1)
+	v = multi_srl_epi32(v, s);              // v = (v >> s)
+	r = _mm_or_si128(r, s);                 // r = (r | s)
 
-		s = _mm_srli_epi32(v, 1);
-		r = _mm_or_si128(r, s);
-		return r;
-	}
+	s = _mm_srli_epi32(v, 1);
+	r = _mm_or_si128(r, s);
+	return r;
+}
 
 #endif // _XM_SSE_INTRINSICS_
 
 #if defined(_XM_ARM_NEON_INTRINSICS_)
 
-	inline int32x4_t GetLeadingBit(const int32x4_t value)
-	{
-		static const XMVECTORI32 g_XM0000FFFF = { { { 0x0000FFFF, 0x0000FFFF, 0x0000FFFF, 0x0000FFFF } } };
-		static const XMVECTORI32 g_XM000000FF = { { { 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF } } };
-		static const XMVECTORI32 g_XM0000000F = { { { 0x0000000F, 0x0000000F, 0x0000000F, 0x0000000F } } };
-		static const XMVECTORI32 g_XM00000003 = { { { 0x00000003, 0x00000003, 0x00000003, 0x00000003 } } };
+inline int32x4_t GetLeadingBit(const int32x4_t value)
+{
+	static const XMVECTORI32 g_XM0000FFFF = { { { 0x0000FFFF, 0x0000FFFF, 0x0000FFFF, 0x0000FFFF } } };
+	static const XMVECTORI32 g_XM000000FF = { { { 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF } } };
+	static const XMVECTORI32 g_XM0000000F = { { { 0x0000000F, 0x0000000F, 0x0000000F, 0x0000000F } } };
+	static const XMVECTORI32 g_XM00000003 = { { { 0x00000003, 0x00000003, 0x00000003, 0x00000003 } } };
 
-		uint32x4_t c = vcgtq_s32(value, g_XM0000FFFF);              // c = (v > 0xFFFF)
-		int32x4_t b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);    // b = (c ? 1 : 0)
-		int32x4_t r = vshlq_n_s32(b, 4);                            // r = (b << 4)
-		r = vnegq_s32(r);
-		int32x4_t v = vshlq_s32(value, r);                          // v = (v >> r)
+	uint32x4_t c = vcgtq_s32(value, g_XM0000FFFF);              // c = (v > 0xFFFF)
+	int32x4_t b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);    // b = (c ? 1 : 0)
+	int32x4_t r = vshlq_n_s32(b, 4);                            // r = (b << 4)
+	r = vnegq_s32(r);
+	int32x4_t v = vshlq_s32(value, r);                          // v = (v >> r)
 
-		c = vcgtq_s32(v, g_XM000000FF);                             // c = (v > 0xFF)
-		b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);              // b = (c ? 1 : 0)
-		int32x4_t s = vshlq_n_s32(b, 3);                            // s = (b << 3)
-		s = vnegq_s32(s);
-		v = vshlq_s32(v, s);                                        // v = (v >> s)
-		r = vorrq_s32(r, s);                                        // r = (r | s)
+	c = vcgtq_s32(v, g_XM000000FF);                             // c = (v > 0xFF)
+	b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);              // b = (c ? 1 : 0)
+	int32x4_t s = vshlq_n_s32(b, 3);                            // s = (b << 3)
+	s = vnegq_s32(s);
+	v = vshlq_s32(v, s);                                        // v = (v >> s)
+	r = vorrq_s32(r, s);                                        // r = (r | s)
 
-		c = vcgtq_s32(v, g_XM0000000F);                             // c = (v > 0xF)
-		b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);              // b = (c ? 1 : 0)
-		s = vshlq_n_s32(b, 2);                                      // s = (b << 2)
-		s = vnegq_s32(s);
-		v = vshlq_s32(v, s);                                        // v = (v >> s)
-		r = vorrq_s32(r, s);                                        // r = (r | s)
+	c = vcgtq_s32(v, g_XM0000000F);                             // c = (v > 0xF)
+	b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);              // b = (c ? 1 : 0)
+	s = vshlq_n_s32(b, 2);                                      // s = (b << 2)
+	s = vnegq_s32(s);
+	v = vshlq_s32(v, s);                                        // v = (v >> s)
+	r = vorrq_s32(r, s);                                        // r = (r | s)
 
-		c = vcgtq_s32(v, g_XM00000003);                             // c = (v > 0x3)
-		b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);              // b = (c ? 1 : 0)
-		s = vshlq_n_s32(b, 1);                                      // s = (b << 1)
-		s = vnegq_s32(s);
-		v = vshlq_s32(v, s);                                        // v = (v >> s)
-		r = vorrq_s32(r, s);                                        // r = (r | s)
+	c = vcgtq_s32(v, g_XM00000003);                             // c = (v > 0x3)
+	b = vshrq_n_s32(vreinterpretq_s32_u32(c), 31);              // b = (c ? 1 : 0)
+	s = vshlq_n_s32(b, 1);                                      // s = (b << 1)
+	s = vnegq_s32(s);
+	v = vshlq_s32(v, s);                                        // v = (v >> s)
+	r = vorrq_s32(r, s);                                        // r = (r | s)
 
-		s = vshrq_n_s32(v, 1);
-		r = vorrq_s32(r, s);
-		return r;
-	}
+	s = vshrq_n_s32(v, 1);
+	r = vorrq_s32(r, s);
+	return r;
+}
 
 #endif
 
@@ -21526,9 +21526,9 @@ inline XMFLOAT4* XM_CALLCONV XMVector4TransformStream
  *
  ****************************************************************************/
 
- //------------------------------------------------------------------------------
- // Comparison operations
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Comparison operations
+//------------------------------------------------------------------------------
 
 #if !defined(_XM_NO_INTRINSICS_) && defined(_MSC_VER) && !defined(__clang__) && !defined(__INTEL_COMPILER)
 #pragma float_control(push)
@@ -22550,53 +22550,53 @@ inline XMVECTOR XM_CALLCONV XMMatrixDeterminant ( FXMMATRIX M )
 }
 
 #define XM3RANKDECOMPOSE(a, b, c, x, y, z)      \
-    if((x) < (y))                   \
-    {                               \
-        if((y) < (z))               \
-        {                           \
-            (a) = 2;                \
-            (b) = 1;                \
-            (c) = 0;                \
-        }                           \
-        else                        \
-        {                           \
-            (a) = 1;                \
-                                    \
-            if((x) < (z))           \
-            {                       \
-                (b) = 2;            \
-                (c) = 0;            \
-            }                       \
-            else                    \
-            {                       \
-                (b) = 0;            \
-                (c) = 2;            \
-            }                       \
-        }                           \
-    }                               \
-    else                            \
-    {                               \
-        if((x) < (z))               \
-        {                           \
-            (a) = 2;                \
-            (b) = 0;                \
-            (c) = 1;                \
-        }                           \
-        else                        \
-        {                           \
-            (a) = 0;                \
-                                    \
-            if((y) < (z))           \
-            {                       \
-                (b) = 2;            \
-                (c) = 1;            \
-            }                       \
-            else                    \
-            {                       \
-                (b) = 1;            \
-                (c) = 2;            \
-            }                       \
-        }                           \
+    if((x) < (y))								\
+    {											\
+        if((y) < (z))							\
+        {										\
+            (a) = 2;							\
+            (b) = 1;							\
+            (c) = 0;							\
+        }										\
+        else									\
+        {										\
+            (a) = 1;							\
+												\
+            if((x) < (z))						\
+            {									\
+                (b) = 2;						\
+                (c) = 0;						\
+            }									\
+            else								\
+            {									\
+                (b) = 0;						\
+                (c) = 2;						\
+            }									\
+        }										\
+    }											\
+    else										\
+    {											\
+        if((x) < (z))							\
+        {										\
+            (a) = 2;							\
+            (b) = 0;							\
+            (c) = 1;							\
+        }										\
+        else									\
+        {										\
+            (a) = 0;							\
+												\
+            if((y) < (z))						\
+            {									\
+                (b) = 2;						\
+                (c) = 1;						\
+            }									\
+            else								\
+            {									\
+                (b) = 1;						\
+                (c) = 2;						\
+            }									\
+        }										\
     }
 
 #define XM3_DECOMP_EPSILON 0.0001f
@@ -22608,7 +22608,7 @@ inline bool XM_CALLCONV XMMatrixDecompose
     XMVECTOR* outRotQuat,
     XMVECTOR* outTrans,
     FXMMATRIX M
-)
+	)
 {
     static const XMVECTOR* pvCanonicalBasis[3] = {
         &g_XMIdentityR0.v,
@@ -22724,7 +22724,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixSet
     float m10, float m11, float m12, float m13,
     float m20, float m21, float m22, float m23,
     float m30, float m31, float m32, float m33
-)
+	)
 {
     XMMATRIX M;
 #if defined(_XM_NO_INTRINSICS_)
@@ -23135,7 +23135,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixRotationRollPitchYaw
     float Pitch,
     float Yaw,
     float Roll
-)
+	)
 {
     XMVECTOR Angles = XMVectorSet(Pitch, Yaw, Roll, 0.0f);
     return XMMatrixRotationRollPitchYawFromVector(Angles);
@@ -23146,7 +23146,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixRotationRollPitchYaw
 inline XMMATRIX XM_CALLCONV XMMatrixRotationRollPitchYawFromVector
 (
     FXMVECTOR Angles // <Pitch, Yaw, Roll, undefined>
-)
+	)
 {
     XMVECTOR Q = XMQuaternionRotationRollPitchYawFromVector(Angles);
     return XMMatrixRotationQuaternion(Q);
@@ -23244,7 +23244,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixRotationAxis
 (
     FXMVECTOR Axis,
     float     Angle
-)
+	)
 {
     assert(!XMVector3Equal(Axis, XMVectorZero()));
     assert(!XMVector3IsInfinite(Axis));
@@ -23346,7 +23346,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixTransformation2D
     FXMVECTOR RotationOrigin,
     float     Rotation,
     GXMVECTOR Translation
-)
+	)
 {
     // M = Inverse(MScalingOrigin) * Transpose(MScalingOrientation) * MScaling * MScalingOrientation *
     //         MScalingOrigin * Inverse(MRotationOrigin) * MRotation * MRotationOrigin * MTranslation;
@@ -23385,7 +23385,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixTransformation
     GXMVECTOR RotationOrigin,
     HXMVECTOR RotationQuaternion,
     HXMVECTOR Translation
-)
+	)
 {
     // M = Inverse(MScalingOrigin) * Transpose(MScalingOrientation) * MScaling * MScalingOrientation *
     //         MScalingOrigin * Inverse(MRotationOrigin) * MRotation * MRotationOrigin * MTranslation;
@@ -23421,7 +23421,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixAffineTransformation2D
     FXMVECTOR RotationOrigin,
     float     Rotation,
     FXMVECTOR Translation
-)
+	)
 {
     // M = MScaling * Inverse(MRotationOrigin) * MRotation * MRotationOrigin * MTranslation;
 
@@ -23448,7 +23448,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixAffineTransformation
     FXMVECTOR RotationOrigin,
     FXMVECTOR RotationQuaternion,
     GXMVECTOR Translation
-)
+	)
 {
     // M = MScaling * Inverse(MRotationOrigin) * MRotation * MRotationOrigin * MTranslation;
 
@@ -23497,7 +23497,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixShadow
 (
     FXMVECTOR ShadowPlane,
     FXMVECTOR LightPosition
-)
+	)
 {
     static const XMVECTORU32 Select0001 = { { { XM_SELECT_0, XM_SELECT_0, XM_SELECT_0, XM_SELECT_1 } } };
 
@@ -23533,7 +23533,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixLookAtLH
     FXMVECTOR EyePosition,
     FXMVECTOR FocusPosition,
     FXMVECTOR UpDirection
-)
+	)
 {
     XMVECTOR EyeDirection = XMVectorSubtract(FocusPosition, EyePosition);
     return XMMatrixLookToLH(EyePosition, EyeDirection, UpDirection);
@@ -23546,7 +23546,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixLookAtRH
     FXMVECTOR EyePosition,
     FXMVECTOR FocusPosition,
     FXMVECTOR UpDirection
-)
+	)
 {
     XMVECTOR NegEyeDirection = XMVectorSubtract(EyePosition, FocusPosition);
     return XMMatrixLookToLH(EyePosition, NegEyeDirection, UpDirection);
@@ -23559,7 +23559,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixLookToLH
     FXMVECTOR EyePosition,
     FXMVECTOR EyeDirection,
     FXMVECTOR UpDirection
-)
+	)
 {
     assert(!XMVector3Equal(EyeDirection, XMVectorZero()));
     assert(!XMVector3IsInfinite(EyeDirection));
@@ -23597,7 +23597,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixLookToRH
     FXMVECTOR EyePosition,
     FXMVECTOR EyeDirection,
     FXMVECTOR UpDirection
-)
+	)
 {
     XMVECTOR NegEyeDirection = XMVectorNegate(EyeDirection);
     return XMMatrixLookToLH(EyePosition, NegEyeDirection, UpDirection);
@@ -23616,7 +23616,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixPerspectiveLH
     float ViewHeight,
     float NearZ,
     float FarZ
-)
+	)
 {
     assert(NearZ > 0.f && FarZ > 0.f);
     assert(!XMScalarNearEqual(ViewWidth, 0.0f, 0.00001f));
@@ -24020,9 +24020,9 @@ XMMatrixPerspectiveOffCenterLH ( float ViewLeft, float ViewRight, float ViewBott
     M.r[0] = vsetq_lane_f32(TwoNearZ * ReciprocalWidth, Zero, 0);
     M.r[1] = vsetq_lane_f32(TwoNearZ * ReciprocalHeight, Zero, 1);
     M.r[2] = XMVectorSet(-(ViewLeft + ViewRight) * ReciprocalWidth,
-        -(ViewTop + ViewBottom) * ReciprocalHeight,
-        fRange,
-        1.0f);
+						 -(ViewTop + ViewBottom) * ReciprocalHeight,
+						 fRange,
+						 1.0f);
     M.r[3] = vsetq_lane_f32(-fRange * NearZ, Zero, 2);
     return M;
 #elif defined(_XM_SSE_INTRINSICS_)
@@ -24051,9 +24051,9 @@ XMMatrixPerspectiveOffCenterLH ( float ViewLeft, float ViewRight, float ViewBott
     M.r[1] = vTemp;
     // 0,0,fRange,1.0f
     M.r[2] = XMVectorSet(-(ViewLeft + ViewRight) * ReciprocalWidth,
-        -(ViewTop + ViewBottom) * ReciprocalHeight,
-        fRange,
-        1.0f);
+						 -(ViewTop + ViewBottom) * ReciprocalHeight,
+						 fRange,
+						 1.0f);
     // 0,0,-fRange * NearZ,0.0f
     vValues = _mm_and_ps(vValues, g_XMMaskZ.v);
     M.r[3] = vValues;
@@ -24071,7 +24071,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixPerspectiveOffCenterRH
     float ViewTop,
     float NearZ,
     float FarZ
-)
+	)
 {
     assert(NearZ > 0.f && FarZ > 0.f);
     assert(!XMScalarNearEqual(ViewRight, ViewLeft, 0.00001f));
@@ -24118,9 +24118,9 @@ inline XMMATRIX XM_CALLCONV XMMatrixPerspectiveOffCenterRH
     M.r[0] = vsetq_lane_f32(TwoNearZ * ReciprocalWidth, Zero, 0);
     M.r[1] = vsetq_lane_f32(TwoNearZ * ReciprocalHeight, Zero, 1);
     M.r[2] = XMVectorSet((ViewLeft + ViewRight) * ReciprocalWidth,
-        (ViewTop + ViewBottom) * ReciprocalHeight,
-        fRange,
-        -1.0f);
+						 (ViewTop + ViewBottom) * ReciprocalHeight,
+						 fRange,
+						 -1.0f);
     M.r[3] = vsetq_lane_f32(fRange * NearZ, Zero, 2);
     return M;
 #elif defined(_XM_SSE_INTRINSICS_)
@@ -24149,9 +24149,9 @@ inline XMMATRIX XM_CALLCONV XMMatrixPerspectiveOffCenterRH
     M.r[1] = vTemp;
     // 0,0,fRange,1.0f
     M.r[2] = XMVectorSet((ViewLeft + ViewRight) * ReciprocalWidth,
-        (ViewTop + ViewBottom) * ReciprocalHeight,
-        fRange,
-        -1.0f);
+						 (ViewTop + ViewBottom) * ReciprocalHeight,
+						 fRange,
+						 -1.0f);
     // 0,0,-fRange * NearZ,0.0f
     vValues = _mm_and_ps(vValues, g_XMMaskZ.v);
     M.r[3] = vValues;
@@ -24326,7 +24326,7 @@ inline XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterLH
     float ViewTop,
     float NearZ,
     float FarZ
-)
+	)
 {
     assert(!XMScalarNearEqual(ViewRight, ViewLeft, 0.00001f));
     assert(!XMScalarNearEqual(ViewTop, ViewBottom, 0.00001f));
@@ -24370,9 +24370,9 @@ inline XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterLH
     M.r[1] = vsetq_lane_f32(ReciprocalHeight + ReciprocalHeight, Zero, 1);
     M.r[2] = vsetq_lane_f32(fRange, Zero, 2);
     M.r[3] = XMVectorSet(-(ViewLeft + ViewRight) * ReciprocalWidth,
-        -(ViewTop + ViewBottom) * ReciprocalHeight,
-        -fRange * NearZ,
-        1.0f);
+						 -(ViewTop + ViewBottom) * ReciprocalHeight,
+						 -fRange * NearZ,
+						 1.0f);
     return M;
 #elif defined(_XM_SSE_INTRINSICS_)
     XMMATRIX M;
@@ -24447,9 +24447,9 @@ inline XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterRH ( float ViewLeft, fl
     M.m[2][3] = 0.0f;
 
     M.r[3] = XMVectorSet(-(ViewLeft + ViewRight) * ReciprocalWidth,
-        -(ViewTop + ViewBottom) * ReciprocalHeight,
-        fRange * NearZ,
-        1.0f);
+						 -(ViewTop + ViewBottom) * ReciprocalHeight,
+						 fRange * NearZ,
+						 1.0f);
     return M;
 
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
@@ -24462,9 +24462,9 @@ inline XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterRH ( float ViewLeft, fl
     M.r[1] = vsetq_lane_f32(ReciprocalHeight + ReciprocalHeight, Zero, 1);
     M.r[2] = vsetq_lane_f32(fRange, Zero, 2);
     M.r[3] = XMVectorSet(-(ViewLeft + ViewRight) * ReciprocalWidth,
-        -(ViewTop + ViewBottom) * ReciprocalHeight,
-        fRange * NearZ,
-        1.0f);
+						 -(ViewTop + ViewBottom) * ReciprocalHeight,
+						 fRange * NearZ,
+						 1.0f);
     return M;
 #elif defined(_XM_SSE_INTRINSICS_)
     XMMATRIX M;
@@ -24526,11 +24526,11 @@ inline XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterRH ( float ViewLeft, fl
  *
  ****************************************************************************/
 
- //------------------------------------------------------------------------------
- // Comparison operations
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Comparison operations
+//------------------------------------------------------------------------------
 
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 inline bool XM_CALLCONV XMQuaternionEqual ( FXMVECTOR Q1, FXMVECTOR Q2 )
 {
@@ -24589,11 +24589,11 @@ inline XMVECTOR XM_CALLCONV XMQuaternionMultiply ( FXMVECTOR Q1, FXMVECTOR Q2 )
 
 #if defined(_XM_NO_INTRINSICS_)
     XMVECTORF32 Result = { { {
-            (Q2.vector4_f32[3] * Q1.vector4_f32[0]) + (Q2.vector4_f32[0] * Q1.vector4_f32[3]) + (Q2.vector4_f32[1] * Q1.vector4_f32[2]) - (Q2.vector4_f32[2] * Q1.vector4_f32[1]),
-            (Q2.vector4_f32[3] * Q1.vector4_f32[1]) - (Q2.vector4_f32[0] * Q1.vector4_f32[2]) + (Q2.vector4_f32[1] * Q1.vector4_f32[3]) + (Q2.vector4_f32[2] * Q1.vector4_f32[0]),
-            (Q2.vector4_f32[3] * Q1.vector4_f32[2]) + (Q2.vector4_f32[0] * Q1.vector4_f32[1]) - (Q2.vector4_f32[1] * Q1.vector4_f32[0]) + (Q2.vector4_f32[2] * Q1.vector4_f32[3]),
-            (Q2.vector4_f32[3] * Q1.vector4_f32[3]) - (Q2.vector4_f32[0] * Q1.vector4_f32[0]) - (Q2.vector4_f32[1] * Q1.vector4_f32[1]) - (Q2.vector4_f32[2] * Q1.vector4_f32[2])
-        } } };
+				(Q2.vector4_f32[3] * Q1.vector4_f32[0]) + (Q2.vector4_f32[0] * Q1.vector4_f32[3]) + (Q2.vector4_f32[1] * Q1.vector4_f32[2]) - (Q2.vector4_f32[2] * Q1.vector4_f32[1]),
+				(Q2.vector4_f32[3] * Q1.vector4_f32[1]) - (Q2.vector4_f32[0] * Q1.vector4_f32[2]) + (Q2.vector4_f32[1] * Q1.vector4_f32[3]) + (Q2.vector4_f32[2] * Q1.vector4_f32[0]),
+				(Q2.vector4_f32[3] * Q1.vector4_f32[2]) + (Q2.vector4_f32[0] * Q1.vector4_f32[1]) - (Q2.vector4_f32[1] * Q1.vector4_f32[0]) + (Q2.vector4_f32[2] * Q1.vector4_f32[3]),
+				(Q2.vector4_f32[3] * Q1.vector4_f32[3]) - (Q2.vector4_f32[0] * Q1.vector4_f32[0]) - (Q2.vector4_f32[1] * Q1.vector4_f32[1]) - (Q2.vector4_f32[2] * Q1.vector4_f32[2])
+			} } };
     return Result.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     static const XMVECTORF32 ControlWZYX = { { { 1.0f, -1.0f, 1.0f, -1.0f } } };
@@ -24704,11 +24704,11 @@ inline XMVECTOR XM_CALLCONV XMQuaternionConjugate(FXMVECTOR Q)
 {
 #if defined(_XM_NO_INTRINSICS_)
     XMVECTORF32 Result = { { {
-            -Q.vector4_f32[0],
-            -Q.vector4_f32[1],
-            -Q.vector4_f32[2],
-            Q.vector4_f32[3]
-        } } };
+				-Q.vector4_f32[0],
+				-Q.vector4_f32[1],
+				-Q.vector4_f32[2],
+				Q.vector4_f32[3]
+			} } };
     return Result.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     static const XMVECTORF32 NegativeOne3 = { { { -1.0f, -1.0f, -1.0f, 1.0f } } };
@@ -24922,7 +24922,7 @@ inline void XM_CALLCONV XMQuaternionSquadSetup
     FXMVECTOR  Q1,
     FXMVECTOR  Q2,
     GXMVECTOR  Q3
-)
+	)
 {
     assert ( pA );
     assert ( pB );
@@ -25362,9 +25362,9 @@ inline void XM_CALLCONV XMQuaternionToAxisAngle ( XMVECTOR* pAxis, float* pAngle
  *
  ****************************************************************************/
 
- //------------------------------------------------------------------------------
- // Comparison operations
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Comparison operations
+//------------------------------------------------------------------------------
 
 inline bool XM_CALLCONV XMPlaneEqual ( FXMVECTOR P1, FXMVECTOR P2 )
 {
@@ -25478,11 +25478,11 @@ inline XMVECTOR XM_CALLCONV XMPlaneNormalize ( FXMVECTOR P )
         fLengthSq = 1.0f / fLengthSq;
     }
     XMVECTORF32 vResult = { { {
-            P.vector4_f32[0] * fLengthSq,
-            P.vector4_f32[1] * fLengthSq,
-            P.vector4_f32[2] * fLengthSq,
-            P.vector4_f32[3] * fLengthSq
-        } } };
+				P.vector4_f32[0] * fLengthSq,
+				P.vector4_f32[1] * fLengthSq,
+				P.vector4_f32[2] * fLengthSq,
+				P.vector4_f32[3] * fLengthSq
+			} } };
     return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     XMVECTOR vLength = XMVector3ReciprocalLength(P);
@@ -25549,7 +25549,7 @@ inline void XM_CALLCONV XMPlaneIntersectPlane
     XMVECTOR* pLinePoint2,
     FXMVECTOR  P1,
     FXMVECTOR  P2
-)
+	)
 {
     assert(pLinePoint1);
     assert(pLinePoint2);
@@ -25603,14 +25603,14 @@ inline XMFLOAT4* XM_CALLCONV XMPlaneTransformStream
     size_t          InputStride,
     size_t          PlaneCount,
     FXMMATRIX       M
-)
+	)
 {
     return XMVector4TransformStream(pOutputStream,
-        OutputStride,
-        pInputStream,
-        InputStride,
-        PlaneCount,
-        M);
+									OutputStride,
+									pInputStream,
+									InputStride,
+									PlaneCount,
+									M);
 }
 
 //------------------------------------------------------------------------------
@@ -25648,9 +25648,9 @@ inline XMVECTOR XM_CALLCONV XMPlaneFromPoints ( FXMVECTOR Point1, FXMVECTOR Poin
  *
  ****************************************************************************/
 
- //------------------------------------------------------------------------------
- // Comparison operations
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Comparison operations
+//------------------------------------------------------------------------------
 
 inline bool XM_CALLCONV XMColorEqual ( FXMVECTOR C1, FXMVECTOR C2 )
 {
@@ -25719,11 +25719,11 @@ inline XMVECTOR XM_CALLCONV XMColorNegative ( FXMVECTOR vColor )
 {
 #if defined ( _XM_NO_INTRINSICS_ )
     XMVECTORF32 vResult = { { {
-            1.0f - vColor.vector4_f32[0],
-            1.0f - vColor.vector4_f32[1],
-            1.0f - vColor.vector4_f32[2],
-            vColor.vector4_f32[3]
-        } } };
+				1.0f - vColor.vector4_f32[0],
+				1.0f - vColor.vector4_f32[1],
+				1.0f - vColor.vector4_f32[2],
+				vColor.vector4_f32[3]
+			} } };
     return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     uint32x4_t vTemp = veorq_u32(vreinterpretq_u32_f32(vColor), g_XMNegate3);
@@ -25786,11 +25786,11 @@ inline XMVECTOR XM_CALLCONV XMColorAdjustContrast ( FXMVECTOR vColor, float fCon
 // Result = (vColor - 0.5f) * fContrast + 0.5f;
 #if defined(_XM_NO_INTRINSICS_)
     XMVECTORF32 vResult = { { {
-            ((vColor.vector4_f32[0] - 0.5f) * fContrast) + 0.5f,
-            ((vColor.vector4_f32[1] - 0.5f) * fContrast) + 0.5f,
-            ((vColor.vector4_f32[2] - 0.5f) * fContrast) + 0.5f,
-            vColor.vector4_f32[3]        // Leave W untouched
-        } } };
+				((vColor.vector4_f32[0] - 0.5f) * fContrast) + 0.5f,
+				((vColor.vector4_f32[1] - 0.5f) * fContrast) + 0.5f,
+				((vColor.vector4_f32[2] - 0.5f) * fContrast) + 0.5f,
+				vColor.vector4_f32[3]        // Leave W untouched
+			} } };
     return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
     XMVECTOR vResult = vsubq_f32(vColor, g_XMOneHalf.v);
@@ -26325,7 +26325,7 @@ inline XMVECTOR XM_CALLCONV XMColorSRGBToRGB ( FXMVECTOR srgb )
  *
  ****************************************************************************/
 
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 inline bool XMVerifyCPUSupport()
 {
@@ -26485,7 +26485,7 @@ inline bool XMScalarNearEqual
     float S1,
     float S2,
     float Epsilon
-)
+	)
 {
     float Delta = S1 - S2;
     return (fabsf(Delta) <= Epsilon);
@@ -26843,10 +26843,10 @@ inline float XMScalarACosEst ( float Value )
 
 #pragma warning(push)
 #pragma warning(disable:4068 4214 4204 4365 4616 6001 6101)
- // C4068/4616: ignore unknown pragmas
- // C4214/4204: nonstandard extension used
- // C4365: Off by default noise
- // C6001/6101: False positives
+// C4068/4616: ignore unknown pragmas
+// C4214/4204: nonstandard extension used
+// C4365: Off by default noise
+// C6001/6101: False positives
 
 #ifdef _PREFAST_
 #pragma prefast(push)
@@ -26861,7 +26861,7 @@ inline float XMScalarACosEst ( float Value )
  *
  ****************************************************************************/
 
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 inline float XMConvertHalfToFloat ( HALF Value )
 {
@@ -26926,7 +26926,7 @@ inline float *XMConvertHalfToFloatStream
 	const HALF *pInputStream ,
 	size_t      InputStride ,
 	size_t      HalfCount
-)
+	)
 {
 	assert ( pOutputStream );
 	assert ( pInputStream );
@@ -27603,11 +27603,11 @@ inline XMVECTOR XM_CALLCONV XMLoadColor ( const XMCOLOR *pSource )
 	// uint32_t -> Float calls a runtime function. Keep in int32_t
 	uint32_t iColor = ( int32_t ) ( pSource->c );
 	XMVECTORF32 vColor = { { {
-			( float ) ( ( iColor >> 16 ) & 0xFF ) * ( 1.0f / 255.0f ),
-			( float ) ( ( iColor >> 8 ) & 0xFF ) * ( 1.0f / 255.0f ),
-			( float ) ( iColor & 0xFF ) * ( 1.0f / 255.0f ),
-			( float ) ( ( iColor >> 24 ) & 0xFF ) * ( 1.0f / 255.0f )
-		} } };
+				( float ) ( ( iColor >> 16 ) & 0xFF ) * ( 1.0f / 255.0f ),
+				( float ) ( ( iColor >> 8 ) & 0xFF ) * ( 1.0f / 255.0f ),
+				( float ) ( iColor & 0xFF ) * ( 1.0f / 255.0f ),
+				( float ) ( ( iColor >> 24 ) & 0xFF ) * ( 1.0f / 255.0f )
+			} } };
 	return vColor.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32_t bgra = pSource->c;
@@ -27643,11 +27643,11 @@ inline XMVECTOR XM_CALLCONV XMLoadHalf2 ( const XMHALF2 *pSource )
 	return _mm_cvtph_ps ( _mm_castps_si128 ( V ) );
 #else
 	XMVECTORF32 vResult = { { {
-			XMConvertHalfToFloat ( pSource->x ),
-			XMConvertHalfToFloat ( pSource->y ),
-			0.0f,
-			0.0f
-		} } };
+				XMConvertHalfToFloat ( pSource->x ),
+				XMConvertHalfToFloat ( pSource->y ),
+				0.0f,
+				0.0f
+			} } };
 	return vResult.v;
 #endif // !_XM_F16C_INTRINSICS_
 }
@@ -27659,11 +27659,11 @@ inline XMVECTOR XM_CALLCONV XMLoadShortN2 ( const XMSHORTN2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( pSource->x == -32768 ) ? -1.f : ( ( float ) ( pSource->x ) * ( 1.0f / 32767.0f ) ),
-			( pSource->y == -32768 ) ? -1.f : ( ( float ) ( pSource->y ) * ( 1.0f / 32767.0f ) ),
-			0.0f,
-			0.0f
-		} } };
+				( pSource->x == -32768 ) ? -1.f : ( ( float ) ( pSource->x ) * ( 1.0f / 32767.0f ) ),
+				( pSource->y == -32768 ) ? -1.f : ( ( float ) ( pSource->y ) * ( 1.0f / 32767.0f ) ),
+				0.0f,
+				0.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt16 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -27698,11 +27698,11 @@ inline XMVECTOR XM_CALLCONV XMLoadShort2 ( const XMSHORT2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			0.f,
-			0.f
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				0.f,
+				0.f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt16 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -27733,11 +27733,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUShortN2 ( const XMUSHORTN2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ) / 65535.0f,
-			( float ) ( pSource->y ) / 65535.0f,
-			0.f,
-			0.f
-		} } };
+				( float ) ( pSource->x ) / 65535.0f,
+				( float ) ( pSource->y ) / 65535.0f,
+				0.f,
+				0.f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt16 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -27773,11 +27773,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUShort2 ( const XMUSHORT2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			0.f,
-			0.f
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				0.f,
+				0.f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt16 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -27810,11 +27810,11 @@ inline XMVECTOR XM_CALLCONV XMLoadByteN2 ( const XMBYTEN2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( pSource->x == -128 ) ? -1.f : ( ( float ) ( pSource->x ) * ( 1.0f / 127.0f ) ),
-			( pSource->y == -128 ) ? -1.f : ( ( float ) ( pSource->y ) * ( 1.0f / 127.0f ) ),
-			0.0f,
-			0.0f
-		} } };
+				( pSource->x == -128 ) ? -1.f : ( ( float ) ( pSource->x ) * ( 1.0f / 127.0f ) ),
+				( pSource->y == -128 ) ? -1.f : ( ( float ) ( pSource->y ) * ( 1.0f / 127.0f ) ),
+				0.0f,
+				0.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint16x4_t vInt8 = vld1_dup_u16 ( ( const uint16_t * ) ( pSource ) );
@@ -27852,11 +27852,11 @@ inline XMVECTOR XM_CALLCONV XMLoadByte2 ( const XMBYTE2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			0.0f,
-			0.0f
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				0.0f,
+				0.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint16x4_t vInt8 = vld1_dup_u16 ( ( const uint16_t * ) ( pSource ) );
@@ -27890,11 +27890,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUByteN2 ( const XMUBYTEN2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ) * ( 1.0f / 255.0f ),
-			( float ) ( pSource->y ) * ( 1.0f / 255.0f ),
-			0.0f,
-			0.0f
-		} } };
+				( float ) ( pSource->x ) * ( 1.0f / 255.0f ),
+				( float ) ( pSource->y ) * ( 1.0f / 255.0f ),
+				0.0f,
+				0.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint16x4_t vInt8 = vld1_dup_u16 ( ( const uint16_t * ) ( pSource ) );
@@ -27929,11 +27929,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUByte2 ( const XMUBYTE2 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			0.0f,
-			0.0f
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				0.0f,
+				0.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint16x4_t vInt8 = vld1_dup_u16 ( ( const uint16_t * ) ( pSource ) );
@@ -27967,11 +27967,11 @@ inline XMVECTOR XM_CALLCONV XMLoadU565 ( const XMU565 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->v & 0x1F ),
-			( float ) ( ( pSource->v >> 5 ) & 0x3F ),
-			( float ) ( ( pSource->v >> 11 ) & 0x1F ),
-			0.f,
-		} } };
+				( float ) ( pSource->v & 0x1F ),
+				( float ) ( ( pSource->v >> 5 ) & 0x3F ),
+				( float ) ( ( pSource->v >> 11 ) & 0x1F ),
+				0.f,
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	static const XMVECTORI32 U565And = { { { 0x1F, 0x3F << 5, 0x1F << 11, 0 } } };
@@ -28126,10 +28126,10 @@ inline XMVECTOR XM_CALLCONV XMLoadFloat3SE ( const XMFLOAT3SE *pSource )
 	float Scale = fi.f;
 
 	XMVECTORF32 v = { { {
-			Scale * ( float ) pSource->xm,
-			Scale * ( float ) pSource->ym,
-			Scale * ( float ) pSource->zm,
-			1.0f } } };
+				Scale * ( float ) pSource->xm,
+				Scale * ( float ) pSource->ym,
+				Scale * ( float ) pSource->zm,
+				1.0f } } };
 	return v.v;
 }
 
@@ -28143,11 +28143,11 @@ inline XMVECTOR XM_CALLCONV XMLoadHalf4 ( const XMHALF4 *pSource )
 	return _mm_cvtph_ps ( V );
 #else
 	XMVECTORF32 vResult = { { {
-			XMConvertHalfToFloat ( pSource->x ),
-			XMConvertHalfToFloat ( pSource->y ),
-			XMConvertHalfToFloat ( pSource->z ),
-			XMConvertHalfToFloat ( pSource->w )
-		} } };
+				XMConvertHalfToFloat ( pSource->x ),
+				XMConvertHalfToFloat ( pSource->y ),
+				XMConvertHalfToFloat ( pSource->z ),
+				XMConvertHalfToFloat ( pSource->w )
+			} } };
 	return vResult.v;
 #endif // !_XM_F16C_INTRINSICS_
 }
@@ -28159,11 +28159,11 @@ inline XMVECTOR XM_CALLCONV XMLoadShortN4 ( const XMSHORTN4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( pSource->x == -32768 ) ? -1.f : ( ( float ) ( pSource->x ) * ( 1.0f / 32767.0f ) ),
-			( pSource->y == -32768 ) ? -1.f : ( ( float ) ( pSource->y ) * ( 1.0f / 32767.0f ) ),
-			( pSource->z == -32768 ) ? -1.f : ( ( float ) ( pSource->z ) * ( 1.0f / 32767.0f ) ),
-			( pSource->w == -32768 ) ? -1.f : ( ( float ) ( pSource->w ) * ( 1.0f / 32767.0f ) )
-		} } };
+				( pSource->x == -32768 ) ? -1.f : ( ( float ) ( pSource->x ) * ( 1.0f / 32767.0f ) ),
+				( pSource->y == -32768 ) ? -1.f : ( ( float ) ( pSource->y ) * ( 1.0f / 32767.0f ) ),
+				( pSource->z == -32768 ) ? -1.f : ( ( float ) ( pSource->z ) * ( 1.0f / 32767.0f ) ),
+				( pSource->w == -32768 ) ? -1.f : ( ( float ) ( pSource->w ) * ( 1.0f / 32767.0f ) )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	int16x4_t vInt = vld1_s16 ( ( const int16_t * ) ( pSource ) );
@@ -28198,11 +28198,11 @@ inline XMVECTOR XM_CALLCONV XMLoadShort4 ( const XMSHORT4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			( float ) ( pSource->z ),
-			( float ) ( pSource->w )
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				( float ) ( pSource->z ),
+				( float ) ( pSource->w )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	int16x4_t vInt = vld1_s16 ( ( const int16_t * ) ( pSource ) );
@@ -28233,11 +28233,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUShortN4 ( const XMUSHORTN4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ) / 65535.0f,
-			( float ) ( pSource->y ) / 65535.0f,
-			( float ) ( pSource->z ) / 65535.0f,
-			( float ) ( pSource->w ) / 65535.0f
-		} } };
+				( float ) ( pSource->x ) / 65535.0f,
+				( float ) ( pSource->y ) / 65535.0f,
+				( float ) ( pSource->z ) / 65535.0f,
+				( float ) ( pSource->w ) / 65535.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint16x4_t vInt = vld1_u16 ( ( const uint16_t * ) ( pSource ) );
@@ -28271,11 +28271,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUShort4 ( const XMUSHORT4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			( float ) ( pSource->z ),
-			( float ) ( pSource->w )
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				( float ) ( pSource->z ),
+				( float ) ( pSource->w )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint16x4_t vInt = vld1_u16 ( ( const uint16_t * ) ( pSource ) );
@@ -28313,11 +28313,11 @@ inline XMVECTOR XM_CALLCONV XMLoadXDecN4 ( const XMXDECN4 *pSource )
 	uint32_t ElementZ = ( pSource->v >> 20 ) & 0x3FF;
 
 	XMVECTORF32 vResult = { { {
-			( ElementX == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ) / 511.0f ),
-			( ElementY == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ) / 511.0f ),
-			( ElementZ == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ) / 511.0f ),
-			( float ) ( pSource->v >> 30 ) / 3.0f
-		} } };
+				( ElementX == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ) / 511.0f ),
+				( ElementY == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ) / 511.0f ),
+				( ElementZ == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ) / 511.0f ),
+				( float ) ( pSource->v >> 30 ) / 3.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x4_t vInt = vld1q_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28367,11 +28367,11 @@ inline XMVECTOR XM_CALLCONV XMLoadXDec4 ( const XMXDEC4 *pSource )
 	uint32_t ElementZ = ( pSource->v >> 20 ) & 0x3FF;
 
 	XMVECTORF32 vResult = { { {
-			( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ),
-			( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ),
-			( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ),
-			( float ) ( pSource->v >> 30 )
-		} } };
+				( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ),
+				( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ),
+				( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ),
+				( float ) ( pSource->v >> 30 )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	static const XMVECTORU32 XDec4Xor = { { { 0x200, 0x200 << 10, 0x200 << 20, 0x80000000 } } };
@@ -28419,11 +28419,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUDecN4 ( const XMUDECN4 *pSource )
 	uint32_t ElementZ = ( pSource->v >> 20 ) & 0x3FF;
 
 	XMVECTORF32 vResult = { { {
-			( float ) ( ElementX ) / 1023.0f,
-			( float ) ( ElementY ) / 1023.0f,
-			( float ) ( ElementZ ) / 1023.0f,
-			( float ) ( pSource->v >> 30 ) / 3.0f
-		} } };
+				( float ) ( ElementX ) / 1023.0f,
+				( float ) ( ElementY ) / 1023.0f,
+				( float ) ( ElementZ ) / 1023.0f,
+				( float ) ( pSource->v >> 30 ) / 3.0f
+			} } };
 	return vResult.v;
 
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
@@ -28463,11 +28463,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUDecN4_XR ( const XMUDECN4 *pSource )
 	int32_t ElementZ = ( pSource->v >> 20 ) & 0x3FF;
 
 	XMVECTORF32 vResult = { { {
-			( float ) ( ElementX - 0x180 ) / 510.0f,
-			( float ) ( ElementY - 0x180 ) / 510.0f,
-			( float ) ( ElementZ - 0x180 ) / 510.0f,
-			( float ) ( pSource->v >> 30 ) / 3.0f
-		} } };
+				( float ) ( ElementX - 0x180 ) / 510.0f,
+				( float ) ( ElementY - 0x180 ) / 510.0f,
+				( float ) ( ElementZ - 0x180 ) / 510.0f,
+				( float ) ( pSource->v >> 30 ) / 3.0f
+			} } };
 
 	return vResult.v;
 
@@ -28513,11 +28513,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUDec4 ( const XMUDEC4 *pSource )
 	uint32_t ElementZ = ( pSource->v >> 20 ) & 0x3FF;
 
 	XMVECTORF32 vResult = { { {
-			( float ) ( ElementX ),
-			( float ) ( ElementY ),
-			( float ) ( ElementZ ),
-			( float ) ( pSource->v >> 30 )
-		} } };
+				( float ) ( ElementX ),
+				( float ) ( ElementY ),
+				( float ) ( ElementZ ),
+				( float ) ( pSource->v >> 30 )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x4_t vInt = vld1q_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28565,11 +28565,11 @@ inline XMVECTOR XM_CALLCONV XMLoadDecN4 ( const XMDECN4 *pSource )
 	uint32_t ElementW = pSource->v >> 30;
 
 	XMVECTORF32 vResult = { { {
-			( ElementX == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ) / 511.0f ),
-			( ElementY == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ) / 511.0f ),
-			( ElementZ == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ) / 511.0f ),
-			( ElementW == 0x2 ) ? -1.f : ( float ) ( ( int16_t ) ( ElementW | SignExtendW [ ( ElementW >> 1 ) & 1 ] ) )
-		} } };
+				( ElementX == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ) / 511.0f ),
+				( ElementY == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ) / 511.0f ),
+				( ElementZ == 0x200 ) ? -1.f : ( ( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ) / 511.0f ),
+				( ElementW == 0x2 ) ? -1.f : ( float ) ( ( int16_t ) ( ElementW | SignExtendW [ ( ElementW >> 1 ) & 1 ] ) )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	static const XMVECTORF32 DecN4Mul = { { { 1.0f / 511.0f, 1.0f / ( 511.0f * 1024.0f ), 1.0f / ( 511.0f * 1024.0f * 1024.0f ), 1.0f / ( 1024.0f * 1024.0f * 1024.0f ) } } };
@@ -28614,11 +28614,11 @@ inline XMVECTOR XM_CALLCONV XMLoadDec4 ( const XMDEC4 *pSource )
 	uint32_t ElementW = pSource->v >> 30;
 
 	XMVECTORF32 vResult = { { {
-			( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ),
-			( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ),
-			( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ),
-			( float ) ( ( int16_t ) ( ElementW | SignExtendW [ ElementW >> 1 ] ) )
-		} } };
+				( float ) ( ( int16_t ) ( ElementX | SignExtend [ ElementX >> 9 ] ) ),
+				( float ) ( ( int16_t ) ( ElementY | SignExtend [ ElementY >> 9 ] ) ),
+				( float ) ( ( int16_t ) ( ElementZ | SignExtend [ ElementZ >> 9 ] ) ),
+				( float ) ( ( int16_t ) ( ElementW | SignExtendW [ ElementW >> 1 ] ) )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x4_t vInt = vld1q_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28657,11 +28657,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUByteN4 ( const XMUBYTEN4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ) / 255.0f,
-			( float ) ( pSource->y ) / 255.0f,
-			( float ) ( pSource->z ) / 255.0f,
-			( float ) ( pSource->w ) / 255.0f
-		} } };
+				( float ) ( pSource->x ) / 255.0f,
+				( float ) ( pSource->y ) / 255.0f,
+				( float ) ( pSource->z ) / 255.0f,
+				( float ) ( pSource->w ) / 255.0f
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt8 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28694,11 +28694,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUByte4 ( const XMUBYTE4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			( float ) ( pSource->z ),
-			( float ) ( pSource->w )
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				( float ) ( pSource->z ),
+				( float ) ( pSource->w )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt8 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28730,11 +28730,11 @@ inline XMVECTOR XM_CALLCONV XMLoadByteN4 ( const XMBYTEN4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( pSource->x == -128 ) ? -1.f : ( ( float ) ( pSource->x ) / 127.0f ),
-			( pSource->y == -128 ) ? -1.f : ( ( float ) ( pSource->y ) / 127.0f ),
-			( pSource->z == -128 ) ? -1.f : ( ( float ) ( pSource->z ) / 127.0f ),
-			( pSource->w == -128 ) ? -1.f : ( ( float ) ( pSource->w ) / 127.0f )
-		} } };
+				( pSource->x == -128 ) ? -1.f : ( ( float ) ( pSource->x ) / 127.0f ),
+				( pSource->y == -128 ) ? -1.f : ( ( float ) ( pSource->y ) / 127.0f ),
+				( pSource->z == -128 ) ? -1.f : ( ( float ) ( pSource->z ) / 127.0f ),
+				( pSource->w == -128 ) ? -1.f : ( ( float ) ( pSource->w ) / 127.0f )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt8 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28768,11 +28768,11 @@ _Use_decl_annotations_ inline XMVECTOR XM_CALLCONV XMLoadByte4 ( const XMBYTE4 *
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->x ),
-			( float ) ( pSource->y ),
-			( float ) ( pSource->z ),
-			( float ) ( pSource->w )
-		} } };
+				( float ) ( pSource->x ),
+				( float ) ( pSource->y ),
+				( float ) ( pSource->z ),
+				( float ) ( pSource->w )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	uint32x2_t vInt8 = vld1_dup_u32 ( ( const uint32_t * ) ( pSource ) );
@@ -28804,11 +28804,11 @@ inline XMVECTOR XM_CALLCONV XMLoadUNibble4 ( const XMUNIBBLE4 *pSource )
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->v & 0xF ),
-			( float ) ( ( pSource->v >> 4 ) & 0xF ),
-			( float ) ( ( pSource->v >> 8 ) & 0xF ),
-			( float ) ( ( pSource->v >> 12 ) & 0xF )
-		} } };
+				( float ) ( pSource->v & 0xF ),
+				( float ) ( ( pSource->v >> 4 ) & 0xF ),
+				( float ) ( ( pSource->v >> 8 ) & 0xF ),
+				( float ) ( ( pSource->v >> 12 ) & 0xF )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	static const XMVECTORI32 UNibble4And = { { { 0xF, 0xF0, 0xF00, 0xF000 } } };
@@ -28840,11 +28840,11 @@ _Use_decl_annotations_ inline XMVECTOR XM_CALLCONV XMLoadU555 ( const XMU555 *pS
 	assert ( pSource );
 #if defined(_XM_NO_INTRINSICS_)
 	XMVECTORF32 vResult = { { {
-			( float ) ( pSource->v & 0x1F  ),
-			( float ) ( ( pSource->v >> 5  ) & 0x1F ),
-			( float ) ( ( pSource->v >> 10 ) & 0x1F ),
-			( float ) ( ( pSource->v >> 15 ) & 0x1 )
-		} } };
+				( float ) ( pSource->v & 0x1F  ),
+				( float ) ( ( pSource->v >> 5  ) & 0x1F ),
+				( float ) ( ( pSource->v >> 10 ) & 0x1F ),
+				( float ) ( ( pSource->v >> 15 ) & 0x1 )
+			} } };
 	return vResult.v;
 #elif defined(_XM_ARM_NEON_INTRINSICS_)
 	static const XMVECTORI32 U555And = { { { 0x1F, 0x1F << 5, 0x1F << 10, 0x8000 } } };
@@ -30394,8 +30394,8 @@ inline void XM_CALLCONV XMStoreU555 ( XMU555 *pDestination , FXMVECTOR V )
  ****************************************************************************/
 
 #pragma warning( disable : 4619 4456 )
- // C4619 #pragma warning warnings
- // C4456 declaration hides previous local declaration
+// C4619 #pragma warning warnings
+// C4456 declaration hides previous local declaration
 
 #ifdef __clang__
 #pragma clang diagnostic ignored "-Wold-style-cast"
@@ -30412,453 +30412,453 @@ inline void ComputeCapInt ( const size_t order , float angle , float *pR )
 {
 
 	const float fExtraNormFac [ XM_SH_MAXORDER ] = { 2.0f * sqrtf ( XM_PI ),
-												 2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),	
-												 2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),						
-												 2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
-												 2.0f / 3.0f * sqrtf ( XM_PI ),
-												 2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
+		2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
+		2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
+		2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
+		2.0f / 3.0f * sqrtf ( XM_PI ),
+		2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
 
-		// computes the integral of a constant function over a solid angular
-		// extent.  No error checking - only used internaly.  This function
-		// only returns the Yl0 coefficients, since the rest are zero for
-		// circularly symmetric functions.
-		const float ComputeCapInt_t1  = sqrtf ( 0.3141593E1f );
-		const float ComputeCapInt_t5  = sqrtf ( 3.0f );
-		const float ComputeCapInt_t11 = sqrtf ( 5.0f );
-		const float ComputeCapInt_t18 = sqrtf ( 7.0f );
-		const float ComputeCapInt_t32 = sqrtf ( 11.0f );
-
-
-		const float t2 = cosf ( angle );
-		const float t3 = ComputeCapInt_t1 * t2;
-		const float t7 = sinf ( angle );
-		const float t8 = t7 * t7;
+	// computes the integral of a constant function over a solid angular
+	// extent.  No error checking - only used internaly.  This function
+	// only returns the Yl0 coefficients, since the rest are zero for
+	// circularly symmetric functions.
+	const float ComputeCapInt_t1  = sqrtf ( 0.3141593E1f );
+	const float ComputeCapInt_t5  = sqrtf ( 3.0f );
+	const float ComputeCapInt_t11 = sqrtf ( 5.0f );
+	const float ComputeCapInt_t18 = sqrtf ( 7.0f );
+	const float ComputeCapInt_t32 = sqrtf ( 11.0f );
 
 
-		pR [ 0 ] = -t3 + ComputeCapInt_t1;
-		pR [ 1 ] = ComputeCapInt_t5 * ComputeCapInt_t1 * t8 / 2.0f;
+	const float t2 = cosf ( angle );
+	const float t3 = ComputeCapInt_t1 * t2;
+	const float t7 = sinf ( angle );
+	const float t8 = t7 * t7;
 
-		if ( order > 2 )
+
+	pR [ 0 ] = -t3 + ComputeCapInt_t1;
+	pR [ 1 ] = ComputeCapInt_t5 * ComputeCapInt_t1 * t8 / 2.0f;
+
+	if ( order > 2 )
+	{
+		const float t13 = t2 * t2;
+
+		pR [ 2 ] = -ComputeCapInt_t11 * ComputeCapInt_t1 * t2 * ( t13 - 1.0f ) / 2.0f;
+		if ( order > 3 )
 		{
-			const float t13 = t2 * t2;
+			const float t19 = ComputeCapInt_t18 * ComputeCapInt_t1;
+			const float t20 = t13 * t13;
 
-			pR [ 2 ] = -ComputeCapInt_t11 * ComputeCapInt_t1 * t2 * ( t13 - 1.0f ) / 2.0f;
-			if ( order > 3 )
+			pR [ 3 ] = -5.0f / 8.0f * t19 * t20 + 3.0f / 4.0f * t19 * t13 - t19 / 8.0f;
+			if ( order > 4 )
 			{
-				const float t19 = ComputeCapInt_t18 * ComputeCapInt_t1;
-				const float t20 = t13 * t13;
 
-				pR [ 3 ] = -5.0f / 8.0f * t19 * t20 + 3.0f / 4.0f * t19 * t13 - t19 / 8.0f;
-				if ( order > 4 )
+
+				pR [ 4 ] = -3.0f / 8.0f * t3 * ( 7.0f * t20 - 10.0f * t13 + 3.0f );
+				if ( order > 5 )
 				{
-
-
-					pR [ 4 ] = -3.0f / 8.0f * t3 * ( 7.0f * t20 - 10.0f * t13 + 3.0f );
-					if ( order > 5 )
-					{
-						const float t33 = ComputeCapInt_t32 * ComputeCapInt_t1;
-						pR [ 5 ] = -21.0f / 16.0f * t33 * t20 * t13 + 35.0f / 16.0f * t33 * t20 - 15.0f / 16.0f * t33 * t13 + t33 / 16.0f;
-					}
+					const float t33 = ComputeCapInt_t32 * ComputeCapInt_t1;
+					pR [ 5 ] = -21.0f / 16.0f * t33 * t20 * t13 + 35.0f / 16.0f * t33 * t20 - 15.0f / 16.0f * t33 * t13 + t33 / 16.0f;
 				}
 			}
 		}
 	}
+}
 
-	// input pF only consists of Yl0 values, normalizes coefficients for directional
-	// lights.
-	inline float CosWtInt ( const size_t order )
-	{
-		const float fCW0 = 0.25f;
-		const float fCW1 = 0.5f;
-		const float fCW2 = 5.0f / 16.0f;
-		//const float fCW3 = 0.0f;
-		const float fCW4 = -3.0f / 32.0f;
-		//const float fCW5 = 0.0f;
+// input pF only consists of Yl0 values, normalizes coefficients for directional
+// lights.
+inline float CosWtInt ( const size_t order )
+{
+	const float fCW0 = 0.25f;
+	const float fCW1 = 0.5f;
+	const float fCW2 = 5.0f / 16.0f;
+	//const float fCW3 = 0.0f;
+	const float fCW4 = -3.0f / 32.0f;
+	//const float fCW5 = 0.0f;
 
-		// order has to be at least linear...
+	// order has to be at least linear...
 
-		float fRet = fCW0 + fCW1;
+	float fRet = fCW0 + fCW1;
 
-		if ( order > 2 ) fRet += fCW2;
-		if ( order > 4 ) fRet += fCW4;
+	if ( order > 2 ) fRet += fCW2;
+	if ( order > 4 ) fRet += fCW4;
 
-		// odd degrees >= 3 evaluate to zero integrated against cosine...
+	// odd degrees >= 3 evaluate to zero integrated against cosine...
 
-		return fRet;
-	}
+	return fRet;
+}
 
-	#define SHEvalHemisphereLight_fSqrtPi  ( const float ) sqrtf ( XM_PI )
-	#define SHEvalHemisphereLight_fSqrtPi3 ( const float ) sqrtf ( XM_PI / 3.0f )
-	typedef float REAL;
+#define SHEvalHemisphereLight_fSqrtPi  ( const float ) sqrtf ( XM_PI )
+#define SHEvalHemisphereLight_fSqrtPi3 ( const float ) sqrtf ( XM_PI / 3.0f )
+typedef float REAL;
 
 #define CONSTANT(x) (x ## f)
 
-	// routine generated programmatically for evaluating SH basis for degree 1
-	// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
-	// output is vector b with SH basis evaluated at (x,y,z).
-	//
-	inline void sh_eval_basis_1 ( REAL x , REAL y , REAL z , REAL b [ 4 ] )
-	{
-		/* m=0 */
-
-		// l=0
-		const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
-		b [ 0 ] = p_0_0; // l=0,m=0
-		// l=1
-		const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
-		b [ 2 ] = p_1_0; // l=1,m=0
-
-
-		/* m=1 */
-
-		const REAL s1 = y;
-		const REAL c1 = x;
-
-		// l=1
-		const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
-		b [ 1 ] = p_1_1 * s1; // l=1,m=-1
-		b [ 3 ] = p_1_1 * c1; // l=1,m=+1
-	}
-
-	// routine generated programmatically for evaluating SH basis for degree 2
-	// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
-	// output is vector b with SH basis evaluated at (x,y,z).
-	//
-	inline void sh_eval_basis_2 ( REAL x , REAL y , REAL z , REAL b [ 9 ] )
-	{
-		const REAL z2 = z * z;
-
-
-		/* m=0 */
-
-		// l=0
-		const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
-		b [ 0 ] = p_0_0; // l=0,m=0
-		// l=1
-		const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
-		b [ 2 ] = p_1_0; // l=1,m=0
-		// l=2
-		const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
-		b [ 6 ] = p_2_0; // l=2,m=0
-
-
-		/* m=1 */
-
-		const REAL s1 = y;
-		const REAL c1 = x;
-
-		// l=1
-		const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
-		b [ 1 ] = p_1_1 * s1; // l=1,m=-1
-		b [ 3 ] = p_1_1 * c1; // l=1,m=+1
-		// l=2
-		const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
-		b [ 5 ] = p_2_1 * s1; // l=2,m=-1
-		b [ 7 ] = p_2_1 * c1; // l=2,m=+1
-
-
-		/* m=2 */
-
-		const REAL s2 = x * s1 + y * c1;
-		const REAL c2 = x * c1 - y * s1;
-
-		// l=2
-		const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
-		b [ 4 ] = p_2_2 * s2; // l=2,m=-2
-		b [ 8 ] = p_2_2 * c2; // l=2,m=+2
-	}
-
-	// routine generated programmatically for evaluating SH basis for degree 3
-	// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
-	// output is vector b with SH basis evaluated at (x,y,z).
-	//
-	void sh_eval_basis_3 ( REAL x , REAL y , REAL z , REAL b [ 16 ] )
-	{
-		const REAL z2 = z * z;
-
-
-		/* m=0 */
-
-		// l=0
-		const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
-		b [ 0 ] = p_0_0; // l=0,m=0
-		// l=1
-		const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
-		b [ 2 ] = p_1_0; // l=1,m=0
-		// l=2
-		const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
-		b [ 6 ] = p_2_0; // l=2,m=0
-		// l=3
-		const REAL p_3_0 = z * ( CONSTANT ( 1.865881662950577000 ) * z2 + CONSTANT ( -1.119528997770346200 ) );
-		b [ 12 ] = p_3_0; // l=3,m=0
-
-
-		/* m=1 */
-
-		const REAL s1 = y;
-		const REAL c1 = x;
-
-		// l=1
-		const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
-		b [ 1 ] = p_1_1 * s1; // l=1,m=-1
-		b [ 3 ] = p_1_1 * c1; // l=1,m=+1
-		// l=2
-		const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
-		b [ 5 ] = p_2_1 * s1; // l=2,m=-1
-		b [ 7 ] = p_2_1 * c1; // l=2,m=+1
-		// l=3
-		const REAL p_3_1 = CONSTANT ( -2.285228997322328800 ) * z2 + CONSTANT ( 0.457045799464465770 );
-		b [ 11 ] = p_3_1 * s1; // l=3,m=-1
-		b [ 13 ] = p_3_1 * c1; // l=3,m=+1
-
-
-		/* m=2 */
-
-		const REAL s2 = x * s1 + y * c1;
-		const REAL c2 = x * c1 - y * s1;
-
-		// l=2
-		const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
-		b [ 4 ] = p_2_2 * s2; // l=2,m=-2
-		b [ 8 ] = p_2_2 * c2; // l=2,m=+2
-		// l=3
-		const REAL p_3_2 = CONSTANT ( 1.445305721320277100 ) * z;
-		b [ 10 ] = p_3_2 * s2; // l=3,m=-2
-		b [ 14 ] = p_3_2 * c2; // l=3,m=+2
-
-
-		/* m=3 */
-
-		const REAL s3 = x * s2 + y * c2;
-		const REAL c3 = x * c2 - y * s2;
-
-		// l=3
-		const REAL p_3_3 = CONSTANT ( -0.590043589926643520 );
-		b [ 9 ] = p_3_3 * s3; // l=3,m=-3
-		b [ 15 ] = p_3_3 * c3; // l=3,m=+3
-	}
-
-	// routine generated programmatically for evaluating SH basis for degree 4
-	// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
-	// output is vector b with SH basis evaluated at (x,y,z).
-	//
-	void sh_eval_basis_4 ( REAL x , REAL y , REAL z , REAL b [ 25 ] )
-	{
-		const REAL z2 = z * z;
-
-
-		/* m=0 */
-
-		// l=0
-		const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
-		b [ 0 ] = p_0_0; // l=0,m=0
-		// l=1
-		const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
-		b [ 2 ] = p_1_0; // l=1,m=0
-		// l=2
-		const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
-		b [ 6 ] = p_2_0; // l=2,m=0
-		// l=3
-		const REAL p_3_0 = z * ( CONSTANT ( 1.865881662950577000 ) * z2 + CONSTANT ( -1.119528997770346200 ) );
-		b [ 12 ] = p_3_0; // l=3,m=0
-		// l=4
-		const REAL p_4_0 = CONSTANT ( 1.984313483298443000 ) * z * p_3_0 + CONSTANT ( -1.006230589874905300 ) * p_2_0;
-		b [ 20 ] = p_4_0; // l=4,m=0
-
-
-		/* m=1 */
-
-		const REAL s1 = y;
-		const REAL c1 = x;
-
-		// l=1
-		const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
-		b [ 1 ] = p_1_1 * s1; // l=1,m=-1
-		b [ 3 ] = p_1_1 * c1; // l=1,m=+1
-		// l=2
-		const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
-		b [ 5 ] = p_2_1 * s1; // l=2,m=-1
-		b [ 7 ] = p_2_1 * c1; // l=2,m=+1
-		// l=3
-		const REAL p_3_1 = CONSTANT ( -2.285228997322328800 ) * z2 + CONSTANT ( 0.457045799464465770 );
-		b [ 11 ] = p_3_1 * s1; // l=3,m=-1
-		b [ 13 ] = p_3_1 * c1; // l=3,m=+1
-		// l=4
-		const REAL p_4_1 = z * ( CONSTANT ( -4.683325804901024000 ) * z2 + CONSTANT ( 2.007139630671867200 ) );
-		b [ 19 ] = p_4_1 * s1; // l=4,m=-1
-		b [ 21 ] = p_4_1 * c1; // l=4,m=+1
-
-
-		/* m=2 */
-
-		const REAL s2 = x * s1 + y * c1;
-		const REAL c2 = x * c1 - y * s1;
-
-		// l=2
-		const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
-		b [ 4 ] = p_2_2 * s2; // l=2,m=-2
-		b [ 8 ] = p_2_2 * c2; // l=2,m=+2
-		// l=3
-		const REAL p_3_2 = CONSTANT ( 1.445305721320277100 ) * z;
-		b [ 10 ] = p_3_2 * s2; // l=3,m=-2
-		b [ 14 ] = p_3_2 * c2; // l=3,m=+2
-		// l=4
-		const REAL p_4_2 = CONSTANT ( 3.311611435151459800 ) * z2 + CONSTANT ( -0.473087347878779980 );
-		b [ 18 ] = p_4_2 * s2; // l=4,m=-2
-		b [ 22 ] = p_4_2 * c2; // l=4,m=+2
-
-
-		/* m=3 */
-
-		const REAL s3 = x * s2 + y * c2;
-		const REAL c3 = x * c2 - y * s2;
-
-		// l=3
-		const REAL p_3_3 = CONSTANT ( -0.590043589926643520 );
-		b [ 9 ] = p_3_3 * s3; // l=3,m=-3
-		b [ 15 ] = p_3_3 * c3; // l=3,m=+3
-		// l=4
-		const REAL p_4_3 = CONSTANT ( -1.770130769779930200 ) * z;
-		b [ 17 ] = p_4_3 * s3; // l=4,m=-3
-		b [ 23 ] = p_4_3 * c3; // l=4,m=+3
-
-
-		/* m=4 */
-
-		const REAL s4 = x * s3 + y * c3;
-		const REAL c4 = x * c3 - y * s3;
-
-		// l=4
-		const REAL p_4_4 = CONSTANT ( 0.625835735449176030 );
-		b [ 16 ] = p_4_4 * s4; // l=4,m=-4
-		b [ 24 ] = p_4_4 * c4; // l=4,m=+4
-	}
-
-	// routine generated programmatically for evaluating SH basis for degree 5
-	// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
-	// output is vector b with SH basis evaluated at (x,y,z).
-	//
-	void sh_eval_basis_5 ( REAL x , REAL y , REAL z , REAL b [ 36 ] )
-	{
-		const REAL z2 = z * z;
-
-
-		/* m=0 */
-
-		// l=0
-		const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
-		b [ 0 ] = p_0_0; // l=0,m=0
-		// l=1
-		const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
-		b [ 2 ] = p_1_0; // l=1,m=0
-		// l=2
-		const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
-		b [ 6 ] = p_2_0; // l=2,m=0
-		// l=3
-		const REAL p_3_0 = z * ( CONSTANT ( 1.865881662950577000 ) * z2 + CONSTANT ( -1.119528997770346200 ) );
-		b [ 12 ] = p_3_0; // l=3,m=0
-		// l=4
-		const REAL p_4_0 = CONSTANT ( 1.984313483298443000 ) * z * p_3_0 + CONSTANT ( -1.006230589874905300 ) * p_2_0;
-		b [ 20 ] = p_4_0; // l=4,m=0
-		// l=5
-		const REAL p_5_0 = CONSTANT ( 1.989974874213239700 ) * z * p_4_0 + CONSTANT ( -1.002853072844814000 ) * p_3_0;
-		b [ 30 ] = p_5_0; // l=5,m=0
-
-
-		/* m=1 */
-
-		const REAL s1 = y;
-		const REAL c1 = x;
-
-		// l=1
-		const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
-		b [ 1 ] = p_1_1 * s1; // l=1,m=-1
-		b [ 3 ] = p_1_1 * c1; // l=1,m=+1
-		// l=2
-		const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
-		b [ 5 ] = p_2_1 * s1; // l=2,m=-1
-		b [ 7 ] = p_2_1 * c1; // l=2,m=+1
-		// l=3
-		const REAL p_3_1 = CONSTANT ( -2.285228997322328800 ) * z2 + CONSTANT ( 0.457045799464465770 );
-		b [ 11 ] = p_3_1 * s1; // l=3,m=-1
-		b [ 13 ] = p_3_1 * c1; // l=3,m=+1
-		// l=4
-		const REAL p_4_1 = z * ( CONSTANT ( -4.683325804901024000 ) * z2 + CONSTANT ( 2.007139630671867200 ) );
-		b [ 19 ] = p_4_1 * s1; // l=4,m=-1
-		b [ 21 ] = p_4_1 * c1; // l=4,m=+1
-		// l=5
-		const REAL p_5_1 = CONSTANT ( 2.031009601158990200 ) * z * p_4_1 + CONSTANT ( -0.991031208965114650 ) * p_3_1;
-		b [ 29 ] = p_5_1 * s1; // l=5,m=-1
-		b [ 31 ] = p_5_1 * c1; // l=5,m=+1
-
-
-		/* m=2 */
-
-		const REAL s2 = x * s1 + y * c1;
-		const REAL c2 = x * c1 - y * s1;
-
-		// l=2
-		const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
-		b [ 4 ] = p_2_2 * s2; // l=2,m=-2
-		b [ 8 ] = p_2_2 * c2; // l=2,m=+2
-		// l=3
-		const REAL p_3_2 = CONSTANT ( 1.445305721320277100 ) * z;
-		b [ 10 ] = p_3_2 * s2; // l=3,m=-2
-		b [ 14 ] = p_3_2 * c2; // l=3,m=+2
-		// l=4
-		const REAL p_4_2 = CONSTANT ( 3.311611435151459800 ) * z2 + CONSTANT ( -0.473087347878779980 );
-		b [ 18 ] = p_4_2 * s2; // l=4,m=-2
-		b [ 22 ] = p_4_2 * c2; // l=4,m=+2
-		// l=5
-		const REAL p_5_2 = z * ( CONSTANT ( 7.190305177459987500 ) * z2 + CONSTANT ( -2.396768392486662100 ) );
-		b [ 28 ] = p_5_2 * s2; // l=5,m=-2
-		b [ 32 ] = p_5_2 * c2; // l=5,m=+2
-
-
-		/* m=3 */
-
-		const REAL s3 = x * s2 + y * c2;
-		const REAL c3 = x * c2 - y * s2;
-
-		// l=3
-		const REAL p_3_3 = CONSTANT ( -0.590043589926643520 );
-		b [ 9 ] = p_3_3 * s3; // l=3,m=-3
-		b [ 15 ] = p_3_3 * c3; // l=3,m=+3
-		// l=4
-		const REAL p_4_3 = CONSTANT ( -1.770130769779930200 ) * z;
-		b [ 17 ] = p_4_3 * s3; // l=4,m=-3
-		b [ 23 ] = p_4_3 * c3; // l=4,m=+3
-		// l=5
-		const REAL p_5_3 = CONSTANT ( -4.403144694917253700 ) * z2 + CONSTANT ( 0.489238299435250430 );
-		b [ 27 ] = p_5_3 * s3; // l=5,m=-3
-		b [ 33 ] = p_5_3 * c3; // l=5,m=+3
-
-
-		/* m=4 */
-
-		const REAL s4 = x * s3 + y * c3;
-		const REAL c4 = x * c3 - y * s3;
-
-		// l=4
-		const REAL p_4_4 = CONSTANT ( 0.625835735449176030 );
-		b [ 16 ] = p_4_4 * s4; // l=4,m=-4
-		b [ 24 ] = p_4_4 * c4; // l=4,m=+4
-		// l=5
-		const REAL p_5_4 = CONSTANT ( 2.075662314881041100 ) * z;
-		b [ 26 ] = p_5_4 * s4; // l=5,m=-4
-		b [ 34 ] = p_5_4 * c4; // l=5,m=+4
-
-
-		/* m=5 */
-
-		const REAL s5 = x * s4 + y * c4;
-		const REAL c5 = x * c4 - y * s4;
-
-		// l=5
-		const REAL p_5_5 = CONSTANT ( -0.656382056840170150 );
-		b [ 25 ] = p_5_5 * s5; // l=5,m=-5
-		b [ 35 ] = p_5_5 * c5; // l=5,m=+5
-	}
+// routine generated programmatically for evaluating SH basis for degree 1
+// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
+// output is vector b with SH basis evaluated at (x,y,z).
+//
+inline void sh_eval_basis_1 ( REAL x , REAL y , REAL z , REAL b [ 4 ] )
+{
+	/* m=0 */
+
+	// l=0
+	const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
+	b [ 0 ] = p_0_0; // l=0,m=0
+	// l=1
+	const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
+	b [ 2 ] = p_1_0; // l=1,m=0
+
+
+	/* m=1 */
+
+	const REAL s1 = y;
+	const REAL c1 = x;
+
+	// l=1
+	const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
+	b [ 1 ] = p_1_1 * s1; // l=1,m=-1
+	b [ 3 ] = p_1_1 * c1; // l=1,m=+1
+}
+
+// routine generated programmatically for evaluating SH basis for degree 2
+// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
+// output is vector b with SH basis evaluated at (x,y,z).
+//
+inline void sh_eval_basis_2 ( REAL x , REAL y , REAL z , REAL b [ 9 ] )
+{
+	const REAL z2 = z * z;
+
+
+	/* m=0 */
+
+	// l=0
+	const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
+	b [ 0 ] = p_0_0; // l=0,m=0
+	// l=1
+	const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
+	b [ 2 ] = p_1_0; // l=1,m=0
+	// l=2
+	const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
+	b [ 6 ] = p_2_0; // l=2,m=0
+
+
+	/* m=1 */
+
+	const REAL s1 = y;
+	const REAL c1 = x;
+
+	// l=1
+	const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
+	b [ 1 ] = p_1_1 * s1; // l=1,m=-1
+	b [ 3 ] = p_1_1 * c1; // l=1,m=+1
+	// l=2
+	const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
+	b [ 5 ] = p_2_1 * s1; // l=2,m=-1
+	b [ 7 ] = p_2_1 * c1; // l=2,m=+1
+
+
+	/* m=2 */
+
+	const REAL s2 = x * s1 + y * c1;
+	const REAL c2 = x * c1 - y * s1;
+
+	// l=2
+	const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
+	b [ 4 ] = p_2_2 * s2; // l=2,m=-2
+	b [ 8 ] = p_2_2 * c2; // l=2,m=+2
+}
+
+// routine generated programmatically for evaluating SH basis for degree 3
+// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
+// output is vector b with SH basis evaluated at (x,y,z).
+//
+void sh_eval_basis_3 ( REAL x , REAL y , REAL z , REAL b [ 16 ] )
+{
+	const REAL z2 = z * z;
+
+
+	/* m=0 */
+
+	// l=0
+	const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
+	b [ 0 ] = p_0_0; // l=0,m=0
+	// l=1
+	const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
+	b [ 2 ] = p_1_0; // l=1,m=0
+	// l=2
+	const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
+	b [ 6 ] = p_2_0; // l=2,m=0
+	// l=3
+	const REAL p_3_0 = z * ( CONSTANT ( 1.865881662950577000 ) * z2 + CONSTANT ( -1.119528997770346200 ) );
+	b [ 12 ] = p_3_0; // l=3,m=0
+
+
+	/* m=1 */
+
+	const REAL s1 = y;
+	const REAL c1 = x;
+
+	// l=1
+	const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
+	b [ 1 ] = p_1_1 * s1; // l=1,m=-1
+	b [ 3 ] = p_1_1 * c1; // l=1,m=+1
+	// l=2
+	const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
+	b [ 5 ] = p_2_1 * s1; // l=2,m=-1
+	b [ 7 ] = p_2_1 * c1; // l=2,m=+1
+	// l=3
+	const REAL p_3_1 = CONSTANT ( -2.285228997322328800 ) * z2 + CONSTANT ( 0.457045799464465770 );
+	b [ 11 ] = p_3_1 * s1; // l=3,m=-1
+	b [ 13 ] = p_3_1 * c1; // l=3,m=+1
+
+
+	/* m=2 */
+
+	const REAL s2 = x * s1 + y * c1;
+	const REAL c2 = x * c1 - y * s1;
+
+	// l=2
+	const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
+	b [ 4 ] = p_2_2 * s2; // l=2,m=-2
+	b [ 8 ] = p_2_2 * c2; // l=2,m=+2
+	// l=3
+	const REAL p_3_2 = CONSTANT ( 1.445305721320277100 ) * z;
+	b [ 10 ] = p_3_2 * s2; // l=3,m=-2
+	b [ 14 ] = p_3_2 * c2; // l=3,m=+2
+
+
+	/* m=3 */
+
+	const REAL s3 = x * s2 + y * c2;
+	const REAL c3 = x * c2 - y * s2;
+
+	// l=3
+	const REAL p_3_3 = CONSTANT ( -0.590043589926643520 );
+	b [ 9 ] = p_3_3 * s3; // l=3,m=-3
+	b [ 15 ] = p_3_3 * c3; // l=3,m=+3
+}
+
+// routine generated programmatically for evaluating SH basis for degree 4
+// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
+// output is vector b with SH basis evaluated at (x,y,z).
+//
+void sh_eval_basis_4 ( REAL x , REAL y , REAL z , REAL b [ 25 ] )
+{
+	const REAL z2 = z * z;
+
+
+	/* m=0 */
+
+	// l=0
+	const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
+	b [ 0 ] = p_0_0; // l=0,m=0
+	// l=1
+	const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
+	b [ 2 ] = p_1_0; // l=1,m=0
+	// l=2
+	const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
+	b [ 6 ] = p_2_0; // l=2,m=0
+	// l=3
+	const REAL p_3_0 = z * ( CONSTANT ( 1.865881662950577000 ) * z2 + CONSTANT ( -1.119528997770346200 ) );
+	b [ 12 ] = p_3_0; // l=3,m=0
+	// l=4
+	const REAL p_4_0 = CONSTANT ( 1.984313483298443000 ) * z * p_3_0 + CONSTANT ( -1.006230589874905300 ) * p_2_0;
+	b [ 20 ] = p_4_0; // l=4,m=0
+
+
+	/* m=1 */
+
+	const REAL s1 = y;
+	const REAL c1 = x;
+
+	// l=1
+	const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
+	b [ 1 ] = p_1_1 * s1; // l=1,m=-1
+	b [ 3 ] = p_1_1 * c1; // l=1,m=+1
+	// l=2
+	const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
+	b [ 5 ] = p_2_1 * s1; // l=2,m=-1
+	b [ 7 ] = p_2_1 * c1; // l=2,m=+1
+	// l=3
+	const REAL p_3_1 = CONSTANT ( -2.285228997322328800 ) * z2 + CONSTANT ( 0.457045799464465770 );
+	b [ 11 ] = p_3_1 * s1; // l=3,m=-1
+	b [ 13 ] = p_3_1 * c1; // l=3,m=+1
+	// l=4
+	const REAL p_4_1 = z * ( CONSTANT ( -4.683325804901024000 ) * z2 + CONSTANT ( 2.007139630671867200 ) );
+	b [ 19 ] = p_4_1 * s1; // l=4,m=-1
+	b [ 21 ] = p_4_1 * c1; // l=4,m=+1
+
+
+	/* m=2 */
+
+	const REAL s2 = x * s1 + y * c1;
+	const REAL c2 = x * c1 - y * s1;
+
+	// l=2
+	const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
+	b [ 4 ] = p_2_2 * s2; // l=2,m=-2
+	b [ 8 ] = p_2_2 * c2; // l=2,m=+2
+	// l=3
+	const REAL p_3_2 = CONSTANT ( 1.445305721320277100 ) * z;
+	b [ 10 ] = p_3_2 * s2; // l=3,m=-2
+	b [ 14 ] = p_3_2 * c2; // l=3,m=+2
+	// l=4
+	const REAL p_4_2 = CONSTANT ( 3.311611435151459800 ) * z2 + CONSTANT ( -0.473087347878779980 );
+	b [ 18 ] = p_4_2 * s2; // l=4,m=-2
+	b [ 22 ] = p_4_2 * c2; // l=4,m=+2
+
+
+	/* m=3 */
+
+	const REAL s3 = x * s2 + y * c2;
+	const REAL c3 = x * c2 - y * s2;
+
+	// l=3
+	const REAL p_3_3 = CONSTANT ( -0.590043589926643520 );
+	b [ 9 ] = p_3_3 * s3; // l=3,m=-3
+	b [ 15 ] = p_3_3 * c3; // l=3,m=+3
+	// l=4
+	const REAL p_4_3 = CONSTANT ( -1.770130769779930200 ) * z;
+	b [ 17 ] = p_4_3 * s3; // l=4,m=-3
+	b [ 23 ] = p_4_3 * c3; // l=4,m=+3
+
+
+	/* m=4 */
+
+	const REAL s4 = x * s3 + y * c3;
+	const REAL c4 = x * c3 - y * s3;
+
+	// l=4
+	const REAL p_4_4 = CONSTANT ( 0.625835735449176030 );
+	b [ 16 ] = p_4_4 * s4; // l=4,m=-4
+	b [ 24 ] = p_4_4 * c4; // l=4,m=+4
+}
+
+// routine generated programmatically for evaluating SH basis for degree 5
+// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
+// output is vector b with SH basis evaluated at (x,y,z).
+//
+void sh_eval_basis_5 ( REAL x , REAL y , REAL z , REAL b [ 36 ] )
+{
+	const REAL z2 = z * z;
+
+
+	/* m=0 */
+
+	// l=0
+	const REAL p_0_0 = CONSTANT ( 0.282094791773878140 );
+	b [ 0 ] = p_0_0; // l=0,m=0
+	// l=1
+	const REAL p_1_0 = CONSTANT ( 0.488602511902919920 ) * z;
+	b [ 2 ] = p_1_0; // l=1,m=0
+	// l=2
+	const REAL p_2_0 = CONSTANT ( 0.946174695757560080 ) * z2 + CONSTANT ( -0.315391565252520050 );
+	b [ 6 ] = p_2_0; // l=2,m=0
+	// l=3
+	const REAL p_3_0 = z * ( CONSTANT ( 1.865881662950577000 ) * z2 + CONSTANT ( -1.119528997770346200 ) );
+	b [ 12 ] = p_3_0; // l=3,m=0
+	// l=4
+	const REAL p_4_0 = CONSTANT ( 1.984313483298443000 ) * z * p_3_0 + CONSTANT ( -1.006230589874905300 ) * p_2_0;
+	b [ 20 ] = p_4_0; // l=4,m=0
+	// l=5
+	const REAL p_5_0 = CONSTANT ( 1.989974874213239700 ) * z * p_4_0 + CONSTANT ( -1.002853072844814000 ) * p_3_0;
+	b [ 30 ] = p_5_0; // l=5,m=0
+
+
+	/* m=1 */
+
+	const REAL s1 = y;
+	const REAL c1 = x;
+
+	// l=1
+	const REAL p_1_1 = CONSTANT ( -0.488602511902919920 );
+	b [ 1 ] = p_1_1 * s1; // l=1,m=-1
+	b [ 3 ] = p_1_1 * c1; // l=1,m=+1
+	// l=2
+	const REAL p_2_1 = CONSTANT ( -1.092548430592079200 ) * z;
+	b [ 5 ] = p_2_1 * s1; // l=2,m=-1
+	b [ 7 ] = p_2_1 * c1; // l=2,m=+1
+	// l=3
+	const REAL p_3_1 = CONSTANT ( -2.285228997322328800 ) * z2 + CONSTANT ( 0.457045799464465770 );
+	b [ 11 ] = p_3_1 * s1; // l=3,m=-1
+	b [ 13 ] = p_3_1 * c1; // l=3,m=+1
+	// l=4
+	const REAL p_4_1 = z * ( CONSTANT ( -4.683325804901024000 ) * z2 + CONSTANT ( 2.007139630671867200 ) );
+	b [ 19 ] = p_4_1 * s1; // l=4,m=-1
+	b [ 21 ] = p_4_1 * c1; // l=4,m=+1
+	// l=5
+	const REAL p_5_1 = CONSTANT ( 2.031009601158990200 ) * z * p_4_1 + CONSTANT ( -0.991031208965114650 ) * p_3_1;
+	b [ 29 ] = p_5_1 * s1; // l=5,m=-1
+	b [ 31 ] = p_5_1 * c1; // l=5,m=+1
+
+
+	/* m=2 */
+
+	const REAL s2 = x * s1 + y * c1;
+	const REAL c2 = x * c1 - y * s1;
+
+	// l=2
+	const REAL p_2_2 = CONSTANT ( 0.546274215296039590 );
+	b [ 4 ] = p_2_2 * s2; // l=2,m=-2
+	b [ 8 ] = p_2_2 * c2; // l=2,m=+2
+	// l=3
+	const REAL p_3_2 = CONSTANT ( 1.445305721320277100 ) * z;
+	b [ 10 ] = p_3_2 * s2; // l=3,m=-2
+	b [ 14 ] = p_3_2 * c2; // l=3,m=+2
+	// l=4
+	const REAL p_4_2 = CONSTANT ( 3.311611435151459800 ) * z2 + CONSTANT ( -0.473087347878779980 );
+	b [ 18 ] = p_4_2 * s2; // l=4,m=-2
+	b [ 22 ] = p_4_2 * c2; // l=4,m=+2
+	// l=5
+	const REAL p_5_2 = z * ( CONSTANT ( 7.190305177459987500 ) * z2 + CONSTANT ( -2.396768392486662100 ) );
+	b [ 28 ] = p_5_2 * s2; // l=5,m=-2
+	b [ 32 ] = p_5_2 * c2; // l=5,m=+2
+
+
+	/* M=3 */
+
+	Const Real S3 = X * S2 + Y * C2;
+	Const Real C3 = X * C2 - y * s2;
+
+	// l=3
+	const REAL p_3_3 = CONSTANT ( -0.590043589926643520 );
+	b [ 9 ] = p_3_3 * s3; // l=3,m=-3
+	b [ 15 ] = p_3_3 * c3; // l=3,m=+3
+	// l=4
+	const REAL p_4_3 = CONSTANT ( -1.770130769779930200 ) * z;
+	b [ 17 ] = p_4_3 * s3; // l=4,m=-3
+	b [ 23 ] = p_4_3 * c3; // l=4,m=+3
+	// l=5
+	const REAL p_5_3 = CONSTANT ( -4.403144694917253700 ) * z2 + CONSTANT ( 0.489238299435250430 );
+	b [ 27 ] = p_5_3 * s3; // l=5,m=-3
+	b [ 33 ] = p_5_3 * c3; // l=5,m=+3
+
+
+	/* m=4 */
+
+	const REAL s4 = x * s3 + y * c3;
+	const REAL c4 = x * c3 - y * s3;
+
+	// l=4
+	const REAL p_4_4 = CONSTANT ( 0.625835735449176030 );
+	b [ 16 ] = p_4_4 * s4; // l=4,m=-4
+	b [ 24 ] = p_4_4 * c4; // l=4,m=+4
+	// l=5
+	const REAL p_5_4 = CONSTANT ( 2.075662314881041100 ) * z;
+	b [ 26 ] = p_5_4 * s4; // l=5,m=-4
+	b [ 34 ] = p_5_4 * c4; // l=5,m=+4
+
+
+	/* m=5 */
+
+	const REAL s5 = x * s4 + y * c4;
+	const REAL c5 = x * c4 - y * s4;
+
+	// l=5
+	const REAL p_5_5 = CONSTANT ( -0.656382056840170150 );
+	b [ 25 ] = p_5_5 * s5; // l=5,m=-5
+	b [ 35 ] = p_5_5 * c5; // l=5,m=+5
+}
 
 #define M_PIjs ( REAL )( 4.0f * atan ( 1.0f ) )
 #define maxang ( REAL )( M_PIjs / 2.0f )
@@ -30883,130 +30883,130 @@ inline void ComputeCapInt ( const size_t order , float angle , float *pR )
 #define NL8  17
 #define NL9  19
 
-	inline void rot ( REAL ct , REAL st , REAL x , REAL y , REAL *xout , REAL *yout )
-	{
-		*xout = x * ct - y * st;
-		*yout = y * ct + x * st;
-	}
+inline void rot ( REAL ct , REAL st , REAL x , REAL y , REAL *xout , REAL *yout )
+{
+	*xout = x * ct - y * st;
+	*yout = y * ct + x * st;
+}
 
-	inline void rot_inv ( REAL ct , REAL st , REAL x , REAL y , REAL *xout , REAL *yout )
-	{
-		*xout = x * ct + y * st;
-		*yout = y * ct - x * st;
-	}
+inline void rot_inv ( REAL ct , REAL st , REAL x , REAL y , REAL *xout , REAL *yout )
+{
+	*xout = x * ct + y * st;
+	*yout = y * ct - x * st;
+}
 
-	inline void rot_1 ( REAL ct , REAL st , REAL ctm [ 1 ] , REAL stm [ 1 ] )
-	{
-		ctm [ 0 ] = ct;
-		stm [ 0 ] = st;
-	}
+inline void rot_1 ( REAL ct , REAL st , REAL ctm [ 1 ] , REAL stm [ 1 ] )
+{
+	ctm [ 0 ] = ct;
+	stm [ 0 ] = st;
+}
 
-	inline void rot_2 ( REAL ct , REAL st , REAL ctm [ 2 ] , REAL stm [ 2 ] )
-	{
-		REAL ct2 = CONSTANT ( 2.0 ) * ct;
-		ctm [ 0 ] = ct;
-		stm [ 0 ] = st;
-		ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
-		stm [ 1 ] = ct2 * st;
-	}
+inline void rot_2 ( REAL ct , REAL st , REAL ctm [ 2 ] , REAL stm [ 2 ] )
+{
+	REAL ct2 = CONSTANT ( 2.0 ) * ct;
+	ctm [ 0 ] = ct;
+	stm [ 0 ] = st;
+	ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
+	stm [ 1 ] = ct2 * st;
+}
 
-	inline void rot_3 ( REAL ct , REAL st , REAL ctm [ 3 ] , REAL stm [ 3 ] )
-	{
-		REAL ct2 = CONSTANT ( 2.0 ) * ct;
-		ctm [ 0 ] = ct;
-		stm [ 0 ] = st;
-		ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
-		stm [ 1 ] = ct2 * st;
-		ctm [ 2 ] = ct2 * ctm [ 1 ] - ct;
-		stm [ 2 ] = ct2 * stm [ 1 ] - st;
-	}
+inline void rot_3 ( REAL ct , REAL st , REAL ctm [ 3 ] , REAL stm [ 3 ] )
+{
+	REAL ct2 = CONSTANT ( 2.0 ) * ct;
+	ctm [ 0 ] = ct;
+	stm [ 0 ] = st;
+	ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
+	stm [ 1 ] = ct2 * st;
+	ctm [ 2 ] = ct2 * ctm [ 1 ] - ct;
+	stm [ 2 ] = ct2 * stm [ 1 ] - st;
+}
 
-	inline void rot_4 ( REAL ct , REAL st , REAL ctm [ 4 ] , REAL stm [ 4 ] )
-	{
-		REAL ct2 = CONSTANT ( 2.0 ) * ct;
-		ctm [ 0 ] = ct;
-		stm [ 0 ] = st;
-		ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
-		stm [ 1 ] = ct2 * st;
-		ctm [ 2 ] = ct2 * ctm [ 1 ] - ct;
-		stm [ 2 ] = ct2 * stm [ 1 ] - st;
-		ctm [ 3 ] = ct2 * ctm [ 2 ] - ctm [ 1 ];
-		stm [ 3 ] = ct2 * stm [ 2 ] - stm [ 1 ];
-	}
+inline void rot_4 ( REAL ct , REAL st , REAL ctm [ 4 ] , REAL stm [ 4 ] )
+{
+	REAL ct2 = CONSTANT ( 2.0 ) * ct;
+	ctm [ 0 ] = ct;
+	stm [ 0 ] = st;
+	ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
+	stm [ 1 ] = ct2 * st;
+	ctm [ 2 ] = ct2 * ctm [ 1 ] - ct;
+	stm [ 2 ] = ct2 * stm [ 1 ] - st;
+	ctm [ 3 ] = ct2 * ctm [ 2 ] - ctm [ 1 ];
+	stm [ 3 ] = ct2 * stm [ 2 ] - stm [ 1 ];
+}
 
-	inline void rot_5 ( REAL ct , REAL st , REAL ctm [ 5 ] , REAL stm [ 5 ] )
-	{
-		REAL ct2 = CONSTANT ( 2.0 ) * ct;
-		ctm [ 0 ] = ct;
-		stm [ 0 ] = st;
-		ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
-		stm [ 1 ] = ct2 * st;
-		ctm [ 2 ] = ct2 * ctm [ 1 ] - ct;
-		stm [ 2 ] = ct2 * stm [ 1 ] - st;
-		ctm [ 3 ] = ct2 * ctm [ 2 ] - ctm [ 1 ];
-		stm [ 3 ] = ct2 * stm [ 2 ] - stm [ 1 ];
-		ctm [ 4 ] = ct2 * ctm [ 3 ] - ctm [ 2 ];
-		stm [ 4 ] = ct2 * stm [ 3 ] - stm [ 2 ];
-	}
+inline void rot_5 ( REAL ct , REAL st , REAL ctm [ 5 ] , REAL stm [ 5 ] )
+{
+	REAL ct2 = CONSTANT ( 2.0 ) * ct;
+	ctm [ 0 ] = ct;
+	stm [ 0 ] = st;
+	ctm [ 1 ] = ct2 * ct - CONSTANT ( 1.0 );
+	stm [ 1 ] = ct2 * st;
+	ctm [ 2 ] = ct2 * ctm [ 1 ] - ct;
+	stm [ 2 ] = ct2 * stm [ 1 ] - st;
+	ctm [ 3 ] = ct2 * ctm [ 2 ] - ctm [ 1 ];
+	stm [ 3 ] = ct2 * stm [ 2 ] - stm [ 1 ];
+	ctm [ 4 ] = ct2 * ctm [ 3 ] - ctm [ 2 ];
+	stm [ 4 ] = ct2 * stm [ 3 ] - stm [ 2 ];
+}
 
-	inline void sh_rotz_1 ( REAL ctm [ 1 ] , REAL stm [ 1 ] , REAL y [ NL1 ] , REAL yr [ NL1 ] )
-	{
-		yr [ 1 ] = y [ 1 ];
-		rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 0 ] , y [ 2 ] , &yr [ 0 ] , &yr [ 2 ] );
-	}
+inline void sh_rotz_1 ( REAL ctm [ 1 ] , REAL stm [ 1 ] , REAL y [ NL1 ] , REAL yr [ NL1 ] )
+{
+	yr [ 1 ] = y [ 1 ];
+	rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 0 ] , y [ 2 ] , &yr [ 0 ] , &yr [ 2 ] );
+}
 
-	inline void sh_rotz_2 ( REAL ctm [ 2 ] , REAL stm [ 2 ] , REAL y [ NL2 ] , REAL yr [ NL2 ] )
-	{
-		yr [ 2 ] = y [ 2 ];
-		rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 1 ] , y [ 3 ] , &yr [ 1 ] , &yr [ 3 ] );
-		rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 0 ] , y [ 4 ] , &yr [ 0 ] , &yr [ 4 ] );
-	}
+inline void sh_rotz_2 ( REAL ctm [ 2 ] , REAL stm [ 2 ] , REAL y [ NL2 ] , REAL yr [ NL2 ] )
+{
+	yr [ 2 ] = y [ 2 ];
+	rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 1 ] , y [ 3 ] , &yr [ 1 ] , &yr [ 3 ] );
+	rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 0 ] , y [ 4 ] , &yr [ 0 ] , &yr [ 4 ] );
+}
 
-	inline void sh_rotz_3 ( REAL ctm [ 3 ] , REAL stm [ 3 ] , REAL y [ NL3 ] , REAL yr [ NL3 ] )
-	{
-		yr [ 3 ] = y [ 3 ];
-		rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 2 ] , y [ 4 ] , &yr [ 2 ] , &yr [ 4 ] );
-		rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 1 ] , y [ 5 ] , &yr [ 1 ] , &yr [ 5 ] );
-		rot_inv ( ctm [ 2 ] , stm [ 2 ] , y [ 0 ] , y [ 6 ] , &yr [ 0 ] , &yr [ 6 ] );
-	}
+inline void sh_rotz_3 ( REAL ctm [ 3 ] , REAL stm [ 3 ] , REAL y [ NL3 ] , REAL yr [ NL3 ] )
+{
+	yr [ 3 ] = y [ 3 ];
+	rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 2 ] , y [ 4 ] , &yr [ 2 ] , &yr [ 4 ] );
+	rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 1 ] , y [ 5 ] , &yr [ 1 ] , &yr [ 5 ] );
+	rot_inv ( ctm [ 2 ] , stm [ 2 ] , y [ 0 ] , y [ 6 ] , &yr [ 0 ] , &yr [ 6 ] );
+}
 
-	inline void sh_rotz_4 ( REAL ctm [ 4 ] , REAL stm [ 4 ] , REAL y [ NL4 ] , REAL yr [ NL4 ] )
-	{
-		yr [ 4 ] = y [ 4 ];
-		rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 3 ] , y [ 5 ] , &yr [ 3 ] , &yr [ 5 ] );
-		rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 2 ] , y [ 6 ] , &yr [ 2 ] , &yr [ 6 ] );
-		rot_inv ( ctm [ 2 ] , stm [ 2 ] , y [ 1 ] , y [ 7 ] , &yr [ 1 ] , &yr [ 7 ] );
-		rot_inv ( ctm [ 3 ] , stm [ 3 ] , y [ 0 ] , y [ 8 ] , &yr [ 0 ] , &yr [ 8 ] );
-	}
+inline void sh_rotz_4 ( REAL ctm [ 4 ] , REAL stm [ 4 ] , REAL y [ NL4 ] , REAL yr [ NL4 ] )
+{
+	yr [ 4 ] = y [ 4 ];
+	rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 3 ] , y [ 5 ] , &yr [ 3 ] , &yr [ 5 ] );
+	rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 2 ] , y [ 6 ] , &yr [ 2 ] , &yr [ 6 ] );
+	rot_inv ( ctm [ 2 ] , stm [ 2 ] , y [ 1 ] , y [ 7 ] , &yr [ 1 ] , &yr [ 7 ] );
+	rot_inv ( ctm [ 3 ] , stm [ 3 ] , y [ 0 ] , y [ 8 ] , &yr [ 0 ] , &yr [ 8 ] );
+}
 
-	inline void sh_rotz_5 ( REAL ctm [ 5 ] , REAL stm [ 5 ] , REAL y [ NL5 ] , REAL yr [ NL5 ] )
-	{
-		yr [ 5 ] = y [ 5 ];
-		rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 4 ] , y [ 6 ] ,  &yr [ 4 ] , &yr [ 6 ] );
-		rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 3 ] , y [ 7 ] ,  &yr [ 3 ] , &yr [ 7 ] );
-		rot_inv ( ctm [ 2 ] , stm [ 2 ] , y [ 2 ] , y [ 8 ] ,  &yr [ 2 ] , &yr [ 8 ] );
-		rot_inv ( ctm [ 3 ] , stm [ 3 ] , y [ 1 ] , y [ 9 ] ,  &yr [ 1 ] , &yr [ 9 ] );
-		rot_inv ( ctm [ 4 ] , stm [ 4 ] , y [ 0 ] , y [ 10 ] , &yr [ 0 ] , &yr [ 10 ] );
-	}
+inline void sh_rotz_5 ( REAL ctm [ 5 ] , REAL stm [ 5 ] , REAL y [ NL5 ] , REAL yr [ NL5 ] )
+{
+	yr [ 5 ] = y [ 5 ];
+	rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 4 ] , y [ 6 ] ,  &yr [ 4 ] , &yr [ 6 ] );
+	rot_inv ( ctm [ 1 ] , stm [ 1 ] , y [ 3 ] , y [ 7 ] ,  &yr [ 3 ] , &yr [ 7 ] );
+	rot_inv ( ctm [ 2 ] , stm [ 2 ] , y [ 2 ] , y [ 8 ] ,  &yr [ 2 ] , &yr [ 8 ] );
+	rot_inv ( ctm [ 3 ] , stm [ 3 ] , y [ 1 ] , y [ 9 ] ,  &yr [ 1 ] , &yr [ 9 ] );
+	rot_inv ( ctm [ 4 ] , stm [ 4 ] , y [ 0 ] , y [ 10 ] , &yr [ 0 ] , &yr [ 10 ] );
+}
 
-	// rotation code generated programmatically by rotatex (2000x4000 samples, eps=1e-008)
+// rotation code generated programmatically by rotatex (2000x4000 samples, eps=1e-008)
 
 #define fx_1_001 ( REAL )(  sqrt ( 1.0f ) / 1.0f )  // 1
 #define fx_1_002 ( REAL )( -sqrt ( 1.0f ) / 1.0f )  // -1.00000030843
 
-	inline void sh_rotx90_1 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_1_001 * y [ 1 ];
-		yr [ 1 ] = fx_1_002 * y [ 0 ];
-		yr [ 2 ] = fx_1_001 * y [ 2 ];
-	};
+inline void sh_rotx90_1 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_1_001 * y [ 1 ];
+	yr [ 1 ] = fx_1_002 * y [ 0 ];
+	yr [ 2 ] = fx_1_001 * y [ 2 ];
+};
 
-	inline void sh_rotx90_inv_1 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_1_002 * y [ 1 ];
-		yr [ 1 ] = fx_1_001 * y [ 0 ];
-		yr [ 2 ] = fx_1_001 * y [ 2 ];
-	}
+inline void sh_rotx90_inv_1 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_1_002 * y [ 1 ];
+	yr [ 1 ] = fx_1_001 * y [ 0 ];
+	yr [ 2 ] = fx_1_001 * y [ 2 ];
+}
 
 #define fx_2_001 ( REAL )(  sqrt ( 4.0f ) / 2.0f )  // 1
 #define fx_2_002 ( REAL )( -sqrt ( 4.0f ) / 2.0f )  // -1
@@ -31014,54 +31014,54 @@ inline void ComputeCapInt ( const size_t order , float angle , float *pR )
 #define fx_2_004 ( REAL )( -sqrt ( 3.0f ) / 2.0f )  // -0.866025848959
 #define fx_2_005 ( REAL )(  sqrt ( 1.0f ) / 2.0f )  // 0.5
 
-	inline void sh_rotx90_2 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_2_001 * y [ 3 ];
-		yr [ 1 ] = fx_2_002 * y [ 1 ];
-		yr [ 2 ] = fx_2_003 * y [ 2 ] + fx_2_004 * y [ 4 ];
-		yr [ 3 ] = fx_2_002 * y [ 0 ];
-		yr [ 4 ] = fx_2_004 * y [ 2 ] + fx_2_005 * y [ 4 ];
-	};
+inline void sh_rotx90_2 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_2_001 * y [ 3 ];
+	yr [ 1 ] = fx_2_002 * y [ 1 ];
+	yr [ 2 ] = fx_2_003 * y [ 2 ] + fx_2_004 * y [ 4 ];
+	yr [ 3 ] = fx_2_002 * y [ 0 ];
+	yr [ 4 ] = fx_2_004 * y [ 2 ] + fx_2_005 * y [ 4 ];
+};
 
-	inline void sh_rotx90_inv_2 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_2_002 * y [ 3 ];
-		yr [ 1 ] = fx_2_002 * y [ 1 ];
-		yr [ 2 ] = fx_2_003 * y [ 2 ] + fx_2_004 * y [ 4 ];
-		yr [ 3 ] = fx_2_001 * y [ 0 ];
-		yr [ 4 ] = fx_2_004 * y [ 2 ] + fx_2_005 * y [ 4 ];
-	}
+inline void sh_rotx90_inv_2 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_2_002 * y [ 3 ];
+	yr [ 1 ] = fx_2_002 * y [ 1 ];
+	yr [ 2 ] = fx_2_003 * y [ 2 ] + fx_2_004 * y [ 4 ];
+	yr [ 3 ] = fx_2_001 * y [ 0 ];
+	yr [ 4 ] = fx_2_004 * y [ 2 ] + fx_2_005 * y [ 4 ];
+}
 
- #define fx_3_001 ( REAL ) ( -sqrt ( 10.0f ) / 4.0f ) // -0.790569415042
- #define fx_3_002 ( REAL ) (  sqrt ( 6.0f  ) / 4.0f ) // 0.612372435696
- #define fx_3_003 ( REAL ) ( -sqrt ( 16.0f ) / 4.0f ) // -1
- #define fx_3_004 ( REAL ) ( -sqrt ( 6.0f  ) / 4.0f ) // -0.612372435695
- #define fx_3_005 ( REAL ) ( -sqrt ( 1.0f  ) / 4.0f ) // -0.25
- #define fx_3_006 ( REAL ) ( -sqrt ( 15.0f ) / 4.0f ) // -0.968245836551
- #define fx_3_007 ( REAL ) (  sqrt ( 1.0f  ) / 4.0f ) // 0.25
- #define fx_3_008 ( REAL ) (  sqrt ( 10.0f ) / 4.0f ) // 0.790569983984
+#define fx_3_001 ( REAL ) ( -sqrt ( 10.0f ) / 4.0f ) // -0.790569415042
+#define fx_3_002 ( REAL ) (  sqrt ( 6.0f  ) / 4.0f ) // 0.612372435696
+#define fx_3_003 ( REAL ) ( -sqrt ( 16.0f ) / 4.0f ) // -1
+#define fx_3_004 ( REAL ) ( -sqrt ( 6.0f  ) / 4.0f ) // -0.612372435695
+#define fx_3_005 ( REAL ) ( -sqrt ( 1.0f  ) / 4.0f ) // -0.25
+#define fx_3_006 ( REAL ) ( -sqrt ( 15.0f ) / 4.0f ) // -0.968245836551
+#define fx_3_007 ( REAL ) (  sqrt ( 1.0f  ) / 4.0f ) // 0.25
+#define fx_3_008 ( REAL ) (  sqrt ( 10.0f ) / 4.0f ) // 0.790569983984
 
-	inline void sh_rotx90_3 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_3_001 * y [ 3 ] + fx_3_002 * y [ 5 ];
-		yr [ 1 ] = fx_3_003 * y [ 1 ];
-		yr [ 2 ] = fx_3_004 * y [ 3 ] + fx_3_001 * y [ 5 ];
-		yr [ 3 ] = fx_3_008 * y [ 0 ] + fx_3_002 * y [ 2 ];
-		yr [ 4 ] = fx_3_005 * y [ 4 ] + fx_3_006 * y [ 6 ];
-		yr [ 5 ] = fx_3_004 * y [ 0 ] - fx_3_001 * y [ 2 ];
-		yr [ 6 ] = fx_3_006 * y [ 4 ] + fx_3_007 * y [ 6 ];
-	};
+inline void sh_rotx90_3 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_3_001 * y [ 3 ] + fx_3_002 * y [ 5 ];
+	yr [ 1 ] = fx_3_003 * y [ 1 ];
+	yr [ 2 ] = fx_3_004 * y [ 3 ] + fx_3_001 * y [ 5 ];
+	yr [ 3 ] = fx_3_008 * y [ 0 ] + fx_3_002 * y [ 2 ];
+	yr [ 4 ] = fx_3_005 * y [ 4 ] + fx_3_006 * y [ 6 ];
+	yr [ 5 ] = fx_3_004 * y [ 0 ] - fx_3_001 * y [ 2 ];
+	yr [ 6 ] = fx_3_006 * y [ 4 ] + fx_3_007 * y [ 6 ];
+};
 
-	inline void sh_rotx90_inv_3 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_3_008 * y [ 3 ] + fx_3_004 * y [ 5 ];
-		yr [ 1 ] = fx_3_003 * y [ 1 ];
-		yr [ 2 ] = fx_3_002 * y [ 3 ] - fx_3_001 * y [ 5 ];
-		yr [ 3 ] = fx_3_001 * y [ 0 ] + fx_3_004 * y [ 2 ];
-		yr [ 4 ] = fx_3_005 * y [ 4 ] + fx_3_006 * y [ 6 ];
-		yr [ 5 ] = fx_3_002 * y [ 0 ] + fx_3_001 * y [ 2 ];
-		yr [ 6 ] = fx_3_006 * y [ 4 ] + fx_3_007 * y [ 6 ];
-	}
+inline void sh_rotx90_inv_3 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_3_008 * y [ 3 ] + fx_3_004 * y [ 5 ];
+	yr [ 1 ] = fx_3_003 * y [ 1 ];
+	yr [ 2 ] = fx_3_002 * y [ 3 ] - fx_3_001 * y [ 5 ];
+	yr [ 3 ] = fx_3_001 * y [ 0 ] + fx_3_004 * y [ 2 ];
+	yr [ 4 ] = fx_3_005 * y [ 4 ] + fx_3_006 * y [ 6 ];
+	yr [ 5 ] = fx_3_002 * y [ 0 ] + fx_3_001 * y [ 2 ];
+	yr [ 6 ] = fx_3_006 * y [ 4 ] + fx_3_007 * y [ 6 ];
+}
 
 #define fx_4_001 ( REAL ) ( -sqrt ( 56.0f ) / 8.0f ) // -0.935414346694
 #define fx_4_002 ( REAL ) (  sqrt ( 8.0f  ) / 8.0f ) // 0.353553390593
@@ -31077,31 +31077,31 @@ inline void ComputeCapInt ( const size_t order , float angle , float *pR )
 #define fx_4_012 ( REAL ) (  sqrt ( 1.0f  ) / 8.0f ) // 0.125
 #define fx_4_013 ( REAL ) (  sqrt ( 56.0f ) / 8.0f ) // 0.935414346692
 
-	inline void sh_rotx90_4 ( REAL y [ 9 ] , REAL yr [ 9 ] )
-	{
-		yr [ 0 ] = fx_4_001 * y [ 5 ] + fx_4_002 * y [ 7 ];
-		yr [ 1 ] = fx_4_003 * y [ 1 ] + fx_4_004 * y [ 3 ];
-		yr [ 2 ] = fx_4_005 * y [ 5 ] + fx_4_001 * y [ 7 ];
-		yr [ 3 ] = fx_4_004 * y [ 1 ] + fx_4_006 * y [ 3 ];
-		yr [ 4 ] = fx_4_007 * y [ 4 ] + fx_4_008 * y [ 6 ] + fx_4_009 * y [ 8 ];
-		yr [ 5 ] = fx_4_013 * y [ 0 ] + fx_4_002 * y [ 2 ];
-		yr [ 6 ] = fx_4_008 * y [ 4 ] + fx_4_010 * y [ 6 ] + fx_4_011 * y [ 8 ];
-		yr [ 7 ] = fx_4_005 * y [ 0 ] - fx_4_001 * y [ 2 ];
-		yr [ 8 ] = fx_4_009 * y [ 4 ] + fx_4_011 * y [ 6 ] + fx_4_012 * y [ 8 ];
-	};
+inline void sh_rotx90_4 ( REAL y [ 9 ] , REAL yr [ 9 ] )
+{
+	yr [ 0 ] = fx_4_001 * y [ 5 ] + fx_4_002 * y [ 7 ];
+	yr [ 1 ] = fx_4_003 * y [ 1 ] + fx_4_004 * y [ 3 ];
+	yr [ 2 ] = fx_4_005 * y [ 5 ] + fx_4_001 * y [ 7 ];
+	yr [ 3 ] = fx_4_004 * y [ 1 ] + fx_4_006 * y [ 3 ];
+	yr [ 4 ] = fx_4_007 * y [ 4 ] + fx_4_008 * y [ 6 ] + fx_4_009 * y [ 8 ];
+	yr [ 5 ] = fx_4_013 * y [ 0 ] + fx_4_002 * y [ 2 ];
+	yr [ 6 ] = fx_4_008 * y [ 4 ] + fx_4_010 * y [ 6 ] + fx_4_011 * y [ 8 ];
+	yr [ 7 ] = fx_4_005 * y [ 0 ] - fx_4_001 * y [ 2 ];
+	yr [ 8 ] = fx_4_009 * y [ 4 ] + fx_4_011 * y [ 6 ] + fx_4_012 * y [ 8 ];
+};
 
-	inline void sh_rotx90_inv_4 ( REAL y [ ], REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_4_013 * y [ 5 ] + fx_4_005 * y [ 7 ];
-		yr [ 1 ] = fx_4_003 * y [ 1 ] + fx_4_004 * y [ 3 ];
-		yr [ 2 ] = fx_4_002 * y [ 5 ] - fx_4_001 * y [ 7 ];
-		yr [ 3 ] = fx_4_004 * y [ 1 ] + fx_4_006 * y [ 3 ];
-		yr [ 4 ] = fx_4_007 * y [ 4 ] + fx_4_008 * y [ 6 ] + fx_4_009 * y [ 8 ];
-		yr [ 5 ] = fx_4_001 * y [ 0 ] + fx_4_005 * y [ 2 ];
-		yr [ 6 ] = fx_4_008 * y [ 4 ] + fx_4_010 * y [ 6 ] + fx_4_011 * y [ 8 ];
-		yr [ 7 ] = fx_4_002 * y [ 0 ] + fx_4_001 * y [ 2 ];
-		yr [ 8 ] = fx_4_009 * y [ 4 ] + fx_4_011 * y [ 6 ] + fx_4_012 * y [ 8 ];
-	}
+inline void sh_rotx90_inv_4 ( REAL y [ ], REAL yr [ ] )
+{
+	yr [ 0 ] = fx_4_013 * y [ 5 ] + fx_4_005 * y [ 7 ];
+	yr [ 1 ] = fx_4_003 * y [ 1 ] + fx_4_004 * y [ 3 ];
+	yr [ 2 ] = fx_4_002 * y [ 5 ] - fx_4_001 * y [ 7 ];
+	yr [ 3 ] = fx_4_004 * y [ 1 ] + fx_4_006 * y [ 3 ];
+	yr [ 4 ] = fx_4_007 * y [ 4 ] + fx_4_008 * y [ 6 ] + fx_4_009 * y [ 8 ];
+	yr [ 5 ] = fx_4_001 * y [ 0 ] + fx_4_005 * y [ 2 ];
+	yr [ 6 ] = fx_4_008 * y [ 4 ] + fx_4_010 * y [ 6 ] + fx_4_011 * y [ 8 ];
+	yr [ 7 ] = fx_4_002 * y [ 0 ] + fx_4_001 * y [ 2 ];
+	yr [ 8 ] = fx_4_009 * y [ 4 ] + fx_4_011 * y [ 6 ] + fx_4_012 * y [ 8 ];
+}
 
 #define fx_5_001 ( REAL ) ( sqrt ( 126.0 ) / 16.0 )   // 0.70156076002
 #define fx_5_002 ( REAL ) ( -sqrt ( 120.0 ) / 16.0 )  // -0.684653196882
@@ -31127,236 +31127,236 @@ inline void ComputeCapInt ( const size_t order , float angle , float *pR )
 #define fx_5_022 ( REAL ) ( -sqrt ( 70.0 ) / 16.0 )   // -0.522913107945
 #define fx_5_023 ( REAL ) ( -sqrt ( 60.0 ) / 16.0 )   // -0.48412346577
 
-	inline void sh_rotx90_5 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_5_001 * y [ 5 ] + fx_5_002 * y [ 7 ] + fx_5_003 * y [ 9 ];
-		yr [ 1 ] = fx_5_004 * y [ 1 ] + fx_5_005 * y [ 3 ];
-		yr [ 2 ] = fx_5_006 * y [ 5 ] + fx_5_007 * y [ 7 ] + fx_5_008 * y [ 9 ];
-		yr [ 3 ] = fx_5_005 * y [ 1 ] + fx_5_009 * y [ 3 ];
-		yr [ 4 ] = fx_5_010 * y [ 5 ] + fx_5_011 * y [ 7 ] + fx_5_012 * y [ 9 ];
-		yr [ 5 ] = fx_5_019 * y [ 0 ] + fx_5_022 * y [ 2 ] + fx_5_023 * y [ 4 ];
-		yr [ 6 ] = fx_5_013 * y [ 6 ] + fx_5_014 * y [ 8 ] + fx_5_015 * y [ 10 ];
-		yr [ 7 ] = fx_5_020 * y [ 0 ] - fx_5_007 * y [ 2 ] - fx_5_011 * y [ 4 ];
-		yr [ 8 ] = fx_5_014 * y [ 6 ] + fx_5_016 * y [ 8 ] + fx_5_017 * y [ 10 ];
-		yr [ 9 ] = fx_5_021 * y [ 0 ] - fx_5_008 * y [ 2 ] - fx_5_012 * y [ 4 ];
-		yr [ 10 ] = fx_5_015 * y [ 6 ] + fx_5_017 * y [ 8 ] + fx_5_018 * y [ 10 ];
-	};
+inline void sh_rotx90_5 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_5_001 * y [ 5 ] + fx_5_002 * y [ 7 ] + fx_5_003 * y [ 9 ];
+	yr [ 1 ] = fx_5_004 * y [ 1 ] + fx_5_005 * y [ 3 ];
+	yr [ 2 ] = fx_5_006 * y [ 5 ] + fx_5_007 * y [ 7 ] + fx_5_008 * y [ 9 ];
+	yr [ 3 ] = fx_5_005 * y [ 1 ] + fx_5_009 * y [ 3 ];
+	yr [ 4 ] = fx_5_010 * y [ 5 ] + fx_5_011 * y [ 7 ] + fx_5_012 * y [ 9 ];
+	yr [ 5 ] = fx_5_019 * y [ 0 ] + fx_5_022 * y [ 2 ] + fx_5_023 * y [ 4 ];
+	yr [ 6 ] = fx_5_013 * y [ 6 ] + fx_5_014 * y [ 8 ] + fx_5_015 * y [ 10 ];
+	yr [ 7 ] = fx_5_020 * y [ 0 ] - fx_5_007 * y [ 2 ] - fx_5_011 * y [ 4 ];
+	yr [ 8 ] = fx_5_014 * y [ 6 ] + fx_5_016 * y [ 8 ] + fx_5_017 * y [ 10 ];
+	yr [ 9 ] = fx_5_021 * y [ 0 ] - fx_5_008 * y [ 2 ] - fx_5_012 * y [ 4 ];
+	yr [ 10 ] = fx_5_015 * y [ 6 ] + fx_5_017 * y [ 8 ] + fx_5_018 * y [ 10 ];
+};
 
-	inline void sh_rotx90_inv_5 ( REAL y [ ] , REAL yr [ ] )
-	{
-		yr [ 0 ] = fx_5_019 * y [ 5 ] + fx_5_020 * y [ 7 ] + fx_5_021 * y [ 9 ];
-		yr [ 1 ] = fx_5_004 * y [ 1 ] + fx_5_005 * y [ 3 ];
-		yr [ 2 ] = fx_5_022 * y [ 5 ] - fx_5_007 * y [ 7 ] - fx_5_008 * y [ 9 ];
-		yr [ 3 ] = fx_5_005 * y [ 1 ] + fx_5_009 * y [ 3 ];
-		yr [ 4 ] = fx_5_023 * y [ 5 ] - fx_5_011 * y [ 7 ] - fx_5_012 * y [ 9 ];
-		yr [ 5 ] = fx_5_001 * y [ 0 ] + fx_5_006 * y [ 2 ] + fx_5_010 * y [ 4 ];
-		yr [ 6 ] = fx_5_013 * y [ 6 ] + fx_5_014 * y [ 8 ] + fx_5_015 * y [ 10 ];
-		yr [ 7 ] = fx_5_002 * y [ 0 ] + fx_5_007 * y [ 2 ] + fx_5_011 * y [ 4 ];
-		yr [ 8 ] = fx_5_014 * y [ 6 ] + fx_5_016 * y [ 8 ] + fx_5_017 * y [ 10 ];
-		yr [ 9 ] = fx_5_003 * y [ 0 ] + fx_5_008 * y [ 2 ] + fx_5_012 * y [ 4 ];
-		yr [ 10 ] = fx_5_015 * y [ 6 ] + fx_5_017 * y [ 8 ] + fx_5_018 * y [ 10 ];
-	}
+inline void sh_rotx90_inv_5 ( REAL y [ ] , REAL yr [ ] )
+{
+	yr [ 0 ] = fx_5_019 * y [ 5 ] + fx_5_020 * y [ 7 ] + fx_5_021 * y [ 9 ];
+	yr [ 1 ] = fx_5_004 * y [ 1 ] + fx_5_005 * y [ 3 ];
+	yr [ 2 ] = fx_5_022 * y [ 5 ] - fx_5_007 * y [ 7 ] - fx_5_008 * y [ 9 ];
+	yr [ 3 ] = fx_5_005 * y [ 1 ] + fx_5_009 * y [ 3 ];
+	yr [ 4 ] = fx_5_023 * y [ 5 ] - fx_5_011 * y [ 7 ] - fx_5_012 * y [ 9 ];
+	yr [ 5 ] = fx_5_001 * y [ 0 ] + fx_5_006 * y [ 2 ] + fx_5_010 * y [ 4 ];
+	yr [ 6 ] = fx_5_013 * y [ 6 ] + fx_5_014 * y [ 8 ] + fx_5_015 * y [ 10 ];
+	yr [ 7 ] = fx_5_002 * y [ 0 ] + fx_5_007 * y [ 2 ] + fx_5_011 * y [ 4 ];
+	yr [ 8 ] = fx_5_014 * y [ 6 ] + fx_5_016 * y [ 8 ] + fx_5_017 * y [ 10 ];
+	yr [ 9 ] = fx_5_003 * y [ 0 ] + fx_5_008 * y [ 2 ] + fx_5_012 * y [ 4 ];
+	yr [ 10 ] = fx_5_015 * y [ 6 ] + fx_5_017 * y [ 8 ] + fx_5_018 * y [ 10 ];
+}
 
-	inline void sh_rot_1 ( REAL m [ 3 * 3 ] , REAL y [ NL1 ] , REAL yr [ NL1 ] )
-	{
-		REAL yr0 = m [ 4 ] * y [ 0 ] - m [ 5 ] * y [ 1 ] + m [ 3 ] * y [ 2 ];
-		REAL yr1 = m [ 8 ] * y [ 1 ] - m [ 7 ] * y [ 0 ] - m [ 6 ] * y [ 2 ];
-		REAL yr2 = m [ 1 ] * y [ 0 ] - m [ 2 ] * y [ 1 ] + m [ 0 ] * y [ 2 ];
+inline void sh_rot_1 ( REAL m [ 3 * 3 ] , REAL y [ NL1 ] , REAL yr [ NL1 ] )
+{
+	REAL yr0 = m [ 4 ] * y [ 0 ] - m [ 5 ] * y [ 1 ] + m [ 3 ] * y [ 2 ];
+	REAL yr1 = m [ 8 ] * y [ 1 ] - m [ 7 ] * y [ 0 ] - m [ 6 ] * y [ 2 ];
+	REAL yr2 = m [ 1 ] * y [ 0 ] - m [ 2 ] * y [ 1 ] + m [ 0 ] * y [ 2 ];
 
-		yr [ 0 ] = yr0;
-		yr [ 1 ] = yr1;
-		yr [ 2 ] = yr2;
-	}
+	yr [ 0 ] = yr0;
+	yr [ 1 ] = yr1;
+	yr [ 2 ] = yr2;
+}
 
-	inline void sh_roty_1 ( REAL ctm [ 1 ] , REAL stm [ 1 ] , REAL y [ NL1 ] , REAL yr [ NL1 ] )
-	{
-		yr [ 0 ] = y [ 0 ];
-		rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 1 ] , y [ 2 ] , &yr [ 1 ] , &yr [ 2 ] );
-	}
+inline void sh_roty_1 ( REAL ctm [ 1 ] , REAL stm [ 1 ] , REAL y [ NL1 ] , REAL yr [ NL1 ] )
+{
+	yr [ 0 ] = y [ 0 ];
+	rot_inv ( ctm [ 0 ] , stm [ 0 ] , y [ 1 ] , y [ 2 ] , &yr [ 1 ] , &yr [ 2 ] );
+}
 
-	inline void sh_roty_2 ( REAL ctm [ 2 ] , REAL stm [ 2 ] , REAL y [ NL2 ] , REAL yr [ NL2 ] )
-	{
-		REAL ytmp [ NL2 ];
-		sh_rotx90_2 ( y , yr );
-		sh_rotz_2 ( ctm , stm , yr , ytmp );
-		sh_rotx90_inv_2 ( ytmp , yr );
-	}
+inline void sh_roty_2 ( REAL ctm [ 2 ] , REAL stm [ 2 ] , REAL y [ NL2 ] , REAL yr [ NL2 ] )
+{
+	REAL ytmp [ NL2 ];
+	sh_rotx90_2 ( y , yr );
+	sh_rotz_2 ( ctm , stm , yr , ytmp );
+	sh_rotx90_inv_2 ( ytmp , yr );
+}
 
-	inline void sh_roty_3 ( REAL ctm [ 3 ] , REAL stm [ 3 ] , REAL y [ NL3 ] , REAL yr [ NL3 ] )
-	{
-		REAL ytmp [ NL3 ];
-		sh_rotx90_3 ( y , yr );
-		sh_rotz_3 ( ctm , stm , yr , ytmp );
-		sh_rotx90_inv_3 ( ytmp , yr );
-	}
+inline void sh_roty_3 ( REAL ctm [ 3 ] , REAL stm [ 3 ] , REAL y [ NL3 ] , REAL yr [ NL3 ] )
+{
+	REAL ytmp [ NL3 ];
+	sh_rotx90_3 ( y , yr );
+	sh_rotz_3 ( ctm , stm , yr , ytmp );
+	sh_rotx90_inv_3 ( ytmp , yr );
+}
 
-	inline void sh_roty_4 ( REAL ctm [ 4 ] , REAL stm [ 4 ] , REAL y [ NL4 ] , REAL yr [ NL4 ] )
-	{
-		REAL ytmp [ NL4 ];
-		sh_rotx90_4 ( y , yr );
-		sh_rotz_4 ( ctm , stm , yr , ytmp );
-		sh_rotx90_inv_4 ( ytmp , yr );
-	}
+inline void sh_roty_4 ( REAL ctm [ 4 ] , REAL stm [ 4 ] , REAL y [ NL4 ] , REAL yr [ NL4 ] )
+{
+	REAL ytmp [ NL4 ];
+	sh_rotx90_4 ( y , yr );
+	sh_rotz_4 ( ctm , stm , yr , ytmp );
+	sh_rotx90_inv_4 ( ytmp , yr );
+}
 
-	inline void sh_roty_5 ( REAL ctm [ 5 ] , REAL stm [ 5 ] , REAL y [ NL5 ] , REAL yr [ NL5 ] )
-	{
-		REAL ytmp [ NL5 ];
-		sh_rotx90_5 ( y , yr );
-		sh_rotz_5 ( ctm , stm , yr , ytmp );
-		sh_rotx90_inv_5 ( ytmp , yr );
-	}
+inline void sh_roty_5 ( REAL ctm [ 5 ] , REAL stm [ 5 ] , REAL y [ NL5 ] , REAL yr [ NL5 ] )
+{
+	REAL ytmp [ NL5 ];
+	sh_rotx90_5 ( y , yr );
+	sh_rotz_5 ( ctm , stm , yr , ytmp );
+	sh_rotx90_inv_5 ( ytmp , yr );
+}
 
 #define ROT_TOL CONSTANT(1e-4)
 
-	/*
-	Finds cosine,sine pairs for zyz rotation (i.e. rotation R_z2 R_y R_z1 v).
-	The rotation is one which maps mx to (1,0,0) and mz to (0,0,1).
-	*/
-	inline void zyz ( REAL m [ 3 * 3 ] , REAL *zc1 , REAL *zs1 , REAL *yc , REAL *ys , REAL *zc2 , REAL *zs2 )
-	{
-		REAL cz = m [ 8 ];
+/*
+  Finds cosine,sine pairs for zyz rotation (i.e. rotation R_z2 R_y R_z1 v).
+  The rotation is one which maps mx to (1,0,0) and mz to (0,0,1).
+*/
+inline void zyz ( REAL m [ 3 * 3 ] , REAL *zc1 , REAL *zs1 , REAL *yc , REAL *ys , REAL *zc2 , REAL *zs2 )
+{
+	REAL cz = m [ 8 ];
 
-		// rotate so that (cx,cy,0) aligns to (1,0,0)
-		REAL cxylen = ( REAL ) sqrtf ( 1.0f - cz * cz );
-		if ( cxylen >= ROT_TOL )
+	// rotate so that (cx,cy,0) aligns to (1,0,0)
+	REAL cxylen = ( REAL ) sqrtf ( 1.0f - cz * cz );
+	if ( cxylen >= ROT_TOL )
+	{
+		// if above is a NaN, will do the correct thing
+		*yc = cz;
+		*ys = cxylen;
+		REAL len67inv = 1.0f / sqrtf ( m [ 6 ] * m [ 6 ] + m [ 7 ] * m [ 7 ] );
+		*zc1 = -m [ 6 ] * len67inv;
+		*zs1 = m [ 7 ] * len67inv;
+		REAL len25inv = 1.0f / sqrtf ( m [ 2 ] * m [ 2 ] + m [ 5 ] * m [ 5 ] );
+		*zc2 = m [ 2 ] * len25inv;
+		*zs2 = m [ 5 ] * len25inv;
+	}
+	else
+	{  // m[6],m[7],m[8] already aligned to (0,0,1)
+		*zc1 = 1.0; *zs1 = 0.0;        // identity
+		*yc = cz;   *ys  = 0.0;        // identity
+		*zc2 = m [ 0 ] * cz; *zs2 = -m [ 1 ];  // align x axis (mx[0],mx[1],0) to (1,0,0)
+	}
+}
+
+inline void sh_rotzyz_2 ( REAL zc1m [ 2 ] , REAL zs1m [ 2 ] , REAL ycm [ 2 ] , REAL ysm [ 2 ] , REAL zc2m [ 2 ] , REAL zs2m [ 2 ] , REAL y [ NL2 ] , REAL yr [ NL2 ] )
+{
+	REAL ytmp [ NL2 ];
+	sh_rotz_2 ( zc1m , zs1m , y , yr );
+	sh_roty_2 ( ycm , ysm , yr , ytmp );
+	sh_rotz_2 ( zc2m , zs2m , ytmp , yr );
+}
+
+inline void sh_rotzyz_3 ( REAL zc1m [ 3 ] , REAL zs1m [ 3 ] , REAL ycm [ 3 ] , REAL ysm [ 3 ] , REAL zc2m [ 3 ] , REAL zs2m [ 3 ] , REAL y [ NL3 ] , REAL yr [ NL3 ] )
+{
+	REAL ytmp [ NL3 ];
+	sh_rotz_3 ( zc1m , zs1m , y , yr );
+	sh_roty_3 ( ycm , ysm , yr , ytmp );
+	sh_rotz_3 ( zc2m , zs2m , ytmp , yr );
+}
+
+inline void sh_rotzyz_4 ( REAL zc1m [ 4 ] , REAL zs1m [ 4 ] , REAL ycm [ 4 ] , REAL ysm [ 4 ] , REAL zc2m [ 4 ] , REAL zs2m [ 4 ] , REAL y [ NL4 ] , REAL yr [ NL4 ] )
+{
+	REAL ytmp [ NL4 ];
+	sh_rotz_4 ( zc1m , zs1m , y , yr );
+	sh_roty_4 ( ycm , ysm , yr , ytmp );
+	sh_rotz_4 ( zc2m , zs2m , ytmp , yr );
+}
+
+inline void sh_rotzyz_5 ( REAL zc1m [ 5 ] , REAL zs1m [ 5 ] , REAL ycm [ 5 ] , REAL ysm [ 5 ] , REAL zc2m [ 5 ] , REAL zs2m [ 5 ] , REAL y [ NL5 ] , REAL yr [ NL5 ] )
+{
+	REAL ytmp [ NL5 ];
+	sh_rotz_5 ( zc1m , zs1m , y , yr );
+	sh_roty_5 ( ycm , ysm , yr , ytmp );
+	sh_rotz_5 ( zc2m , zs2m , ytmp , yr );
+}
+
+inline void sh3_rot ( REAL m [ 3 * 3 ] , REAL zc1 , REAL zs1 , REAL yc , REAL ys , REAL zc2 , REAL zs2 , REAL y [ NSH3 ] , REAL yr [ NSH3 ] )
+{
+	REAL zc1m [ 3 ] , zs1m [ 3 ];
+	rot_3 ( zc1 , zs1 , zc1m , zs1m );
+	REAL ycm [ 3 ] , ysm [ 3 ];
+	rot_3 ( yc , ys , ycm , ysm );
+	REAL zc2m [ 3 ] , zs2m [ 3 ];
+	rot_3 ( zc2 , zs2 , zc2m , zs2m );
+
+	yr [ 0 ] = y [ 0 ];
+	sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
+	sh_rotzyz_2 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH1 , yr + NSH1 );
+	sh_rotzyz_3 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH2 , yr + NSH2 );
+}
+
+inline void sh4_rot ( REAL m [ 3 * 3 ] , REAL zc1 , REAL zs1 , REAL yc , REAL ys , REAL zc2 , REAL zs2 , REAL y [ NSH4 ] , REAL yr [ NSH4 ] )
+{
+	REAL zc1m [ 4 ] , zs1m [ 4 ];
+	rot_4 ( zc1 , zs1 , zc1m , zs1m );
+	REAL ycm [ 4 ] , ysm [ 4 ];
+	rot_4 ( yc , ys , ycm , ysm );
+	REAL zc2m [ 4 ] , zs2m [ 4 ];
+	rot_4 ( zc2 , zs2 , zc2m , zs2m );
+
+	yr [ 0 ] = y [ 0 ];
+	sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
+	sh_rotzyz_2 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH1 , yr + NSH1 );
+	sh_rotzyz_3 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH2 , yr + NSH2 );
+	sh_rotzyz_4 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH3 , yr + NSH3 );
+}
+
+inline void sh5_rot ( REAL m [ 3 * 3 ] , REAL zc1 , REAL zs1 , REAL yc , REAL ys , REAL zc2 , REAL zs2 , REAL y [ NSH5 ] , REAL yr [ NSH5 ] )
+{
+	REAL zc1m [ 5 ] , zs1m [ 5 ];
+	rot_5 ( zc1 , zs1 , zc1m , zs1m );
+	REAL ycm [ 5 ] , ysm [ 5 ];
+	rot_5 ( yc , ys , ycm , ysm );
+	REAL zc2m [ 5 ] , zs2m [ 5 ];
+	rot_5 ( zc2 , zs2 , zc2m , zs2m );
+
+	yr [ 0 ] = y [ 0 ];
+	sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
+	sh_rotzyz_2 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH1 , yr + NSH1 );
+	sh_rotzyz_3 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH2 , yr + NSH2 );
+	sh_rotzyz_4 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH3 , yr + NSH3 );
+	sh_rotzyz_5 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH4 , yr + NSH4 );
+}
+
+inline void sh1_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH1 ] , REAL yr [ NSH1 ] )
+{
+	yr [ 0 ] = y [ 0 ];
+	sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
+}
+
+inline void sh3_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH3 ] , REAL yr [ NSH3 ] )
+{
+	REAL zc1 , zs1 , yc , ys , zc2 , zs2;
+	zyz ( m , &zc1 , &zs1 , &yc , &ys , &zc2 , &zs2 );
+	sh3_rot ( m , zc1 , zs1 , yc , ys , zc2 , zs2 , y , yr );
+}
+
+inline void sh4_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH4 ] , REAL yr [ NSH4 ] )
+{
+	REAL zc1 , zs1 , yc , ys , zc2 , zs2;
+	zyz ( m ,&zc1 , &zs1 , &yc , &ys , &zc2 , &zs2 );
+	sh4_rot ( m , zc1 , zs1 , yc , ys , zc2 , zs2 , y , yr );
+}
+
+inline void sh5_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH5 ] , REAL yr [ NSH5 ] )
+{
+	REAL zc1 , zs1 , yc , ys , zc2 , zs2;
+	zyz ( m , &zc1 , &zs1 , &yc , &ys , &zc2 , &zs2 );
+	sh5_rot ( m , zc1 , zs1 , yc , ys , zc2 , zs2 , y , yr );
+}
+
+// simple matrix vector multiply for a square matrix (only used by ZRotation)
+inline void SimpMatMul ( size_t dim , const float *matrix , const float *input , float *result )
+{
+	for ( size_t iR = 0; iR < dim; ++iR )
+	{
+		result [ iR + 0 ] = matrix [ iR * dim + 0 ] * input [ 0 ];
+		for ( size_t iC = 1; iC < dim; ++iC )
 		{
-			// if above is a NaN, will do the correct thing
-			*yc = cz;
-			*ys = cxylen;
-			REAL len67inv = 1.0f / sqrtf ( m [ 6 ] * m [ 6 ] + m [ 7 ] * m [ 7 ] );
-			*zc1 = -m [ 6 ] * len67inv;
-			*zs1 = m [ 7 ] * len67inv;
-			REAL len25inv = 1.0f / sqrtf ( m [ 2 ] * m [ 2 ] + m [ 5 ] * m [ 5 ] );
-			*zc2 = m [ 2 ] * len25inv;
-			*zs2 = m [ 5 ] * len25inv;
-		}
-		else
-		{  // m[6],m[7],m[8] already aligned to (0,0,1)
-			*zc1 = 1.0; *zs1 = 0.0;        // identity
-			*yc = cz;   *ys  = 0.0;        // identity
-			*zc2 = m [ 0 ] * cz; *zs2 = -m [ 1 ];  // align x axis (mx[0],mx[1],0) to (1,0,0)
+			result [ iR ] += matrix [ iR * dim + iC ] * input [ iC ];
 		}
 	}
-
-	inline void sh_rotzyz_2 ( REAL zc1m [ 2 ] , REAL zs1m [ 2 ] , REAL ycm [ 2 ] , REAL ysm [ 2 ] , REAL zc2m [ 2 ] , REAL zs2m [ 2 ] , REAL y [ NL2 ] , REAL yr [ NL2 ] )
-	{
-		REAL ytmp [ NL2 ];
-		sh_rotz_2 ( zc1m , zs1m , y , yr );
-		sh_roty_2 ( ycm , ysm , yr , ytmp );
-		sh_rotz_2 ( zc2m , zs2m , ytmp , yr );
-	}
-
-	inline void sh_rotzyz_3 ( REAL zc1m [ 3 ] , REAL zs1m [ 3 ] , REAL ycm [ 3 ] , REAL ysm [ 3 ] , REAL zc2m [ 3 ] , REAL zs2m [ 3 ] , REAL y [ NL3 ] , REAL yr [ NL3 ] )
-	{
-		REAL ytmp [ NL3 ];
-		sh_rotz_3 ( zc1m , zs1m , y , yr );
-		sh_roty_3 ( ycm , ysm , yr , ytmp );
-		sh_rotz_3 ( zc2m , zs2m , ytmp , yr );
-	}
-
-	inline void sh_rotzyz_4 ( REAL zc1m [ 4 ] , REAL zs1m [ 4 ] , REAL ycm [ 4 ] , REAL ysm [ 4 ] , REAL zc2m [ 4 ] , REAL zs2m [ 4 ] , REAL y [ NL4 ] , REAL yr [ NL4 ] )
-	{
-		REAL ytmp [ NL4 ];
-		sh_rotz_4 ( zc1m , zs1m , y , yr );
-		sh_roty_4 ( ycm , ysm , yr , ytmp );
-		sh_rotz_4 ( zc2m , zs2m , ytmp , yr );
-	}
-
-	inline void sh_rotzyz_5 ( REAL zc1m [ 5 ] , REAL zs1m [ 5 ] , REAL ycm [ 5 ] , REAL ysm [ 5 ] , REAL zc2m [ 5 ] , REAL zs2m [ 5 ] , REAL y [ NL5 ] , REAL yr [ NL5 ] )
-	{
-		REAL ytmp [ NL5 ];
-		sh_rotz_5 ( zc1m , zs1m , y , yr );
-		sh_roty_5 ( ycm , ysm , yr , ytmp );
-		sh_rotz_5 ( zc2m , zs2m , ytmp , yr );
-	}
-
-	inline void sh3_rot ( REAL m [ 3 * 3 ] , REAL zc1 , REAL zs1 , REAL yc , REAL ys , REAL zc2 , REAL zs2 , REAL y [ NSH3 ] , REAL yr [ NSH3 ] )
-	{
-		REAL zc1m [ 3 ] , zs1m [ 3 ];
-		rot_3 ( zc1 , zs1 , zc1m , zs1m );
-		REAL ycm [ 3 ] , ysm [ 3 ];
-		rot_3 ( yc , ys , ycm , ysm );
-		REAL zc2m [ 3 ] , zs2m [ 3 ];
-		rot_3 ( zc2 , zs2 , zc2m , zs2m );
-
-		yr [ 0 ] = y [ 0 ];
-		sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
-		sh_rotzyz_2 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH1 , yr + NSH1 );
-		sh_rotzyz_3 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH2 , yr + NSH2 );
-	}
-
-	inline void sh4_rot ( REAL m [ 3 * 3 ] , REAL zc1 , REAL zs1 , REAL yc , REAL ys , REAL zc2 , REAL zs2 , REAL y [ NSH4 ] , REAL yr [ NSH4 ] )
-	{
-		REAL zc1m [ 4 ] , zs1m [ 4 ];
-		rot_4 ( zc1 , zs1 , zc1m , zs1m );
-		REAL ycm [ 4 ] , ysm [ 4 ];
-		rot_4 ( yc , ys , ycm , ysm );
-		REAL zc2m [ 4 ] , zs2m [ 4 ];
-		rot_4 ( zc2 , zs2 , zc2m , zs2m );
-
-		yr [ 0 ] = y [ 0 ];
-		sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
-		sh_rotzyz_2 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH1 , yr + NSH1 );
-		sh_rotzyz_3 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH2 , yr + NSH2 );
-		sh_rotzyz_4 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH3 , yr + NSH3 );
-	}
-
-	inline void sh5_rot ( REAL m [ 3 * 3 ] , REAL zc1 , REAL zs1 , REAL yc , REAL ys , REAL zc2 , REAL zs2 , REAL y [ NSH5 ] , REAL yr [ NSH5 ] )
-	{
-		REAL zc1m [ 5 ] , zs1m [ 5 ];
-		rot_5 ( zc1 , zs1 , zc1m , zs1m );
-		REAL ycm [ 5 ] , ysm [ 5 ];
-		rot_5 ( yc , ys , ycm , ysm );
-		REAL zc2m [ 5 ] , zs2m [ 5 ];
-		rot_5 ( zc2 , zs2 , zc2m , zs2m );
-
-		yr [ 0 ] = y [ 0 ];
-		sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
-		sh_rotzyz_2 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH1 , yr + NSH1 );
-		sh_rotzyz_3 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH2 , yr + NSH2 );
-		sh_rotzyz_4 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH3 , yr + NSH3 );
-		sh_rotzyz_5 ( zc1m , zs1m , ycm , ysm , zc2m , zs2m , y + NSH4 , yr + NSH4 );
-	}
-
-	inline void sh1_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH1 ] , REAL yr [ NSH1 ] )
-	{
-		yr [ 0 ] = y [ 0 ];
-		sh_rot_1 ( m , y + NSH0 , yr + NSH0 );
-	}
-
-	inline void sh3_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH3 ] , REAL yr [ NSH3 ] )
-	{
-		REAL zc1 , zs1 , yc , ys , zc2 , zs2;
-		zyz ( m , &zc1 , &zs1 , &yc , &ys , &zc2 , &zs2 );
-		sh3_rot ( m , zc1 , zs1 , yc , ys , zc2 , zs2 , y , yr );
-	}
-
-	inline void sh4_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH4 ] , REAL yr [ NSH4 ] )
-	{
-		REAL zc1 , zs1 , yc , ys , zc2 , zs2;
-		zyz ( m ,&zc1 , &zs1 , &yc , &ys , &zc2 , &zs2 );
-		sh4_rot ( m , zc1 , zs1 , yc , ys , zc2 , zs2 , y , yr );
-	}
-
-	inline void sh5_rot_ ( REAL m [ 3 * 3 ] , REAL y [ NSH5 ] , REAL yr [ NSH5 ] )
-	{
-		REAL zc1 , zs1 , yc , ys , zc2 , zs2;
-		zyz ( m , &zc1 , &zs1 , &yc , &ys , &zc2 , &zs2 );
-		sh5_rot ( m , zc1 , zs1 , yc , ys , zc2 , zs2 , y , yr );
-	}
-
-	// simple matrix vector multiply for a square matrix (only used by ZRotation)
-	inline void SimpMatMul ( size_t dim , const float *matrix , const float *input , float *result )
-	{
-		for ( size_t iR = 0; iR < dim; ++iR )
-		{
-			result [ iR + 0 ] = matrix [ iR * dim + 0 ] * input [ 0 ];
-			for ( size_t iC = 1; iC < dim; ++iC )
-			{
-				result [ iR ] += matrix [ iR * dim + iC ] * input [ iC ];
-			}
-		}
-	}
+}
 
 
 //-------------------------------------------------------------------------------------
@@ -31364,8 +31364,7 @@ inline void ComputeCapInt ( const size_t order , float angle , float *pR )
 //
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb205448.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XM_CALLCONV XMSHEvalDirection ( float *result , size_t order , FXMVECTOR dir )
+_Use_decl_annotations_ float *XM_CALLCONV XMSHEvalDirection ( float *result , size_t order , FXMVECTOR dir )
 {
 	if ( !result )
 	{
@@ -31381,29 +31380,29 @@ float *XM_CALLCONV XMSHEvalDirection ( float *result , size_t order , FXMVECTOR 
 
 	switch ( order )
 	{
-		case 2:
-			sh_eval_basis_1 ( fX , fY , fZ , result );
-			break;
+	case 2:
+		sh_eval_basis_1 ( fX , fY , fZ , result );
+		break;
 
-		case 3:
-			sh_eval_basis_2 ( fX , fY , fZ , result );
-			break;
+	case 3:
+		sh_eval_basis_2 ( fX , fY , fZ , result );
+		break;
 
-		case 4:
-			sh_eval_basis_3 ( fX , fY , fZ , result );
-			break;
+	case 4:
+		sh_eval_basis_3 ( fX , fY , fZ , result );
+		break;
 
-		case 5:
-			sh_eval_basis_4 ( fX , fY , fZ , result );
-			break;
+	case 5:
+		sh_eval_basis_4 ( fX , fY , fZ , result );
+		break;
 
-		case 6:
-			sh_eval_basis_5 ( fX , fY , fZ , result );
-			break;
+	case 6:
+		sh_eval_basis_5 ( fX , fY , fZ , result );
+		break;
 
-		default:
-			assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
-			return 0;
+	default:
+		assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
+		return 0;
 	}
 
 	return result;
@@ -31415,8 +31414,7 @@ float *XM_CALLCONV XMSHEvalDirection ( float *result , size_t order , FXMVECTOR 
 //
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb204992.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XM_CALLCONV XMSHRotate ( float *result, size_t order, FXMMATRIX rotMatrix, const float *input )
+_Use_decl_annotations_ float *XM_CALLCONV XMSHRotate ( float *result, size_t order, FXMMATRIX rotMatrix, const float *input )
 {
 	if ( !result || !input )
 	{
@@ -31448,99 +31446,99 @@ float *XM_CALLCONV XMSHRotate ( float *result, size_t order, FXMMATRIX rotMatrix
 
 	switch ( order )
 	{
-		case 2:
-		{
-			// do linear by hand...
+	case 2:
+	{
+		// do linear by hand...
 
-			result [ 1 ] = r11 * input [ 1 ] - r12 * input [ 2 ] + r10 * input [ 3 ];
-			result [ 2 ] = -r21 * input [ 1 ] + r22 * input [ 2 ] - r20 * input [ 3 ];
-			result [ 3 ] = r01 * input [ 1 ] - r02 * input [ 2 ] + r00 * input [ 3 ];
+		result [ 1 ] = r11 * input [ 1 ] - r12 * input [ 2 ] + r10 * input [ 3 ];
+		result [ 2 ] = -r21 * input [ 1 ] + r22 * input [ 2 ] - r20 * input [ 3 ];
+		result [ 3 ] = r01 * input [ 1 ] - r02 * input [ 2 ] + r00 * input [ 3 ];
+	}
+	break;
+
+	case 3:
+	{
+		float R [ 25 ];
+		// do linear by hand...
+
+		result [ 1 ] = r11 * input [ 1 ] - r12 * input [ 2 ] + r10 * input [ 3 ];
+		result [ 2 ] = -r21 * input [ 1 ] + r22 * input [ 2 ] - r20 * input [ 3 ];
+		result [ 3 ] = r01 * input [ 1 ] - r02 * input [ 2 ] + r00 * input [ 3 ];
+
+		// direct code for quadratics is faster than ZYZ reccurence relations
+
+		const float t41 = r01 * r00;
+		const float t43 = r11 * r10;
+		const float t48 = r11 * r12;
+		const float t50 = r01 * r02;
+		const float t55 = r02 * r02;
+		const float t57 = r22 * r22;
+		const float t58 = r12 * r12;
+		const float t61 = r00 * r02;
+		const float t63 = r10 * r12;
+		const float t68 = r10 * r10;
+		const float t70 = r01 * r01;
+		const float t72 = r11 * r11;
+		const float t74 = r00 * r00;
+		const float t76 = r21 * r21;
+		const float t78 = r20 * r20;
+
+		const float v173 = 0.1732050808e1f;
+		const float v577 = 0.5773502693e0f;
+		const float v115 = 0.1154700539e1f;
+		const float v288 = 0.2886751347e0f;
+		const float v866 = 0.8660254040e0f;
+
+		R [ 0 ] = r11 * r00 + r01 * r10;
+		R [ 1 ] = -r01 * r12 - r11 * r02;
+		R [ 2 ] = v173 * r02 * r12;
+		R [ 3 ] = -r10 * r02 - r00 * r12;
+		R [ 4 ] = r00 * r10 - r01 * r11;
+		R [ 5 ] = -r11 * r20 - r21 * r10;
+		R [ 6 ] = r11 * r22 + r21 * r12;
+		R [ 7 ] = -v173 * r22 * r12;
+		R [ 8 ] = r20 * r12 + r10 * r22;
+		R [ 9 ] = -r10 * r20 + r11 * r21;
+		R [ 10 ] = -v577 * ( t41 + t43 ) + v115 * r21 * r20;
+		R [ 11 ] = v577 * ( t48 + t50 ) - v115 * r21 * r22;
+		R [ 12 ] = -0.5000000000e0f * ( t55 + t58 ) + t57;
+		R [ 13 ] = v577 * ( t61 + t63 ) - v115 * r20 * r22;
+		R [ 14 ] = v288 * ( t70 - t68 + t72 - t74 ) - v577 * ( t76 - t78 );
+		R [ 15 ] = -r01 * r20 - r21 * r00;
+		R [ 16 ] = r01 * r22 + r21 * r02;
+		R [ 17 ] = -v173 * r22 * r02;
+		R [ 18 ] = r00 * r22 + r20 * r02;
+		R [ 19 ] = -r00 * r20 + r01 * r21;
+		R [ 20 ] = t41 - t43;
+		R [ 21 ] = -t50 + t48;
+		R [ 22 ] = v866 * ( t55 - t58 );
+		R [ 23 ] = t63 - t61;
+		R [ 24 ] = 0.5000000000e0f * ( t74 - t68 - t70 + t72 );
+
+		// blow the matrix multiply out by hand, looping is ineficient on a P4...
+		for ( unsigned int iR = 0; iR < 5; iR++ )
+		{
+			const unsigned int uBase = iR * 5;
+			result [ 4 + iR ] = R [ uBase + 0 ] * input [ 4 ] + R [ uBase + 1 ] * input [ 5 ] + R [ uBase + 2 ] * input [ 6 ] + R [ uBase + 3 ] * input [ 7 ] + R [ uBase + 4 ] * input [ 8 ];
 		}
+	}
+	break;
+
+	case 4:
+		sh3_rot_ ( mRot, ( float * ) input, result );
 		break;
 
-		case 3:
-		{
-			float R [ 25 ];
-			// do linear by hand...
-
-			result [ 1 ] = r11 * input [ 1 ] - r12 * input [ 2 ] + r10 * input [ 3 ];
-			result [ 2 ] = -r21 * input [ 1 ] + r22 * input [ 2 ] - r20 * input [ 3 ];
-			result [ 3 ] = r01 * input [ 1 ] - r02 * input [ 2 ] + r00 * input [ 3 ];
-
-			// direct code for quadratics is faster than ZYZ reccurence relations
-
-			const float t41 = r01 * r00;
-			const float t43 = r11 * r10;
-			const float t48 = r11 * r12;
-			const float t50 = r01 * r02;
-			const float t55 = r02 * r02;
-			const float t57 = r22 * r22;
-			const float t58 = r12 * r12;
-			const float t61 = r00 * r02;
-			const float t63 = r10 * r12;
-			const float t68 = r10 * r10;
-			const float t70 = r01 * r01;
-			const float t72 = r11 * r11;
-			const float t74 = r00 * r00;
-			const float t76 = r21 * r21;
-			const float t78 = r20 * r20;
-
-			const float v173 = 0.1732050808e1f;
-			const float v577 = 0.5773502693e0f;
-			const float v115 = 0.1154700539e1f;
-			const float v288 = 0.2886751347e0f;
-			const float v866 = 0.8660254040e0f;
-
-			R [ 0 ] = r11 * r00 + r01 * r10;
-			R [ 1 ] = -r01 * r12 - r11 * r02;
-			R [ 2 ] = v173 * r02 * r12;
-			R [ 3 ] = -r10 * r02 - r00 * r12;
-			R [ 4 ] = r00 * r10 - r01 * r11;
-			R [ 5 ] = -r11 * r20 - r21 * r10;
-			R [ 6 ] = r11 * r22 + r21 * r12;
-			R [ 7 ] = -v173 * r22 * r12;
-			R [ 8 ] = r20 * r12 + r10 * r22;
-			R [ 9 ] = -r10 * r20 + r11 * r21;
-			R [ 10 ] = -v577 * ( t41 + t43 ) + v115 * r21 * r20;
-			R [ 11 ] = v577 * ( t48 + t50 ) - v115 * r21 * r22;
-			R [ 12 ] = -0.5000000000e0f * ( t55 + t58 ) + t57;
-			R [ 13 ] = v577 * ( t61 + t63 ) - v115 * r20 * r22;
-			R [ 14 ] = v288 * ( t70 - t68 + t72 - t74 ) - v577 * ( t76 - t78 );
-			R [ 15 ] = -r01 * r20 - r21 * r00;
-			R [ 16 ] = r01 * r22 + r21 * r02;
-			R [ 17 ] = -v173 * r22 * r02;
-			R [ 18 ] = r00 * r22 + r20 * r02;
-			R [ 19 ] = -r00 * r20 + r01 * r21;
-			R [ 20 ] = t41 - t43;
-			R [ 21 ] = -t50 + t48;
-			R [ 22 ] = v866 * ( t55 - t58 );
-			R [ 23 ] = t63 - t61;
-			R [ 24 ] = 0.5000000000e0f * ( t74 - t68 - t70 + t72 );
-
-			// blow the matrix multiply out by hand, looping is ineficient on a P4...
-			for ( unsigned int iR = 0; iR < 5; iR++ )
-			{
-				const unsigned int uBase = iR * 5;
-				result [ 4 + iR ] = R [ uBase + 0 ] * input [ 4 ] + R [ uBase + 1 ] * input [ 5 ] + R [ uBase + 2 ] * input [ 6 ] + R [ uBase + 3 ] * input [ 7 ] + R [ uBase + 4 ] * input [ 8 ];
-			}
-		}
+	case 5:
+		sh4_rot_ ( mRot, ( float * ) input, result );
 		break;
 
-		case 4:
-			sh3_rot_ ( mRot, ( float * ) input, result );
-			break;
+	case 6:
+		sh5_rot_ ( mRot ,( float * ) input, result );
+		break;
 
-		case 5:
-			sh4_rot_ ( mRot, ( float * ) input, result );
-			break;
-
-		case 6:
-			sh5_rot_ ( mRot ,( float * ) input, result );
-			break;
-
-		default:
-			assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
-			return 0;
+	default:
+		assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
+		return 0;
 	}
 
 	return result;
@@ -31552,8 +31550,7 @@ float *XM_CALLCONV XMSHRotate ( float *result, size_t order, FXMMATRIX rotMatrix
 //
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb205461.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XMSHRotateZ ( float *result, size_t order, float angle, const float *input )
+_Use_decl_annotations_ float *XMSHRotateZ ( float *result, size_t order, float angle, const float *input )
 {
 	if ( !result || !input )
 	{
@@ -31752,8 +31749,7 @@ float *XMSHAdd ( float *result, size_t order, const float *inputA, const float *
 //
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb204994.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XMSHScale ( float *result , size_t order, const float *input, float scale )
+_Use_decl_annotations_ float *XMSHScale ( float *result , size_t order, const float *input, float scale )
 {
 	if ( !result || !input )
 	{
@@ -31811,24 +31807,24 @@ float *XMSHMultiply ( float *result , size_t order , const float *inputF , const
 {
 	switch ( order )
 	{
-		case 2:
-			return XMSHMultiply2 ( result , inputF , inputG );
+	case 2:
+		return XMSHMultiply2 ( result , inputF , inputG );
 
-		case 3:
-			return XMSHMultiply3 ( result , inputF , inputG );
+	case 3:
+		return XMSHMultiply3 ( result , inputF , inputG );
 
-		case 4:
-			return XMSHMultiply4 ( result , inputF , inputG );
+	case 4:
+		return XMSHMultiply4 ( result , inputF , inputG );
 
-		case 5:
-			return XMSHMultiply5 ( result , inputF , inputG );
+	case 5:
+		return XMSHMultiply5 ( result , inputF , inputG );
 
-		case 6:
-			return XMSHMultiply6 ( result , inputF , inputG );
+	case 6:
+		return XMSHMultiply6 ( result , inputF , inputG );
 
-		default:
-			assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
-			return 0;
+	default:
+		assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
+		return 0;
 	}
 }
 
@@ -31836,8 +31832,7 @@ float *XMSHMultiply ( float *result , size_t order , const float *inputF , const
 //-------------------------------------------------------------------------------------
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb205454.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XMSHMultiply2 ( float *y , const float *f , const float *g )
+_Use_decl_annotations_ float *XMSHMultiply2 ( float *y , const float *f , const float *g )
 {
 	if ( !y || !f || !g )
 	{
@@ -31878,8 +31873,7 @@ float *XMSHMultiply2 ( float *y , const float *f , const float *g )
 //-------------------------------------------------------------------------------------
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb232906.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XMSHMultiply3 ( float *y , const float *f , const float *g )
+_Use_decl_annotations_ float *XMSHMultiply3 ( float *y , const float *f , const float *g )
 {
 	if ( !y || !f || !g )
 	{
@@ -31999,8 +31993,7 @@ float *XMSHMultiply3 ( float *y , const float *f , const float *g )
 //-------------------------------------------------------------------------------------
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb232907.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XMSHMultiply4 ( float *y, const float *f, const float *g )
+_Use_decl_annotations_ float *XMSHMultiply4 ( float *y, const float *f, const float *g )
 {
 	if ( !y || !f || !g )
 	{
@@ -32333,8 +32326,7 @@ float *XMSHMultiply4 ( float *y, const float *f, const float *g )
 //-------------------------------------------------------------------------------------
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb232908.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_
-float *XMSHMultiply5 ( float *y , const float *f , const float *g )
+_Use_decl_annotations_ float *XMSHMultiply5 ( float *y , const float *f , const float *g )
 {
 	if ( !y || !f || !g )
 	{
@@ -33148,8 +33140,7 @@ float *XMSHMultiply5 ( float *y , const float *f , const float *g )
 //-------------------------------------------------------------------------------------
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb232909.aspx
 //-------------------------------------------------------------------------------------
-_Use_decl_annotations_ float* 
-XMSHMultiply6 ( float *y , const float *f , const float *g )
+_Use_decl_annotations_ float*  XMSHMultiply6 ( float *y , const float *f , const float *g )
 {
 	if ( !y || !f || !g )
 	{
@@ -34903,21 +34894,20 @@ bool XM_CALLCONV XMSHEvalDirectionalLight ( size_t order, FXMVECTOR dir, FXMVECT
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb205451.aspx
 //-------------------------------------------------------------------------------------
 _Use_decl_annotations_
-bool XM_CALLCONV XMSHEvalSphericalLight (
-	size_t order ,
-	FXMVECTOR pos ,
-	float radius ,
-	FXMVECTOR color ,
-	float *resultR ,
-	float *resultG ,
-	float *resultB )
+bool XM_CALLCONV XMSHEvalSphericalLight ( size_t order ,
+										  FXMVECTOR pos,
+										  float radius,
+										  FXMVECTOR color,
+										  float *resultR,
+										  float *resultG,
+										  float *resultB )
 {
 	const float fExtraNormFac [ XM_SH_MAXORDER ] = { 2.0f * sqrtf ( XM_PI ),
-												 2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
-												 2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
-												 2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
-												 2.0f / 3.0f * sqrtf ( XM_PI ),
-												 2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
+		2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
+		2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
+		2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
+		2.0f / 3.0f * sqrtf ( XM_PI ),
+		2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
 
 	if ( !resultR )
 		return false;
@@ -34967,29 +34957,29 @@ bool XM_CALLCONV XMSHEvalSphericalLight (
 
 	switch ( order )
 	{
-		case 2:
-			sh_eval_basis_1 ( fX , fY , fZ , fTmpDir );
-			break;
+	case 2:
+		sh_eval_basis_1 ( fX , fY , fZ , fTmpDir );
+		break;
 
-		case 3:
-			sh_eval_basis_2 ( fX , fY , fZ , fTmpDir );
-			break;
+	case 3:
+		sh_eval_basis_2 ( fX , fY , fZ , fTmpDir );
+		break;
 
-		case 4:
-			sh_eval_basis_3 ( fX , fY , fZ , fTmpDir );
-			break;
+	case 4:
+		sh_eval_basis_3 ( fX , fY , fZ , fTmpDir );
+		break;
 
-		case 5:
-			sh_eval_basis_4 ( fX , fY , fZ , fTmpDir );
-			break;
+	case 5:
+		sh_eval_basis_4 ( fX , fY , fZ , fTmpDir );
+		break;
 
-		case 6:
-			sh_eval_basis_5 ( fX , fY , fZ , fTmpDir );
-			break;
+	case 6:
+		sh_eval_basis_5 ( fX , fY , fZ , fTmpDir );
+		break;
 
-		default:
-			assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
-			return false;
+	default:
+		assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
+		return false;
 	}
 
 	XMFLOAT3A clr;
@@ -35040,21 +35030,20 @@ bool XM_CALLCONV XMSHEvalSphericalLight (
 // http://msdn.microsoft.com/en-us/library/windows/desktop/bb204986.aspx
 //-------------------------------------------------------------------------------------
 _Use_decl_annotations_
-bool XM_CALLCONV XMSHEvalConeLight (
-	size_t order ,
-	FXMVECTOR dir ,
-	float radius ,
-	FXMVECTOR color ,
-	float *resultR ,
-	float *resultG ,
-	float *resultB )
+bool XM_CALLCONV XMSHEvalConeLight ( size_t order ,
+									 FXMVECTOR dir ,
+									 float radius ,
+									 FXMVECTOR color ,
+									 float *resultR ,
+									 float *resultG ,
+									 float *resultB )
 {
 	const float fExtraNormFac [ XM_SH_MAXORDER ] = { 2.0f * sqrtf ( XM_PI ),
-												 2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
-												 2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
-												 2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
-												 2.0f / 3.0f * sqrtf ( XM_PI ),
-												 2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
+		2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
+		2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
+		2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
+		2.0f / 3.0f * sqrtf ( XM_PI ),
+		2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
 	if ( !resultR )
 		return false;
 
@@ -35087,29 +35076,29 @@ bool XM_CALLCONV XMSHEvalConeLight (
 
 		switch ( order )
 		{
-			case 2:
-				sh_eval_basis_1 ( fX , fY , fZ , fTmpDir );
-				break;
+		case 2:
+			sh_eval_basis_1 ( fX , fY , fZ , fTmpDir );
+			break;
 
-			case 3:
-				sh_eval_basis_2 ( fX , fY , fZ , fTmpDir );
-				break;
+		case 3:
+			sh_eval_basis_2 ( fX , fY , fZ , fTmpDir );
+			break;
 
-			case 4:
-				sh_eval_basis_3 ( fX , fY , fZ , fTmpDir );
-				break;
+		case 4:
+			sh_eval_basis_3 ( fX , fY , fZ , fTmpDir );
+			break;
 
-			case 5:
-				sh_eval_basis_4 ( fX , fY , fZ , fTmpDir );
-				break;
+		case 5:
+			sh_eval_basis_4 ( fX , fY , fZ , fTmpDir );
+			break;
 
-			case 6:
-				sh_eval_basis_5 ( fX , fY , fZ , fTmpDir );
-				break;
+		case 6:
+			sh_eval_basis_5 ( fX , fY , fZ , fTmpDir );
+			break;
 
-			default:
-				assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
-				return false;
+		default:
+			assert ( order < XM_SH_MINORDER || order > XM_SH_MAXORDER );
+			return false;
 		}
 
 		XMFLOAT3A clr;
@@ -35176,11 +35165,11 @@ bool XM_CALLCONV XMSHEvalHemisphereLight ( size_t order ,
 										   float *resultB )
 {
 	const float fExtraNormFac [ XM_SH_MAXORDER ] = { 2.0f * sqrtf ( XM_PI ),
-												 2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
-												 2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
-												 2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
-												 2.0f / 3.0f * sqrtf ( XM_PI ),
-												 2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
+		2.0f / 3.0f * sqrtf ( 3.0f * XM_PI ),
+		2.0f / 5.0f * sqrtf ( 5.0f * XM_PI ),
+		2.0f / 7.0f * sqrtf ( 7.0f * XM_PI ),
+		2.0f / 3.0f * sqrtf ( XM_PI ),
+		2.0f / 11.0f * sqrtf ( 11.0f * XM_PI ) };
 	if ( !resultR )
 		return false;
 
@@ -35292,11 +35281,11 @@ bool XM_CALLCONV XMSHEvalHemisphereLight ( size_t order ,
  ****************************************************************************/
 
 #pragma warning( disable : 4616 4619 4061 4265 4626 5039 )
- // C4616/C4619 #pragma warning warnings
- // C4061 numerator 'identifier' in switch of enum 'enumeration' is not explicitly handled by a case label
- // C4265 class has virtual functions, but destructor is not virtual
- // C4626 assignment operator was implicitly defined as deleted
- // C5039 pointer or reference to potentially throwing function passed to extern C function under - EHc
+// C4616/C4619 #pragma warning warnings
+// C4061 numerator 'identifier' in switch of enum 'enumeration' is not explicitly handled by a case label
+// C4265 class has virtual functions, but destructor is not virtual
+// C4626 assignment operator was implicitly defined as deleted
+// C5039 pointer or reference to potentially throwing function passed to extern C function under - EHc
 
 #pragma warning(push)
 #pragma warning(disable: 4365)
@@ -35317,121 +35306,121 @@ bool XM_CALLCONV XMSHEvalHemisphereLight ( size_t order ,
 // This code is lifted from DirectXTex http://go.microsoft.com/fwlink/?LinkId=248926
 // If you need additional DXGI format support, see DirectXTexConvert.cpp
 //-------------------------------------------------------------------------------------
-#define LOAD_SCANLINE_D3D11( type, func )\
-        if ( size >= sizeof(type) )\
-        {\
-            const type * __restrict sPtr = ( const type* ) pSource;\
-            for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) )\
-            {\
-                if ( dPtr >= ePtr ) break;\
-                *(dPtr++) = func( sPtr++ );\
-            }\
-            return true;\
-        }\
-        return false;
+#define LOAD_SCANLINE_D3D11( type, func )								\
+	if ( size >= sizeof(type) )											\
+	{																	\
+		const type * __restrict sPtr = ( const type* ) pSource;			\
+		for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) ) \
+		{																\
+			if ( dPtr >= ePtr ) break;									\
+			*(dPtr++) = func( sPtr++ );									\
+		}																\
+		return true;													\
+	}																	\
+	return false;
 
-#define LOAD_SCANLINE3_D3D11( type, func, defvec )\
-        if ( size >= sizeof(type) )\
-        {\
-            const type * __restrict sPtr = ( const type* ) pSource;\
-            for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) )\
-            {\
-                XMVECTOR v = func( sPtr++ );\
-                if ( dPtr >= ePtr ) break;\
-                *(dPtr++) = XMVectorSelect( defvec.v, v, g_XMSelect1110.v );\
-            }\
-            return true;\
-        }\
-        return false;
+#define LOAD_SCANLINE3_D3D11( type, func, defvec )						\
+	if ( size >= sizeof(type) )											\
+	{																	\
+		const type * __restrict sPtr = ( const type* ) pSource;			\
+		for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) ) \
+		{																\
+			XMVECTOR v = func( sPtr++ );								\
+			if ( dPtr >= ePtr ) break;									\
+			*(dPtr++) = XMVectorSelect( defvec.v, v, g_XMSelect1110.v ); \
+		}																\
+		return true;													\
+	}																	\
+	return false;
 
-#define LOAD_SCANLINE2_D3D11( type, func, defvec )\
-        if ( size >= sizeof(type) )\
-        {\
-            const type * __restrict sPtr = ( const type* ) pSource;\
-            for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) )\
-            {\
-                XMVECTOR v = func ( sPtr++ ); \
-                if ( dPtr >= ePtr ) break; \
-                *(dPtr++) = XMVectorSelect ( defvec.v, v, g_XMSelect1100.v ); \
-            }\
-            return true;\
-        }\
-        return false;
+#define LOAD_SCANLINE2_D3D11( type, func, defvec )						\
+	if ( size >= sizeof(type) )											\
+	{																	\
+		const type * __restrict sPtr = ( const type* ) pSource;			\
+		for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) ) \
+		{																\
+			XMVECTOR v = func ( sPtr++ );								\
+			if ( dPtr >= ePtr ) break;									\
+			*(dPtr++) = XMVectorSelect ( defvec.v, v, g_XMSelect1100.v ); \
+		}																\
+		return true;													\
+	}																	\
+	return false;
 
 #pragma warning(push)
 #pragma warning(disable : 6101)
 _Success_ ( return ) bool _LoadScanline_D3D11 ( _Out_writes_ ( count ) XMVECTOR *pDestination,
-										  size_t count ,
-										  _In_reads_bytes_ ( size ) LPCVOID pSource ,
-										  size_t size ,
-										  DXGI_FORMAT format )
+												size_t count ,
+												_In_reads_bytes_ ( size ) LPCVOID pSource ,
+												size_t size ,
+												DXGI_FORMAT format )
 {
-		assert ( pDestination && ( count > 0 ) && ( ( ( ( uintptr_t ) pDestination ) & 0xF ) == 0 ) );
-		assert ( pSource && size > 0 );
+	assert ( pDestination && ( count > 0 ) && ( ( ( ( uintptr_t ) pDestination ) & 0xF ) == 0 ) );
+	assert ( pSource && size > 0 );
 
-		XMVECTOR *__restrict dPtr = pDestination;
-		if ( !dPtr )
+	XMVECTOR *__restrict dPtr = pDestination;
+	if ( !dPtr )
+	{
+		return false;
+	}
+
+	const XMVECTOR *ePtr = pDestination + count;
+
+	switch ( format )
+	{
+	case DXGI_FORMAT_R32G32B32A32_FLOAT:
+	{
+		size_t msize = ( size > ( sizeof ( XMVECTOR ) * count ) ) ? ( sizeof ( XMVECTOR ) * count ) : size;
+		memcpy_s ( dPtr , sizeof ( XMVECTOR ) * count , pSource , msize );
+	}
+	return true;
+
+	case DXGI_FORMAT_R32G32B32_FLOAT:
+		LOAD_SCANLINE3_D3D11 ( XMFLOAT3, XMLoadFloat3 , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R16G16B16A16_FLOAT:
+		LOAD_SCANLINE_D3D11 ( XMHALF4 , XMLoadHalf4 )
+
+	case DXGI_FORMAT_R32G32_FLOAT:
+		LOAD_SCANLINE2_D3D11 ( XMFLOAT2 , XMLoadFloat2 , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R11G11B10_FLOAT:
+		LOAD_SCANLINE3_D3D11 ( XMFLOAT3PK , XMLoadFloat3PK , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R16G16_FLOAT:
+		LOAD_SCANLINE2_D3D11 ( XMHALF2 , XMLoadHalf2 , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R32_FLOAT:
+		if ( size >= sizeof ( float ) )
 		{
-			return false;
-		}
-
-		const XMVECTOR *ePtr = pDestination + count;
-
-		switch ( format )
-		{
-			case DXGI_FORMAT_R32G32B32A32_FLOAT:
+			const float *__restrict sPtr = ( const float * ) pSource;
+			for ( size_t icount = 0; icount < size; icount += sizeof ( float ) )
 			{
-				size_t msize = ( size > ( sizeof ( XMVECTOR ) * count ) ) ? ( sizeof ( XMVECTOR ) * count ) : size;
-				memcpy_s ( dPtr , sizeof ( XMVECTOR ) * count , pSource , msize );
+				XMVECTOR v = XMLoadFloat ( sPtr++ );
+				if ( dPtr >= ePtr ) break;
+				*( dPtr++ ) = XMVectorSelect ( g_XMIdentityR3.v , v , g_XMSelect1000.v );
 			}
 			return true;
-
-			case DXGI_FORMAT_R32G32B32_FLOAT:
-				LOAD_SCANLINE3_D3D11 ( XMFLOAT3, XMLoadFloat3 , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R16G16B16A16_FLOAT:
-				LOAD_SCANLINE_D3D11 ( XMHALF4 , XMLoadHalf4 )
-
-			case DXGI_FORMAT_R32G32_FLOAT:
-				LOAD_SCANLINE2_D3D11 ( XMFLOAT2 , XMLoadFloat2 , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R11G11B10_FLOAT:
-				LOAD_SCANLINE3_D3D11 ( XMFLOAT3PK , XMLoadFloat3PK , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R16G16_FLOAT:
-				LOAD_SCANLINE2_D3D11 ( XMHALF2 , XMLoadHalf2 , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R32_FLOAT:
-				if ( size >= sizeof ( float ) )
-				{
-					const float *__restrict sPtr = ( const float * ) pSource;
-					for ( size_t icount = 0; icount < size; icount += sizeof ( float ) )
-					{
-						XMVECTOR v = XMLoadFloat ( sPtr++ );
-						if ( dPtr >= ePtr ) break;
-						*( dPtr++ ) = XMVectorSelect ( g_XMIdentityR3.v , v , g_XMSelect1000.v );
-					}
-					return true;
-				}
-				return false;
-
-			case DXGI_FORMAT_R16_FLOAT:
-				if ( size >= sizeof ( HALF ) )
-				{
-					const HALF *__restrict sPtr = ( const HALF * ) pSource;
-					for ( size_t icount = 0; icount < size; icount += sizeof ( HALF ) )
-					{
-						if ( dPtr >= ePtr ) break;
-						*( dPtr++ ) = XMVectorSet ( XMConvertHalfToFloat ( *sPtr++ ) , 0.f , 0.f , 1.f );
-					}
-					return true;
-				}
-				return false;
-
-			default:
-				return false;
 		}
+		return false;
+
+	case DXGI_FORMAT_R16_FLOAT:
+		if ( size >= sizeof ( HALF ) )
+		{
+			const HALF *__restrict sPtr = ( const HALF * ) pSource;
+			for ( size_t icount = 0; icount < size; icount += sizeof ( HALF ) )
+			{
+				if ( dPtr >= ePtr ) break;
+				*( dPtr++ ) = XMVectorSet ( XMConvertHalfToFloat ( *sPtr++ ) , 0.f , 0.f , 1.f );
+			}
+			return true;
+		}
+		return false;
+
+	default:
+		return false;
 	}
+}
 #pragma warning(pop)
 
 
@@ -35474,22 +35463,22 @@ HRESULT SHProjectCubeMap_D3D11 ( ID3D11DeviceContext *context , size_t order , I
 
 	switch ( desc.Format )
 	{
-		case DXGI_FORMAT_R32G32B32A32_FLOAT:
-		case DXGI_FORMAT_R32G32B32_FLOAT:
-		case DXGI_FORMAT_R16G16B16A16_FLOAT:
-		case DXGI_FORMAT_R32G32_FLOAT:
-		case DXGI_FORMAT_R11G11B10_FLOAT:
-		case DXGI_FORMAT_R16G16_FLOAT:
-		case DXGI_FORMAT_R32_FLOAT:
-		case DXGI_FORMAT_R16_FLOAT:
-		{
-			// See _LoadScanline to support more pixel formats
-		} break;
+	case DXGI_FORMAT_R32G32B32A32_FLOAT:
+	case DXGI_FORMAT_R32G32B32_FLOAT:
+	case DXGI_FORMAT_R16G16B16A16_FLOAT:
+	case DXGI_FORMAT_R32G32_FLOAT:
+	case DXGI_FORMAT_R11G11B10_FLOAT:
+	case DXGI_FORMAT_R16G16_FLOAT:
+	case DXGI_FORMAT_R32_FLOAT:
+	case DXGI_FORMAT_R16_FLOAT:
+	{
+		// See _LoadScanline to support more pixel formats
+	} break;
 
-		default:
-		{
-			return E_FAIL;
-		}
+	default:
+	{
+		return E_FAIL;
+	}
 	}
 
 	//--- Create a staging resource copy (if needed) to be able to read data
@@ -35591,53 +35580,53 @@ HRESULT SHProjectCubeMap_D3D11 ( ID3D11DeviceContext *context , size_t order , I
 				float ix , iy , iz;
 				switch ( face )
 				{
-					case 0: // Positive X
-					{
-						iz = 1.0f - ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
-						iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
-						ix = 1.0f;
-					} break;
+				case 0: // Positive X
+				{
+					iz = 1.0f - ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
+					iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
+					ix = 1.0f;
+				} break;
 
-					case 1: // Negative X
-					{
-						iz = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
-						iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
-						ix = -1;
-					} break;
+				case 1: // Negative X
+				{
+					iz = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
+					iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
+					ix = -1;
+				} break;
 
-					case 2: // Positive Y
-					{
-						iz = -1.0f + ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
-						iy = 1.0f;
-						ix = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
-					} break;
+				case 2: // Positive Y
+				{
+					iz = -1.0f + ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
+					iy = 1.0f;
+					ix = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
+				} break;
 
-					case 3: // Negative Y
-					{
-						iz = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
-						iy = -1.0f;
-						ix = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
-					} break;
+				case 3: // Negative Y
+				{
+					iz = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
+					iy = -1.0f;
+					ix = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
+				} break;
 
-					case 4: // Positive Z
-					{
-						iz = 1.0f;
-						iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
-						ix = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
-					} break;
+				case 4: // Positive Z
+				{
+					iz = 1.0f;
+					iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
+					ix = -1.0f + ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
+				} break;
 
-					case 5: // Negative Z
-					{
-						iz = -1.0f;
-						iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
-						ix = 1.0f - ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
-					} break;
+				case 5: // Negative Z
+				{
+					iz = -1.0f;
+					iy = 1.0f - ( 2.0f * ( float ) y + 1.0f ) * fPicSize;
+					ix = 1.0f - ( 2.0f * ( float ) x + 1.0f ) * fPicSize;
+				} break;
 
-					default:
-					{
-						ix = iy = iz = 0.f;
-						assert ( false );
-					} break;
+				default:
+				{
+					ix = iy = iz = 0.f;
+					assert ( false );
+				} break;
 				}
 
 				XMVECTOR dir = XMVectorSet ( ix , iy , iz , 0 );
@@ -35681,11 +35670,11 @@ HRESULT SHProjectCubeMap_D3D11 ( ID3D11DeviceContext *context , size_t order , I
  ****************************************************************************/
 
 #pragma warning( disable : 4616 4619 4061 4265 4626 5039 )
- // C4616/C4619 #pragma warning warnings
- // C4061 numerator 'identifier' in switch of enum 'enumeration' is not explicitly handled by a case label
- // C4265 class has virtual functions, but destructor is not virtual
- // C4626 assignment operator was implicitly defined as deleted
- // C5039 pointer or reference to potentially throwing function passed to extern C function under - EHc
+// C4616/C4619 #pragma warning warnings
+// C4061 numerator 'identifier' in switch of enum 'enumeration' is not explicitly handled by a case label
+// C4265 class has virtual functions, but destructor is not virtual
+// C4626 assignment operator was implicitly defined as deleted
+// C5039 pointer or reference to potentially throwing function passed to extern C function under - EHc
 
 #include <d3d12.h>
 #include <memory.h>
@@ -35702,124 +35691,124 @@ HRESULT SHProjectCubeMap_D3D11 ( ID3D11DeviceContext *context , size_t order , I
 // This code is lifted from DirectXTex http://go.microsoft.com/fwlink/?LinkId=248926
 // If you need additional DXGI format support, see DirectXTexConvert.cpp
 //-------------------------------------------------------------------------------------
-#define LOAD_SCANLINE_D3D12( type, func )\
-        if ( size >= sizeof(type) )\
-        {\
-            const type * __restrict sPtr = ( const type* ) pSource;\
-            for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) )\
-            {\
-                if ( dPtr >= ePtr ) break;\
-                *(dPtr++) = func( sPtr++ );\
-            }\
-            return true;\
-        }\
-        return false;
+#define LOAD_SCANLINE_D3D12( type, func )								\
+	if ( size >= sizeof(type) )											\
+	{																	\
+		const type * __restrict sPtr = ( const type* ) pSource;			\
+		for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) ) \
+		{																\
+			if ( dPtr >= ePtr ) break;									\
+			*(dPtr++) = func( sPtr++ );									\
+		}																\
+		return true;													\
+	}																	\
+	return false;
 
-#define LOAD_SCANLINE3_D3D12( type, func, defvec )\
-        if ( size >= sizeof(type) )\
-        {\
-            const type * __restrict sPtr = ( const type* ) pSource;\
-            for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) )\
-            {\
-                XMVECTOR v = func( sPtr++ );\
-                if ( dPtr >= ePtr ) break;\
-                *(dPtr++) = XMVectorSelect( defvec.v, v, g_XMSelect1110.v );\
-            }\
-            return true;\
-        }\
-        return false;
+#define LOAD_SCANLINE3_D3D12( type, func, defvec )						\
+	if ( size >= sizeof(type) )											\
+	{																	\
+		const type * __restrict sPtr = ( const type* ) pSource;			\
+		for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) ) \
+		{																\
+			XMVECTOR v = func( sPtr++ );								\
+			if ( dPtr >= ePtr ) break;									\
+			*(dPtr++) = XMVectorSelect( defvec.v, v, g_XMSelect1110.v ); \
+		}																\
+		return true;													\
+	}																	\
+	return false;
 
-#define LOAD_SCANLINE2_D3D12( type, func, defvec )\
-        if ( size >= sizeof(type) )\
-        {\
-            const type * __restrict sPtr = ( const type* ) pSource;\
-            for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) )\
-            {\
-                XMVECTOR v = func( sPtr++ );\
-                if ( dPtr >= ePtr ) break;\
-                *(dPtr++) = XMVectorSelect( defvec.v, v, g_XMSelect1100.v );\
-            }\
-            return true;\
-        }\
-        return false;
+#define LOAD_SCANLINE2_D3D12( type, func, defvec )						\
+	if ( size >= sizeof(type) )											\
+	{																	\
+		const type * __restrict sPtr = ( const type* ) pSource;			\
+		for( size_t icount = 0; icount < ( size - sizeof(type) + 1 ); icount += sizeof(type) ) \
+		{																\
+			XMVECTOR v = func( sPtr++ );								\
+			if ( dPtr >= ePtr ) break;									\
+			*(dPtr++) = XMVectorSelect( defvec.v, v, g_XMSelect1100.v ); \
+		}																\
+		return true;													\
+	}																	\
+	return false;
 
 #pragma warning(push)
 #pragma warning(disable : 6101)
-	_Success_ ( return )
-		bool _LoadScanline_D3D12 (
-			_Out_writes_ ( count ) XMVECTOR *pDestination ,
-			size_t count ,
-			_In_reads_bytes_ ( size ) LPCVOID pSource ,
-			size_t size ,
-			DXGI_FORMAT format )
+_Success_ ( return )
+bool _LoadScanline_D3D12 (
+	_Out_writes_ ( count ) XMVECTOR *pDestination ,
+	size_t count ,
+	_In_reads_bytes_ ( size ) LPCVOID pSource ,
+	size_t size ,
+	DXGI_FORMAT format )
+{
+	assert ( pDestination && count > 0 && ( ( ( uintptr_t ) pDestination  & 0xF ) == 0 ) );
+	assert ( pSource && size > 0 );
+
+
+	XMVECTOR *__restrict dPtr = pDestination;
+	if ( !dPtr )
 	{
-		assert ( pDestination && count > 0 && ( ( ( uintptr_t ) pDestination  & 0xF ) == 0 ) );
-		assert ( pSource && size > 0 );
+		return false;
+	}
 
+	const XMVECTOR *ePtr = pDestination + count;
 
-		XMVECTOR *__restrict dPtr = pDestination;
-		if ( !dPtr )
+	switch ( format )
+	{
+	case DXGI_FORMAT_R32G32B32A32_FLOAT:
+	{
+		size_t msize = ( size > ( sizeof ( XMVECTOR ) * count ) ) ? ( sizeof ( XMVECTOR ) * count ) : size;
+		memcpy_s ( dPtr , sizeof ( XMVECTOR ) * count , pSource , msize );
+	}
+	return true;
+
+	case DXGI_FORMAT_R32G32B32_FLOAT:
+		LOAD_SCANLINE3_D3D12 ( XMFLOAT3 , XMLoadFloat3 , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R16G16B16A16_FLOAT:
+		LOAD_SCANLINE_D3D12 ( XMHALF4 , XMLoadHalf4 )
+
+	case DXGI_FORMAT_R32G32_FLOAT:
+		LOAD_SCANLINE2_D3D12 ( XMFLOAT2 , XMLoadFloat2 , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R11G11B10_FLOAT:
+		LOAD_SCANLINE3_D3D12 ( XMFLOAT3PK , XMLoadFloat3PK , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R16G16_FLOAT:
+		LOAD_SCANLINE2_D3D12 ( XMHALF2 , XMLoadHalf2 , g_XMIdentityR3 )
+
+	case DXGI_FORMAT_R32_FLOAT:
+		if ( size >= sizeof ( float ) )
 		{
-			return false;
-		}
-
-		const XMVECTOR *ePtr = pDestination + count;
-
-		switch ( format )
-		{
-			case DXGI_FORMAT_R32G32B32A32_FLOAT:
+			const float *__restrict sPtr = ( const float * ) pSource;
+			for ( size_t icount = 0; icount < size; icount += sizeof ( float ) )
 			{
-				size_t msize = ( size > ( sizeof ( XMVECTOR ) * count ) ) ? ( sizeof ( XMVECTOR ) * count ) : size;
-				memcpy_s ( dPtr , sizeof ( XMVECTOR ) * count , pSource , msize );
+				XMVECTOR v = XMLoadFloat ( sPtr++ );
+				if ( dPtr >= ePtr ) break;
+				*( dPtr++ ) = XMVectorSelect ( g_XMIdentityR3.v , v , g_XMSelect1000.v );
 			}
 			return true;
-
-			case DXGI_FORMAT_R32G32B32_FLOAT:
-				LOAD_SCANLINE3_D3D12 ( XMFLOAT3 , XMLoadFloat3 , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R16G16B16A16_FLOAT:
-				LOAD_SCANLINE_D3D12 ( XMHALF4 , XMLoadHalf4 )
-
-			case DXGI_FORMAT_R32G32_FLOAT:
-				LOAD_SCANLINE2_D3D12 ( XMFLOAT2 , XMLoadFloat2 , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R11G11B10_FLOAT:
-				LOAD_SCANLINE3_D3D12 ( XMFLOAT3PK , XMLoadFloat3PK , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R16G16_FLOAT:
-				LOAD_SCANLINE2_D3D12 ( XMHALF2 , XMLoadHalf2 , g_XMIdentityR3 )
-
-			case DXGI_FORMAT_R32_FLOAT:
-				if ( size >= sizeof ( float ) )
-				{
-					const float *__restrict sPtr = ( const float * ) pSource;
-					for ( size_t icount = 0; icount < size; icount += sizeof ( float ) )
-					{
-						XMVECTOR v = XMLoadFloat ( sPtr++ );
-						if ( dPtr >= ePtr ) break;
-						*( dPtr++ ) = XMVectorSelect ( g_XMIdentityR3.v , v , g_XMSelect1000.v );
-					}
-					return true;
-				}
-				return false;
-
-			case DXGI_FORMAT_R16_FLOAT:
-				if ( size >= sizeof ( HALF ) )
-				{
-					const HALF *__restrict sPtr = ( const HALF * ) pSource;
-					for ( size_t icount = 0; icount < size; icount += sizeof ( HALF ) )
-					{
-						if ( dPtr >= ePtr ) break;
-						*( dPtr++ ) = XMVectorSet ( XMConvertHalfToFloat ( *sPtr++ ) , 0.f , 0.f , 1.f );
-					}
-					return true;
-				}
-				return false;
-
-			default:
-				return false;
 		}
+		return false;
+
+	case DXGI_FORMAT_R16_FLOAT:
+		if ( size >= sizeof ( HALF ) )
+		{
+			const HALF *__restrict sPtr = ( const HALF * ) pSource;
+			for ( size_t icount = 0; icount < size; icount += sizeof ( HALF ) )
+			{
+				if ( dPtr >= ePtr ) break;
+				*( dPtr++ ) = XMVectorSet ( XMConvertHalfToFloat ( *sPtr++ ) , 0.f , 0.f , 1.f );
+			}
+			return true;
+		}
+		return false;
+
+	default:
+		return false;
 	}
+}
 #pragma warning(pop)
 
 //-------------------------------------------------------------------------------------
@@ -35841,19 +35830,19 @@ HRESULT SHProjectCubeMap_D3D12 ( size_t order , const D3D12_RESOURCE_DESC *desc 
 
 	switch ( desc->Format )
 	{
-		case DXGI_FORMAT_R32G32B32A32_FLOAT:
-		case DXGI_FORMAT_R32G32B32_FLOAT:
-		case DXGI_FORMAT_R16G16B16A16_FLOAT:
-		case DXGI_FORMAT_R32G32_FLOAT:
-		case DXGI_FORMAT_R11G11B10_FLOAT:
-		case DXGI_FORMAT_R16G16_FLOAT:
-		case DXGI_FORMAT_R32_FLOAT:
-		case DXGI_FORMAT_R16_FLOAT:
-			// See _LoadScanline to support more pixel formats
-			break;
+	case DXGI_FORMAT_R32G32B32A32_FLOAT:
+	case DXGI_FORMAT_R32G32B32_FLOAT:
+	case DXGI_FORMAT_R16G16B16A16_FLOAT:
+	case DXGI_FORMAT_R32G32_FLOAT:
+	case DXGI_FORMAT_R11G11B10_FLOAT:
+	case DXGI_FORMAT_R16G16_FLOAT:
+	case DXGI_FORMAT_R32_FLOAT:
+	case DXGI_FORMAT_R16_FLOAT:
+		// See _LoadScanline to support more pixel formats
+		break;
 
-		default:
-			return E_FAIL;
+	default:
+		return E_FAIL;
 	}
 
 	//--- Setup for SH projection
@@ -35914,46 +35903,46 @@ HRESULT SHProjectCubeMap_D3D12 ( size_t order , const D3D12_RESOURCE_DESC *desc 
 				float ix , iy , iz;
 				switch ( face )
 				{
-					case 0: // Positive X
-						iz = 1.0f - ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
-						iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
-						ix = 1.0f;
-						break;
+				case 0: // Positive X
+					iz = 1.0f - ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
+					iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
+					ix = 1.0f;
+					break;
 
-					case 1: // Negative X
-						iz = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
-						iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
-						ix = -1;
-						break;
+				case 1: // Negative X
+					iz = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
+					iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
+					ix = -1;
+					break;
 
-					case 2: // Positive Y
-						iz = -1.0f + ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
-						iy = 1.0f;
-						ix = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
-						break;
+				case 2: // Positive Y
+					iz = -1.0f + ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
+					iy = 1.0f;
+					ix = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
+					break;
 
-					case 3: // Negative Y
-						iz = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
-						iy = -1.0f;
-						ix = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
-						break;
+				case 3: // Negative Y
+					iz = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
+					iy = -1.0f;
+					ix = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
+					break;
 
-					case 4: // Positive Z
-						iz = 1.0f;
-						iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
-						ix = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
-						break;
+				case 4: // Positive Z
+					iz = 1.0f;
+					iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
+					ix = -1.0f + ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
+					break;
 
-					case 5: // Negative Z
-						iz = -1.0f;
-						iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
-						ix = 1.0f - ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
-						break;
+				case 5: // Negative Z
+					iz = -1.0f;
+					iy = 1.0f - ( 2.0f * ( float )  y + 1.0f ) * fPicSize;
+					ix = 1.0f - ( 2.0f * ( float )  x + 1.0f ) * fPicSize;
+					break;
 
-					default:
-						ix = iy = iz = 0.f;
-						assert ( false );
-						break;
+				default:
+					ix = iy = iz = 0.f;
+					assert ( false );
+					break;
 				}
 
 				XMVECTOR dir = XMVectorSet ( ix , iy , iz , 0 );
@@ -36517,12 +36506,12 @@ inline void FFT16 (
 		{ { { 1.0f, 0.38268343f, -0.70710677f, -0.92387950f } } }
 	};
 	static const XMVECTORF32 aUnityTableImaginary [ 4 ] =
-	{
-		{ { { -0.0f, -0.0f, -0.0f, -0.0f } } },
-		{ { { -0.0f, -0.38268343f, -0.70710677f, -0.92387950f } } },
-		{ { { -0.0f, -0.70710677f, -1.0f, -0.70710677f } } },
-		{ { { -0.0f, -0.92387950f, -0.70710677f, 0.38268343f } } }
-	};
+		{
+			{ { { -0.0f, -0.0f, -0.0f, -0.0f } } },
+			{ { { -0.0f, -0.38268343f, -0.70710677f, -0.92387950f } } },
+			{ { { -0.0f, -0.70710677f, -1.0f, -0.70710677f } } },
+			{ { { -0.0f, -0.92387950f, -0.70710677f, 0.38268343f } } }
+		};
 
 	for ( size_t uIndex = 0; uIndex < uCount; ++uIndex )
 	{
@@ -36693,10 +36682,9 @@ inline void FFTInitializeUnityTable ( _Out_writes_ ( uLength ) XMVECTOR *__restr
 //  pInput      - [in]  input buffer, samples in bit reversed order as generated by FFT functions, cannot overlap pOutput, must have at least (1<<uLog2Length)/4 elements
 //  uLog2Length - [in]  LOG (base 2) of FFT length in samples, must be >= 2
 //----------------------------------------------------------------------------------
-inline void FFTUnswizzle (
-	_Out_writes_ ( ( 1 << uLog2Length ) / 4 ) XMVECTOR *__restrict pOutput ,
-	_In_reads_ ( ( 1 << uLog2Length ) / 4 ) const XMVECTOR *__restrict pInput ,
-	_In_ const size_t uLog2Length )
+inline void FFTUnswizzle ( _Out_writes_ ( ( 1 << uLog2Length ) / 4 ) XMVECTOR *__restrict pOutput,
+						   _In_reads_ ( ( 1 << uLog2Length ) / 4 ) const XMVECTOR *__restrict pInput,
+						   _In_ const size_t uLog2Length )
 {
 	assert ( pOutput );
 	assert ( pInput );
@@ -36754,9 +36742,9 @@ inline void FFTUnswizzle (
 			XMStoreFloat4A ( &f4a , pInput [ uIndex ] );
 			const size_t n = ( uIndex >> 1 );
 			size_t uAddr = ( ( ( ( size_t ) ( cSwizzleTable [ n & 0xff ] ) << 24 ) |
-							 ( ( size_t ) ( cSwizzleTable [ ( n >> 8 ) & 0xff ] ) << 16 ) |
-							 ( ( size_t ) ( cSwizzleTable [ ( n >> 16 ) & 0xff ] ) << 8 ) |
-							 ( ( size_t ) ( cSwizzleTable [ ( n >> 24 ) ] ) ) ) >> uRev32 ) |
+							   ( ( size_t ) ( cSwizzleTable [ ( n >> 8 ) & 0xff ] ) << 16 ) |
+							   ( ( size_t ) ( cSwizzleTable [ ( n >> 16 ) & 0xff ] ) << 8 ) |
+							   ( ( size_t ) ( cSwizzleTable [ ( n >> 24 ) ] ) ) ) >> uRev32 ) |
 				( ( uIndex & 1 ) * uRev7 * 4 );
 			pfOutput [ uAddr ] = f4a.x;
 			uAddr += uRev7;
@@ -37051,8 +37039,6 @@ inline void IFFTDeinterleaved (
 }
 
 #pragma warning(pop)
-
-
 
 #ifdef __clang__
 #pragma clang diagnostic pop
