@@ -10,11 +10,13 @@ It can only be used by C.
 Just add:
 
 #define _XM_NO_INTRINSICS_
+
 #include "DirectXMath.h"
 
 or 
 
 #define _XM_SSE_INTRINSICS_
+
 #include "DirectXMath.h"
 
 to your C file.
