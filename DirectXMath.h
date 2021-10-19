@@ -1512,13 +1512,17 @@ float XMScalarACosEst  ( float Value );
 // times in a function, but if the constant is used (and declared) in a
 // separate math routine it would be reloaded.
 
+// Note: Since this library is single header, then there is no need for extern anymore
 #ifndef XMGLOBALCONST
 #if defined(__GNUC__) && !defined(__MINGW32__)
-#define XMGLOBALCONST extern const __attribute__((weak))
+// #define XMGLOBALCONST extern const __attribute__((weak))
+#define XMGLOBALCONST const __attribute__((weak))
 #else
-#define XMGLOBALCONST extern const __declspec(selectany)
+// #define XMGLOBALCONST extern const __declspec(selectany)
+#define XMGLOBALCONST const __declspec(selectany)
 #endif
 #endif
+
 
 XMGLOBALCONST XMVECTORF32 g_XMSinCoefficients0 = { { { -0.16666667f, +0.0083333310f, -0.00019840874f, +2.7525562e-06f } } };
 XMGLOBALCONST XMVECTORF32 g_XMSinCoefficients1 = { { { -2.3889859e-08f, -0.16665852f /*Est1*/, +0.0083139502f /*Est2*/, -0.00018524670f /*Est3*/ } } };
