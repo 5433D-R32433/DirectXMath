@@ -304,7 +304,7 @@ const float XMConvertToRadians ( float fDegrees )
 	return fDegrees * ( XM_PI / 180.0f );
 }
 
-const float XMConvertToDegrees ( float fRadians ) 
+const float XMConvertToDegrees ( float fRadians )
 {
 	return fRadians * (180.0f / XM_PI);
 }
@@ -986,11 +986,11 @@ XMVECTOR XM_CALLCONV XMVectorCeiling    ( FXMVECTOR V );
 XMVECTOR XM_CALLCONV XMVectorClamp      ( FXMVECTOR V, FXMVECTOR Min, FXMVECTOR Max );
 XMVECTOR XM_CALLCONV XMVectorSaturate   ( FXMVECTOR V );
 
-XMVECTOR XM_CALLCONV XMVectorAndInt(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR XM_CALLCONV XMVectorAndCInt(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR XM_CALLCONV XMVectorOrInt(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR XM_CALLCONV XMVectorNorInt(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR XM_CALLCONV XMVectorXorInt(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVectorAndInt     ( FXMVECTOR V1, FXMVECTOR V2 );
+XMVECTOR XM_CALLCONV XMVectorAndCInt    ( FXMVECTOR V1, FXMVECTOR V2 );
+XMVECTOR XM_CALLCONV XMVectorOrInt      ( FXMVECTOR V1, FXMVECTOR V2 );
+XMVECTOR XM_CALLCONV XMVectorNorInt     ( FXMVECTOR V1, FXMVECTOR V2 );
+XMVECTOR XM_CALLCONV XMVectorXorInt     ( FXMVECTOR V1, FXMVECTOR V2 );
 
 XMVECTOR XM_CALLCONV XMVectorNegate(FXMVECTOR V);
 XMVECTOR XM_CALLCONV XMVectorAdd(FXMVECTOR V1, FXMVECTOR V2);
@@ -1055,56 +1055,56 @@ XMVECTOR XM_CALLCONV XMVectorBaryCentricV(FXMVECTOR Position0, FXMVECTOR Positio
  *
  ****************************************************************************/
 
-bool        XM_CALLCONV     XMVector2Equal(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector2EqualR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2EqualInt(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector2EqualIntR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2NearEqual(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR Epsilon);
-bool        XM_CALLCONV     XMVector2NotEqual(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2NotEqualInt(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2Greater(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector2GreaterR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2GreaterOrEqual(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector2GreaterOrEqualR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2Less(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2LessOrEqual(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector2InBounds(FXMVECTOR V, FXMVECTOR Bounds);
+bool     XM_CALLCONV XMVector2Equal(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector2EqualR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2EqualInt(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector2EqualIntR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2NearEqual(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR Epsilon);
+bool     XM_CALLCONV XMVector2NotEqual(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2NotEqualInt(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2Greater(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector2GreaterR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2GreaterOrEqual(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector2GreaterOrEqualR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2Less(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2LessOrEqual(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector2InBounds(FXMVECTOR V, FXMVECTOR Bounds);
 
-bool        XM_CALLCONV     XMVector2IsNaN(FXMVECTOR V);
-bool        XM_CALLCONV     XMVector2IsInfinite(FXMVECTOR V);
+bool     XM_CALLCONV XMVector2IsNaN(FXMVECTOR V);
+bool     XM_CALLCONV XMVector2IsInfinite(FXMVECTOR V);
 
-XMVECTOR    XM_CALLCONV     XMVector2Dot(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector2Cross(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector2LengthSq(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2ReciprocalLengthEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2ReciprocalLength(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2LengthEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2Length(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2NormalizeEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2Normalize(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2ClampLength(FXMVECTOR V, float LengthMin, float LengthMax);
-XMVECTOR    XM_CALLCONV     XMVector2ClampLengthV(FXMVECTOR V, FXMVECTOR LengthMin, FXMVECTOR LengthMax);
-XMVECTOR    XM_CALLCONV     XMVector2Reflect(FXMVECTOR Incident, FXMVECTOR Normal);
-XMVECTOR    XM_CALLCONV     XMVector2Refract(FXMVECTOR Incident, FXMVECTOR Normal, float RefractionIndex);
-XMVECTOR    XM_CALLCONV     XMVector2RefractV(FXMVECTOR Incident, FXMVECTOR Normal, FXMVECTOR RefractionIndex);
-XMVECTOR    XM_CALLCONV     XMVector2Orthogonal(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector2AngleBetweenNormalsEst(FXMVECTOR N1, FXMVECTOR N2);
-XMVECTOR    XM_CALLCONV     XMVector2AngleBetweenNormals(FXMVECTOR N1, FXMVECTOR N2);
-XMVECTOR    XM_CALLCONV     XMVector2AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector2LinePointDistance(FXMVECTOR LinePoint1, FXMVECTOR LinePoint2, FXMVECTOR Point);
-XMVECTOR    XM_CALLCONV     XMVector2IntersectLine(FXMVECTOR Line1Point1, FXMVECTOR Line1Point2, FXMVECTOR Line2Point1, GXMVECTOR Line2Point2);
-XMVECTOR    XM_CALLCONV     XMVector2Transform(FXMVECTOR V, FXMMATRIX M);
-XMFLOAT4* XM_CALLCONV     XMVector2TransformStream(_Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (VectorCount - 1)) XMFLOAT4* pOutputStream,
+XMVECTOR XM_CALLCONV XMVector2Dot(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector2Cross(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector2LengthSq(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2ReciprocalLengthEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2ReciprocalLength(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2LengthEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2Length(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2NormalizeEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2Normalize(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2ClampLength(FXMVECTOR V, float LengthMin, float LengthMax);
+XMVECTOR XM_CALLCONV XMVector2ClampLengthV(FXMVECTOR V, FXMVECTOR LengthMin, FXMVECTOR LengthMax);
+XMVECTOR XM_CALLCONV XMVector2Reflect(FXMVECTOR Incident, FXMVECTOR Normal);
+XMVECTOR XM_CALLCONV XMVector2Refract(FXMVECTOR Incident, FXMVECTOR Normal, float RefractionIndex);
+XMVECTOR XM_CALLCONV XMVector2RefractV(FXMVECTOR Incident, FXMVECTOR Normal, FXMVECTOR RefractionIndex);
+XMVECTOR XM_CALLCONV XMVector2Orthogonal(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector2AngleBetweenNormalsEst(FXMVECTOR N1, FXMVECTOR N2);
+XMVECTOR XM_CALLCONV XMVector2AngleBetweenNormals(FXMVECTOR N1, FXMVECTOR N2);
+XMVECTOR XM_CALLCONV XMVector2AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector2LinePointDistance(FXMVECTOR LinePoint1, FXMVECTOR LinePoint2, FXMVECTOR Point);
+XMVECTOR XM_CALLCONV XMVector2IntersectLine(FXMVECTOR Line1Point1, FXMVECTOR Line1Point2, FXMVECTOR Line2Point1, GXMVECTOR Line2Point2);
+XMVECTOR XM_CALLCONV XMVector2Transform(FXMVECTOR V, FXMMATRIX M);
+XMFLOAT4* XM_CALLCONV XMVector2TransformStream(_Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (VectorCount - 1)) XMFLOAT4* pOutputStream,
 												   _In_ size_t OutputStride,
 												   _In_reads_bytes_(sizeof(XMFLOAT2) + InputStride * (VectorCount - 1)) const XMFLOAT2* pInputStream,
 												   _In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
-XMVECTOR    XM_CALLCONV     XMVector2TransformCoord(FXMVECTOR V, FXMMATRIX M);
-XMFLOAT2* XM_CALLCONV     XMVector2TransformCoordStream(_Out_writes_bytes_(sizeof(XMFLOAT2) + OutputStride * (VectorCount - 1)) XMFLOAT2* pOutputStream,
+XMVECTOR XM_CALLCONV XMVector2TransformCoord(FXMVECTOR V, FXMMATRIX M);
+XMFLOAT2* XM_CALLCONV XMVector2TransformCoordStream(_Out_writes_bytes_(sizeof(XMFLOAT2) + OutputStride * (VectorCount - 1)) XMFLOAT2* pOutputStream,
 														_In_ size_t OutputStride,
 														_In_reads_bytes_(sizeof(XMFLOAT2) + InputStride * (VectorCount - 1)) const XMFLOAT2* pInputStream,
 														_In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
-XMVECTOR    XM_CALLCONV     XMVector2TransformNormal(FXMVECTOR V, FXMMATRIX M);
-XMFLOAT2* XM_CALLCONV     XMVector2TransformNormalStream(_Out_writes_bytes_(sizeof(XMFLOAT2) + OutputStride * (VectorCount - 1)) XMFLOAT2* pOutputStream,
+XMVECTOR    XM_CALLCONV XMVector2TransformNormal(FXMVECTOR V, FXMMATRIX M);
+XMFLOAT2*   XM_CALLCONV XMVector2TransformNormalStream(_Out_writes_bytes_(sizeof(XMFLOAT2) + OutputStride * (VectorCount - 1)) XMFLOAT2* pOutputStream,
 														 _In_ size_t OutputStride,
 														 _In_reads_bytes_(sizeof(XMFLOAT2) + InputStride * (VectorCount - 1)) const XMFLOAT2* pInputStream,
 														 _In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
@@ -1115,66 +1115,66 @@ XMFLOAT2* XM_CALLCONV     XMVector2TransformNormalStream(_Out_writes_bytes_(size
  *
  ****************************************************************************/
 
-bool        XM_CALLCONV     XMVector3Equal(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector3EqualR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3EqualInt(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector3EqualIntR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3NearEqual(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR Epsilon);
-bool        XM_CALLCONV     XMVector3NotEqual(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3NotEqualInt(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3Greater(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector3GreaterR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3GreaterOrEqual(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector3GreaterOrEqualR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3Less(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3LessOrEqual(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector3InBounds(FXMVECTOR V, FXMVECTOR Bounds);
+bool     XM_CALLCONV XMVector3Equal(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector3EqualR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3EqualInt(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector3EqualIntR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3NearEqual(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR Epsilon);
+bool     XM_CALLCONV XMVector3NotEqual(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3NotEqualInt(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3Greater(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector3GreaterR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3GreaterOrEqual(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector3GreaterOrEqualR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3Less(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3LessOrEqual(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector3InBounds(FXMVECTOR V, FXMVECTOR Bounds);
 
-bool        XM_CALLCONV     XMVector3IsNaN(FXMVECTOR V);
-bool        XM_CALLCONV     XMVector3IsInfinite(FXMVECTOR V);
+bool     XM_CALLCONV XMVector3IsNaN(FXMVECTOR V);
+bool     XM_CALLCONV XMVector3IsInfinite(FXMVECTOR V);
 
-XMVECTOR    XM_CALLCONV     XMVector3Dot(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector3Cross(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector3LengthSq(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3ReciprocalLengthEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3ReciprocalLength(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3LengthEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3Length(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3NormalizeEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3Normalize(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3ClampLength(FXMVECTOR V, float LengthMin, float LengthMax);
-XMVECTOR    XM_CALLCONV     XMVector3ClampLengthV(FXMVECTOR V, FXMVECTOR LengthMin, FXMVECTOR LengthMax);
-XMVECTOR    XM_CALLCONV     XMVector3Reflect(FXMVECTOR Incident, FXMVECTOR Normal);
-XMVECTOR    XM_CALLCONV     XMVector3Refract(FXMVECTOR Incident, FXMVECTOR Normal, float RefractionIndex);
-XMVECTOR    XM_CALLCONV     XMVector3RefractV(FXMVECTOR Incident, FXMVECTOR Normal, FXMVECTOR RefractionIndex);
-XMVECTOR    XM_CALLCONV     XMVector3Orthogonal(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector3AngleBetweenNormalsEst(FXMVECTOR N1, FXMVECTOR N2);
-XMVECTOR    XM_CALLCONV     XMVector3AngleBetweenNormals(FXMVECTOR N1, FXMVECTOR N2);
-XMVECTOR    XM_CALLCONV     XMVector3AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector3LinePointDistance(FXMVECTOR LinePoint1, FXMVECTOR LinePoint2, FXMVECTOR Point);
-void        XM_CALLCONV     XMVector3ComponentsFromNormal(_Out_ XMVECTOR* pParallel, _Out_ XMVECTOR* pPerpendicular, _In_ FXMVECTOR V, _In_ FXMVECTOR Normal);
-XMVECTOR    XM_CALLCONV     XMVector3Rotate(FXMVECTOR V, FXMVECTOR RotationQuaternion);
-XMVECTOR    XM_CALLCONV     XMVector3InverseRotate(FXMVECTOR V, FXMVECTOR RotationQuaternion);
-XMVECTOR    XM_CALLCONV     XMVector3Transform(FXMVECTOR V, FXMMATRIX M);
-XMFLOAT4* XM_CALLCONV     XMVector3TransformStream(_Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (VectorCount - 1)) XMFLOAT4* pOutputStream,
+XMVECTOR XM_CALLCONV XMVector3Dot(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector3Cross(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector3LengthSq(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3ReciprocalLengthEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3ReciprocalLength(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3LengthEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3Length(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3NormalizeEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3Normalize(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3ClampLength(FXMVECTOR V, float LengthMin, float LengthMax);
+XMVECTOR XM_CALLCONV XMVector3ClampLengthV(FXMVECTOR V, FXMVECTOR LengthMin, FXMVECTOR LengthMax);
+XMVECTOR XM_CALLCONV XMVector3Reflect(FXMVECTOR Incident, FXMVECTOR Normal);
+XMVECTOR XM_CALLCONV XMVector3Refract(FXMVECTOR Incident, FXMVECTOR Normal, float RefractionIndex);
+XMVECTOR XM_CALLCONV XMVector3RefractV(FXMVECTOR Incident, FXMVECTOR Normal, FXMVECTOR RefractionIndex);
+XMVECTOR XM_CALLCONV XMVector3Orthogonal(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3AngleBetweenNormalsEst(FXMVECTOR N1, FXMVECTOR N2);
+XMVECTOR XM_CALLCONV XMVector3AngleBetweenNormals(FXMVECTOR N1, FXMVECTOR N2);
+XMVECTOR XM_CALLCONV XMVector3AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector3LinePointDistance(FXMVECTOR LinePoint1, FXMVECTOR LinePoint2, FXMVECTOR Point);
+void     XM_CALLCONV XMVector3ComponentsFromNormal(_Out_ XMVECTOR* pParallel, _Out_ XMVECTOR* pPerpendicular, _In_ FXMVECTOR V, _In_ FXMVECTOR Normal);
+XMVECTOR XM_CALLCONV XMVector3Rotate(FXMVECTOR V, FXMVECTOR RotationQuaternion);
+XMVECTOR XM_CALLCONV XMVector3InverseRotate(FXMVECTOR V, FXMVECTOR RotationQuaternion);
+XMVECTOR XM_CALLCONV XMVector3Transform(FXMVECTOR V, FXMMATRIX M);
+XMFLOAT4* XM_CALLCONV XMVector3TransformStream(_Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (VectorCount - 1)) XMFLOAT4* pOutputStream,
 												   _In_ size_t OutputStride,
 												   _In_reads_bytes_(sizeof(XMFLOAT3) + InputStride * (VectorCount - 1)) const XMFLOAT3* pInputStream,
 												   _In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
-XMVECTOR    XM_CALLCONV     XMVector3TransformCoord(FXMVECTOR V, FXMMATRIX M);
-XMFLOAT3* XM_CALLCONV     XMVector3TransformCoordStream(_Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
+XMVECTOR XM_CALLCONV XMVector3TransformCoord(FXMVECTOR V, FXMMATRIX M);
+XMFLOAT3* XM_CALLCONV XMVector3TransformCoordStream(_Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
 														_In_ size_t OutputStride,
 														_In_reads_bytes_(sizeof(XMFLOAT3) + InputStride * (VectorCount - 1)) const XMFLOAT3* pInputStream,
 														_In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
-XMVECTOR    XM_CALLCONV     XMVector3TransformNormal(FXMVECTOR V, FXMMATRIX M);
+XMVECTOR XM_CALLCONV XMVector3TransformNormal(FXMVECTOR V, FXMMATRIX M);
 
-XMFLOAT3* XM_CALLCONV     XMVector3TransformNormalStream (	_Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
+XMFLOAT3* XM_CALLCONV XMVector3TransformNormalStream (	_Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
 															_In_ size_t OutputStride,
 															_In_reads_bytes_(sizeof(XMFLOAT3) + InputStride * (VectorCount - 1)) const XMFLOAT3* pInputStream,
 															_In_ size_t InputStride, 
 															_In_ size_t VectorCount, 
 															_In_ FXMMATRIX M);
 
-XMVECTOR    XM_CALLCONV     XMVector3Project ( FXMVECTOR V, 
+XMVECTOR XM_CALLCONV XMVector3Project ( FXMVECTOR V,
 											   float ViewportX, 
 											   float ViewportY, 
 											   float ViewportWidth, 
@@ -1186,7 +1186,7 @@ XMVECTOR    XM_CALLCONV     XMVector3Project ( FXMVECTOR V,
 											   CXMMATRIX World );
 
 
-XMFLOAT3* XM_CALLCONV     XMVector3ProjectStream (  _Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
+XMFLOAT3* XM_CALLCONV XMVector3ProjectStream (  _Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
 													_In_ size_t OutputStride,
 													_In_reads_bytes_(sizeof(XMFLOAT3) + InputStride * (VectorCount - 1)) const XMFLOAT3* pInputStream,
 													_In_ size_t InputStride, 
@@ -1201,7 +1201,7 @@ XMFLOAT3* XM_CALLCONV     XMVector3ProjectStream (  _Out_writes_bytes_(sizeof(XM
 													_In_ CXMMATRIX View, 
 													_In_ CXMMATRIX World );
 
-XMVECTOR    XM_CALLCONV     XMVector3Unproject ( FXMVECTOR V, 
+XMVECTOR    XM_CALLCONV XMVector3Unproject ( FXMVECTOR V,
 												 float ViewportX, 
 												 float ViewportY, 
 												 float ViewportWidth, 
@@ -1212,7 +1212,7 @@ XMVECTOR    XM_CALLCONV     XMVector3Unproject ( FXMVECTOR V,
 												 CXMMATRIX View, 
 												 CXMMATRIX World );
 
-XMFLOAT3* XM_CALLCONV     XMVector3UnprojectStream ( _Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
+XMFLOAT3* XM_CALLCONV XMVector3UnprojectStream ( _Out_writes_bytes_(sizeof(XMFLOAT3) + OutputStride * (VectorCount - 1)) XMFLOAT3* pOutputStream,
 													 _In_ size_t OutputStride,
 													 _In_reads_bytes_(sizeof(XMFLOAT3) + InputStride * (VectorCount - 1)) const XMFLOAT3* pInputStream,
 													 _In_ size_t InputStride, 
@@ -1233,44 +1233,44 @@ XMFLOAT3* XM_CALLCONV     XMVector3UnprojectStream ( _Out_writes_bytes_(sizeof(X
  *
  ****************************************************************************/
 
-bool        XM_CALLCONV     XMVector4Equal(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector4EqualR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4EqualInt(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector4EqualIntR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4NearEqual(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR Epsilon);
-bool        XM_CALLCONV     XMVector4NotEqual(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4NotEqualInt(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4Greater(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector4GreaterR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4GreaterOrEqual(FXMVECTOR V1, FXMVECTOR V2);
-uint32_t    XM_CALLCONV     XMVector4GreaterOrEqualR(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4Less(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4LessOrEqual(FXMVECTOR V1, FXMVECTOR V2);
-bool        XM_CALLCONV     XMVector4InBounds(FXMVECTOR V, FXMVECTOR Bounds);
+bool     XM_CALLCONV XMVector4Equal(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector4EqualR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4EqualInt(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector4EqualIntR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4NearEqual(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR Epsilon);
+bool     XM_CALLCONV XMVector4NotEqual(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4NotEqualInt(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4Greater(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector4GreaterR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4GreaterOrEqual(FXMVECTOR V1, FXMVECTOR V2);
+uint32_t XM_CALLCONV XMVector4GreaterOrEqualR(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4Less(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4LessOrEqual(FXMVECTOR V1, FXMVECTOR V2);
+bool     XM_CALLCONV XMVector4InBounds(FXMVECTOR V, FXMVECTOR Bounds);
 
-bool        XM_CALLCONV     XMVector4IsNaN(FXMVECTOR V);
-bool        XM_CALLCONV     XMVector4IsInfinite(FXMVECTOR V);
+bool     XM_CALLCONV XMVector4IsNaN(FXMVECTOR V);
+bool     XM_CALLCONV XMVector4IsInfinite(FXMVECTOR V);
 
-XMVECTOR    XM_CALLCONV     XMVector4Dot(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector4Cross(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR V3);
-XMVECTOR    XM_CALLCONV     XMVector4LengthSq(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4ReciprocalLengthEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4ReciprocalLength(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4LengthEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4Length(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4NormalizeEst(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4Normalize(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4ClampLength(FXMVECTOR V, float LengthMin, float LengthMax);
-XMVECTOR    XM_CALLCONV     XMVector4ClampLengthV(FXMVECTOR V, FXMVECTOR LengthMin, FXMVECTOR LengthMax);
-XMVECTOR    XM_CALLCONV     XMVector4Reflect(FXMVECTOR Incident, FXMVECTOR Normal);
-XMVECTOR    XM_CALLCONV     XMVector4Refract(FXMVECTOR Incident, FXMVECTOR Normal, float RefractionIndex);
-XMVECTOR    XM_CALLCONV     XMVector4RefractV(FXMVECTOR Incident, FXMVECTOR Normal, FXMVECTOR RefractionIndex);
-XMVECTOR    XM_CALLCONV     XMVector4Orthogonal(FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMVector4AngleBetweenNormalsEst(FXMVECTOR N1, FXMVECTOR N2);
-XMVECTOR    XM_CALLCONV     XMVector4AngleBetweenNormals(FXMVECTOR N1, FXMVECTOR N2);
-XMVECTOR    XM_CALLCONV     XMVector4AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMVector4Transform(FXMVECTOR V, FXMMATRIX M);
-XMFLOAT4* XM_CALLCONV     XMVector4TransformStream(_Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (VectorCount - 1)) XMFLOAT4* pOutputStream,
+XMVECTOR XM_CALLCONV XMVector4Dot(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector4Cross(FXMVECTOR V1, FXMVECTOR V2, FXMVECTOR V3);
+XMVECTOR XM_CALLCONV XMVector4LengthSq(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4ReciprocalLengthEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4ReciprocalLength(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4LengthEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4Length(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4NormalizeEst(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4Normalize(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4ClampLength(FXMVECTOR V, float LengthMin, float LengthMax);
+XMVECTOR XM_CALLCONV XMVector4ClampLengthV(FXMVECTOR V, FXMVECTOR LengthMin, FXMVECTOR LengthMax);
+XMVECTOR XM_CALLCONV XMVector4Reflect(FXMVECTOR Incident, FXMVECTOR Normal);
+XMVECTOR XM_CALLCONV XMVector4Refract(FXMVECTOR Incident, FXMVECTOR Normal, float RefractionIndex);
+XMVECTOR XM_CALLCONV XMVector4RefractV(FXMVECTOR Incident, FXMVECTOR Normal, FXMVECTOR RefractionIndex);
+XMVECTOR XM_CALLCONV XMVector4Orthogonal(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector4AngleBetweenNormalsEst(FXMVECTOR N1, FXMVECTOR N2);
+XMVECTOR XM_CALLCONV XMVector4AngleBetweenNormals(FXMVECTOR N1, FXMVECTOR N2);
+XMVECTOR XM_CALLCONV XMVector4AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMVector4Transform(FXMVECTOR V, FXMMATRIX M);
+XMFLOAT4* XM_CALLCONV XMVector4TransformStream(_Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (VectorCount - 1)) XMFLOAT4* pOutputStream,
 												   _In_ size_t OutputStride,
 												   _In_reads_bytes_(sizeof(XMFLOAT4) + InputStride * (VectorCount - 1)) const XMFLOAT4* pInputStream,
 												   _In_ size_t InputStride, _In_ size_t VectorCount, _In_ FXMMATRIX M);
@@ -1281,60 +1281,60 @@ XMFLOAT4* XM_CALLCONV     XMVector4TransformStream(_Out_writes_bytes_(sizeof(XMF
  *
  ****************************************************************************/
 
-bool        XM_CALLCONV     XMMatrixIsNaN(FXMMATRIX M);
-bool        XM_CALLCONV     XMMatrixIsInfinite(FXMMATRIX M);
-bool        XM_CALLCONV     XMMatrixIsIdentity(FXMMATRIX M);
+bool     XM_CALLCONV XMMatrixIsNaN(FXMMATRIX M);
+bool     XM_CALLCONV XMMatrixIsInfinite(FXMMATRIX M);
+bool     XM_CALLCONV XMMatrixIsIdentity(FXMMATRIX M);
 
-XMMATRIX    XM_CALLCONV     XMMatrixMultiply(FXMMATRIX M1, CXMMATRIX M2);
-XMMATRIX    XM_CALLCONV     XMMatrixMultiplyTranspose(FXMMATRIX M1, CXMMATRIX M2);
-XMMATRIX    XM_CALLCONV     XMMatrixTranspose(FXMMATRIX M);
-XMMATRIX    XM_CALLCONV     XMMatrixInverse(_Out_opt_ XMVECTOR* pDeterminant, _In_ FXMMATRIX M);
-XMMATRIX    XM_CALLCONV     XMMatrixVectorTensorProduct(FXMVECTOR V1, FXMVECTOR V2);
-XMVECTOR    XM_CALLCONV     XMMatrixDeterminant(FXMMATRIX M);
+XMMATRIX XM_CALLCONV XMMatrixMultiply(FXMMATRIX M1, CXMMATRIX M2);
+XMMATRIX XM_CALLCONV XMMatrixMultiplyTranspose(FXMMATRIX M1, CXMMATRIX M2);
+XMMATRIX XM_CALLCONV XMMatrixTranspose(FXMMATRIX M);
+XMMATRIX XM_CALLCONV XMMatrixInverse(_Out_opt_ XMVECTOR* pDeterminant, _In_ FXMMATRIX M);
+XMMATRIX XM_CALLCONV XMMatrixVectorTensorProduct(FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR XM_CALLCONV XMMatrixDeterminant(FXMMATRIX M);
 
 _Success_(return)
-bool        XM_CALLCONV     XMMatrixDecompose(_Out_ XMVECTOR* outScale, _Out_ XMVECTOR* outRotQuat, _Out_ XMVECTOR* outTrans, _In_ FXMMATRIX M);
+bool     XM_CALLCONV XMMatrixDecompose(_Out_ XMVECTOR* outScale, _Out_ XMVECTOR* outRotQuat, _Out_ XMVECTOR* outTrans, _In_ FXMMATRIX M);
 
-XMMATRIX    XM_CALLCONV     XMMatrixIdentity();
-XMMATRIX    XM_CALLCONV     XMMatrixSet(float m00, float m01, float m02, float m03,
+XMMATRIX XM_CALLCONV XMMatrixIdentity();
+XMMATRIX XM_CALLCONV XMMatrixSet(float m00, float m01, float m02, float m03,
 										float m10, float m11, float m12, float m13,
 										float m20, float m21, float m22, float m23,
 										float m30, float m31, float m32, float m33);
-XMMATRIX    XM_CALLCONV     XMMatrixTranslation(float OffsetX, float OffsetY, float OffsetZ);
-XMMATRIX    XM_CALLCONV     XMMatrixTranslationFromVector(FXMVECTOR Offset);
-XMMATRIX    XM_CALLCONV     XMMatrixScaling(float ScaleX, float ScaleY, float ScaleZ);
-XMMATRIX    XM_CALLCONV     XMMatrixScalingFromVector(FXMVECTOR Scale);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationX(float Angle);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationY(float Angle);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationZ(float Angle);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationRollPitchYaw(float Pitch, float Yaw, float Roll);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationRollPitchYawFromVector(FXMVECTOR Angles);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationNormal(FXMVECTOR NormalAxis, float Angle);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationAxis(FXMVECTOR Axis, float Angle);
-XMMATRIX    XM_CALLCONV     XMMatrixRotationQuaternion(FXMVECTOR Quaternion);
-XMMATRIX    XM_CALLCONV     XMMatrixTransformation2D(FXMVECTOR ScalingOrigin, float ScalingOrientation, FXMVECTOR Scaling,
+XMMATRIX XM_CALLCONV XMMatrixTranslation(float OffsetX, float OffsetY, float OffsetZ);
+XMMATRIX XM_CALLCONV XMMatrixTranslationFromVector(FXMVECTOR Offset);
+XMMATRIX XM_CALLCONV XMMatrixScaling(float ScaleX, float ScaleY, float ScaleZ);
+XMMATRIX XM_CALLCONV XMMatrixScalingFromVector(FXMVECTOR Scale);
+XMMATRIX XM_CALLCONV XMMatrixRotationX(float Angle);
+XMMATRIX XM_CALLCONV XMMatrixRotationY(float Angle);
+XMMATRIX XM_CALLCONV XMMatrixRotationZ(float Angle);
+XMMATRIX XM_CALLCONV XMMatrixRotationRollPitchYaw(float Pitch, float Yaw, float Roll);
+XMMATRIX XM_CALLCONV XMMatrixRotationRollPitchYawFromVector(FXMVECTOR Angles);
+XMMATRIX XM_CALLCONV XMMatrixRotationNormal(FXMVECTOR NormalAxis, float Angle);
+XMMATRIX XM_CALLCONV XMMatrixRotationAxis(FXMVECTOR Axis, float Angle);
+XMMATRIX XM_CALLCONV XMMatrixRotationQuaternion(FXMVECTOR Quaternion);
+XMMATRIX XM_CALLCONV XMMatrixTransformation2D(FXMVECTOR ScalingOrigin, float ScalingOrientation, FXMVECTOR Scaling,
 													 FXMVECTOR RotationOrigin, float Rotation, GXMVECTOR Translation);
-XMMATRIX    XM_CALLCONV     XMMatrixTransformation(FXMVECTOR ScalingOrigin, FXMVECTOR ScalingOrientationQuaternion, FXMVECTOR Scaling,
+XMMATRIX XM_CALLCONV XMMatrixTransformation(FXMVECTOR ScalingOrigin, FXMVECTOR ScalingOrientationQuaternion, FXMVECTOR Scaling,
 												   GXMVECTOR RotationOrigin, HXMVECTOR RotationQuaternion, HXMVECTOR Translation);
-XMMATRIX    XM_CALLCONV     XMMatrixAffineTransformation2D(FXMVECTOR Scaling, FXMVECTOR RotationOrigin, float Rotation, FXMVECTOR Translation);
-XMMATRIX    XM_CALLCONV     XMMatrixAffineTransformation(FXMVECTOR Scaling, FXMVECTOR RotationOrigin, FXMVECTOR RotationQuaternion, GXMVECTOR Translation);
-XMMATRIX    XM_CALLCONV     XMMatrixReflect(FXMVECTOR ReflectionPlane);
-XMMATRIX    XM_CALLCONV     XMMatrixShadow(FXMVECTOR ShadowPlane, FXMVECTOR LightPosition);
+XMMATRIX XM_CALLCONV XMMatrixAffineTransformation2D(FXMVECTOR Scaling, FXMVECTOR RotationOrigin, float Rotation, FXMVECTOR Translation);
+XMMATRIX XM_CALLCONV XMMatrixAffineTransformation(FXMVECTOR Scaling, FXMVECTOR RotationOrigin, FXMVECTOR RotationQuaternion, GXMVECTOR Translation);
+XMMATRIX XM_CALLCONV XMMatrixReflect(FXMVECTOR ReflectionPlane);
+XMMATRIX XM_CALLCONV XMMatrixShadow(FXMVECTOR ShadowPlane, FXMVECTOR LightPosition);
 
-XMMATRIX    XM_CALLCONV     XMMatrixLookAtLH(FXMVECTOR EyePosition, FXMVECTOR FocusPosition, FXMVECTOR UpDirection);
-XMMATRIX    XM_CALLCONV     XMMatrixLookAtRH(FXMVECTOR EyePosition, FXMVECTOR FocusPosition, FXMVECTOR UpDirection);
-XMMATRIX    XM_CALLCONV     XMMatrixLookToLH(FXMVECTOR EyePosition, FXMVECTOR EyeDirection, FXMVECTOR UpDirection);
-XMMATRIX    XM_CALLCONV     XMMatrixLookToRH(FXMVECTOR EyePosition, FXMVECTOR EyeDirection, FXMVECTOR UpDirection);
-XMMATRIX    XM_CALLCONV     XMMatrixPerspectiveLH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixPerspectiveRH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixPerspectiveFovLH(float FovAngleY, float AspectRatio, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixPerspectiveFovRH(float FovAngleY, float AspectRatio, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixPerspectiveOffCenterLH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixPerspectiveOffCenterRH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixOrthographicLH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixOrthographicRH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixOrthographicOffCenterLH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
-XMMATRIX    XM_CALLCONV     XMMatrixOrthographicOffCenterRH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixLookAtLH(FXMVECTOR EyePosition, FXMVECTOR FocusPosition, FXMVECTOR UpDirection);
+XMMATRIX XM_CALLCONV XMMatrixLookAtRH(FXMVECTOR EyePosition, FXMVECTOR FocusPosition, FXMVECTOR UpDirection);
+XMMATRIX XM_CALLCONV XMMatrixLookToLH(FXMVECTOR EyePosition, FXMVECTOR EyeDirection, FXMVECTOR UpDirection);
+XMMATRIX XM_CALLCONV XMMatrixLookToRH(FXMVECTOR EyePosition, FXMVECTOR EyeDirection, FXMVECTOR UpDirection);
+XMMATRIX XM_CALLCONV XMMatrixPerspectiveLH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixPerspectiveRH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixPerspectiveFovLH(float FovAngleY, float AspectRatio, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixPerspectiveFovRH(float FovAngleY, float AspectRatio, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixPerspectiveOffCenterLH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixPerspectiveOffCenterRH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixOrthographicLH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixOrthographicRH(float ViewWidth, float ViewHeight, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterLH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
+XMMATRIX XM_CALLCONV XMMatrixOrthographicOffCenterRH(float ViewLeft, float ViewRight, float ViewBottom, float ViewTop, float NearZ, float FarZ);
 
 
 /****************************************************************************
@@ -1343,40 +1343,40 @@ XMMATRIX    XM_CALLCONV     XMMatrixOrthographicOffCenterRH(float ViewLeft, floa
  *
  ****************************************************************************/
 
-bool        XM_CALLCONV     XMQuaternionEqual(FXMVECTOR Q1, FXMVECTOR Q2);
-bool        XM_CALLCONV     XMQuaternionNotEqual(FXMVECTOR Q1, FXMVECTOR Q2);
+bool     XM_CALLCONV XMQuaternionEqual(FXMVECTOR Q1, FXMVECTOR Q2);
+bool     XM_CALLCONV XMQuaternionNotEqual(FXMVECTOR Q1, FXMVECTOR Q2);
 
-bool        XM_CALLCONV     XMQuaternionIsNaN(FXMVECTOR Q);
-bool        XM_CALLCONV     XMQuaternionIsInfinite(FXMVECTOR Q);
-bool        XM_CALLCONV     XMQuaternionIsIdentity(FXMVECTOR Q);
+bool     XM_CALLCONV XMQuaternionIsNaN(FXMVECTOR Q);
+bool     XM_CALLCONV XMQuaternionIsInfinite(FXMVECTOR Q);
+bool     XM_CALLCONV XMQuaternionIsIdentity(FXMVECTOR Q);
 
-XMVECTOR    XM_CALLCONV     XMQuaternionDot(FXMVECTOR Q1, FXMVECTOR Q2);
-XMVECTOR    XM_CALLCONV     XMQuaternionMultiply(FXMVECTOR Q1, FXMVECTOR Q2);
-XMVECTOR    XM_CALLCONV     XMQuaternionLengthSq(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionReciprocalLength(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionLength(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionNormalizeEst(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionNormalize(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionConjugate(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionInverse(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionLn(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionExp(FXMVECTOR Q);
-XMVECTOR    XM_CALLCONV     XMQuaternionSlerp(FXMVECTOR Q0, FXMVECTOR Q1, float t);
-XMVECTOR    XM_CALLCONV     XMQuaternionSlerpV(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR T);
-XMVECTOR    XM_CALLCONV     XMQuaternionSquad(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, GXMVECTOR Q3, float t);
-XMVECTOR    XM_CALLCONV     XMQuaternionSquadV(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, GXMVECTOR Q3, HXMVECTOR T);
-void        XM_CALLCONV     XMQuaternionSquadSetup(_Out_ XMVECTOR* pA, _Out_ XMVECTOR* pB, _Out_ XMVECTOR* pC, _In_ FXMVECTOR Q0, _In_ FXMVECTOR Q1, _In_ FXMVECTOR Q2, _In_ GXMVECTOR Q3);
-XMVECTOR    XM_CALLCONV     XMQuaternionBaryCentric(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, float f, float g);
-XMVECTOR    XM_CALLCONV     XMQuaternionBaryCentricV(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, GXMVECTOR F, HXMVECTOR G);
+XMVECTOR XM_CALLCONV XMQuaternionDot(FXMVECTOR Q1, FXMVECTOR Q2);
+XMVECTOR XM_CALLCONV XMQuaternionMultiply(FXMVECTOR Q1, FXMVECTOR Q2);
+XMVECTOR XM_CALLCONV XMQuaternionLengthSq(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionReciprocalLength(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionLength(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionNormalizeEst(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionNormalize(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionConjugate(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionInverse(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionLn(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionExp(FXMVECTOR Q);
+XMVECTOR XM_CALLCONV XMQuaternionSlerp(FXMVECTOR Q0, FXMVECTOR Q1, float t);
+XMVECTOR XM_CALLCONV XMQuaternionSlerpV(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR T);
+XMVECTOR XM_CALLCONV XMQuaternionSquad(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, GXMVECTOR Q3, float t);
+XMVECTOR XM_CALLCONV XMQuaternionSquadV(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, GXMVECTOR Q3, HXMVECTOR T);
+void     XM_CALLCONV XMQuaternionSquadSetup(_Out_ XMVECTOR* pA, _Out_ XMVECTOR* pB, _Out_ XMVECTOR* pC, _In_ FXMVECTOR Q0, _In_ FXMVECTOR Q1, _In_ FXMVECTOR Q2, _In_ GXMVECTOR Q3);
+XMVECTOR XM_CALLCONV XMQuaternionBaryCentric(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, float f, float g);
+XMVECTOR XM_CALLCONV XMQuaternionBaryCentricV(FXMVECTOR Q0, FXMVECTOR Q1, FXMVECTOR Q2, GXMVECTOR F, HXMVECTOR G);
 
-XMVECTOR    XM_CALLCONV     XMQuaternionIdentity();
-XMVECTOR    XM_CALLCONV     XMQuaternionRotationRollPitchYaw(float Pitch, float Yaw, float Roll);
-XMVECTOR    XM_CALLCONV     XMQuaternionRotationRollPitchYawFromVector(FXMVECTOR Angles);
-XMVECTOR    XM_CALLCONV     XMQuaternionRotationNormal(FXMVECTOR NormalAxis, float Angle);
-XMVECTOR    XM_CALLCONV     XMQuaternionRotationAxis(FXMVECTOR Axis, float Angle);
-XMVECTOR    XM_CALLCONV     XMQuaternionRotationMatrix(FXMMATRIX M);
+XMVECTOR XM_CALLCONV XMQuaternionIdentity();
+XMVECTOR XM_CALLCONV XMQuaternionRotationRollPitchYaw(float Pitch, float Yaw, float Roll);
+XMVECTOR XM_CALLCONV XMQuaternionRotationRollPitchYawFromVector(FXMVECTOR Angles);
+XMVECTOR XM_CALLCONV XMQuaternionRotationNormal(FXMVECTOR NormalAxis, float Angle);
+XMVECTOR XM_CALLCONV XMQuaternionRotationAxis(FXMVECTOR Axis, float Angle);
+XMVECTOR XM_CALLCONV XMQuaternionRotationMatrix(FXMMATRIX M);
 
-void        XM_CALLCONV     XMQuaternionToAxisAngle(_Out_ XMVECTOR* pAxis, _Out_ float* pAngle, _In_ FXMVECTOR Q);
+void     XM_CALLCONV XMQuaternionToAxisAngle(_Out_ XMVECTOR* pAxis, _Out_ float* pAngle, _In_ FXMVECTOR Q);
 
 /****************************************************************************
  *
@@ -1384,30 +1384,30 @@ void        XM_CALLCONV     XMQuaternionToAxisAngle(_Out_ XMVECTOR* pAxis, _Out_
  *
  ****************************************************************************/
 
-bool        XM_CALLCONV     XMPlaneEqual(FXMVECTOR P1, FXMVECTOR P2);
-bool        XM_CALLCONV     XMPlaneNearEqual(FXMVECTOR P1, FXMVECTOR P2, FXMVECTOR Epsilon);
-bool        XM_CALLCONV     XMPlaneNotEqual(FXMVECTOR P1, FXMVECTOR P2);
+bool XM_CALLCONV XMPlaneEqual     ( FXMVECTOR P1, FXMVECTOR P2 );
+bool XM_CALLCONV XMPlaneNearEqual ( FXMVECTOR P1, FXMVECTOR P2, FXMVECTOR Epsilon );
+bool XM_CALLCONV XMPlaneNotEqual  ( FXMVECTOR P1, FXMVECTOR P2 );
 
-bool        XM_CALLCONV     XMPlaneIsNaN(FXMVECTOR P);
-bool        XM_CALLCONV     XMPlaneIsInfinite(FXMVECTOR P);
+bool XM_CALLCONV XMPlaneIsNaN      ( FXMVECTOR P );
+bool XM_CALLCONV XMPlaneIsInfinite ( FXMVECTOR P );
 
-XMVECTOR    XM_CALLCONV     XMPlaneDot(FXMVECTOR P, FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMPlaneDotCoord(FXMVECTOR P, FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMPlaneDotNormal(FXMVECTOR P, FXMVECTOR V);
-XMVECTOR    XM_CALLCONV     XMPlaneNormalizeEst(FXMVECTOR P);
-XMVECTOR    XM_CALLCONV     XMPlaneNormalize(FXMVECTOR P);
-XMVECTOR    XM_CALLCONV     XMPlaneIntersectLine(FXMVECTOR P, FXMVECTOR LinePoint1, FXMVECTOR LinePoint2);
-void        XM_CALLCONV     XMPlaneIntersectPlane(_Out_ XMVECTOR* pLinePoint1, _Out_ XMVECTOR* pLinePoint2, _In_ FXMVECTOR P1, _In_ FXMVECTOR P2);
-XMVECTOR    XM_CALLCONV     XMPlaneTransform(FXMVECTOR P, FXMMATRIX M);
-XMFLOAT4*   XM_CALLCONV     XMPlaneTransformStream ( _Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (PlaneCount - 1)) XMFLOAT4* pOutputStream,
+XMVECTOR XM_CALLCONV XMPlaneDot            ( FXMVECTOR P, FXMVECTOR V );
+XMVECTOR XM_CALLCONV XMPlaneDotCoord       ( FXMVECTOR P, FXMVECTOR V );
+XMVECTOR XM_CALLCONV XMPlaneDotNormal      ( FXMVECTOR P, FXMVECTOR V );
+XMVECTOR XM_CALLCONV XMPlaneNormalizeEst   ( FXMVECTOR P );
+XMVECTOR XM_CALLCONV XMPlaneNormalize      ( FXMVECTOR P );
+XMVECTOR XM_CALLCONV XMPlaneIntersectLine  ( FXMVECTOR P, FXMVECTOR LinePoint1, FXMVECTOR LinePoint2 );
+void     XM_CALLCONV XMPlaneIntersectPlane ( _Out_ XMVECTOR* pLinePoint1, _Out_ XMVECTOR* pLinePoint2, _In_ FXMVECTOR P1, _In_ FXMVECTOR P2 );
+XMVECTOR XM_CALLCONV XMPlaneTransform      ( FXMVECTOR P, FXMMATRIX M );
+XMFLOAT4*   XM_CALLCONV XMPlaneTransformStream ( _Out_writes_bytes_(sizeof(XMFLOAT4) + OutputStride * (PlaneCount - 1)) XMFLOAT4* pOutputStream,
 													 _In_ size_t OutputStride,
 													 _In_reads_bytes_(sizeof(XMFLOAT4) + InputStride * (PlaneCount - 1)) const XMFLOAT4* pInputStream,
-													 _In_ size_t InputStride, 
-													 _In_ size_t PlaneCount, 
-													 _In_ FXMMATRIX M);
+													 _In_ size_t InputStride,
+													 _In_ size_t PlaneCount,
+													 _In_ FXMMATRIX M );
 
-XMVECTOR    XM_CALLCONV     XMPlaneFromPointNormal(FXMVECTOR Point, FXMVECTOR Normal);
-XMVECTOR    XM_CALLCONV     XMPlaneFromPoints(FXMVECTOR Point1, FXMVECTOR Point2, FXMVECTOR Point3);
+XMVECTOR XM_CALLCONV XMPlaneFromPointNormal ( FXMVECTOR Point, FXMVECTOR Normal );
+XMVECTOR XM_CALLCONV XMPlaneFromPoints      ( FXMVECTOR Point1, FXMVECTOR Point2, FXMVECTOR Point3 );
 
 /****************************************************************************
  *
@@ -1415,23 +1415,23 @@ XMVECTOR    XM_CALLCONV     XMPlaneFromPoints(FXMVECTOR Point1, FXMVECTOR Point2
  *
  ****************************************************************************/
 
-bool XM_CALLCONV XMColorEqual ( FXMVECTOR C1 , FXMVECTOR C2 );
-bool XM_CALLCONV XMColorNotEqual ( FXMVECTOR C1 , FXMVECTOR C2 );
-bool XM_CALLCONV XMColorGreater ( FXMVECTOR C1 , FXMVECTOR C2 );
+bool XM_CALLCONV XMColorEqual          ( FXMVECTOR C1 , FXMVECTOR C2 );
+bool XM_CALLCONV XMColorNotEqual       ( FXMVECTOR C1 , FXMVECTOR C2 );
+bool XM_CALLCONV XMColorGreater        ( FXMVECTOR C1 , FXMVECTOR C2 );
 bool XM_CALLCONV XMColorGreaterOrEqual ( FXMVECTOR C1 , FXMVECTOR C2 );
-bool XM_CALLCONV XMColorLess ( FXMVECTOR C1 , FXMVECTOR C2 );
-bool XM_CALLCONV XMColorLessOrEqual ( FXMVECTOR C1 , FXMVECTOR C2 );
+bool XM_CALLCONV XMColorLess           ( FXMVECTOR C1 , FXMVECTOR C2 );
+bool XM_CALLCONV XMColorLessOrEqual    ( FXMVECTOR C1 , FXMVECTOR C2 );
 
-bool XM_CALLCONV XMColorIsNaN ( FXMVECTOR C );
+bool XM_CALLCONV XMColorIsNaN      ( FXMVECTOR C );
 bool XM_CALLCONV XMColorIsInfinite ( FXMVECTOR C );
 
 XMVECTOR XM_CALLCONV XMColorNegative ( FXMVECTOR C );
 XMVECTOR XM_CALLCONV XMColorModulate ( FXMVECTOR C1 , FXMVECTOR C2 );
 XMVECTOR XM_CALLCONV XMColorAdjustSaturation ( FXMVECTOR C , float Saturation );
-XMVECTOR XM_CALLCONV XMColorAdjustContrast ( FXMVECTOR C , float Contrast );
+XMVECTOR XM_CALLCONV XMColorAdjustContrast   ( FXMVECTOR C , float Contrast   );
 
-XMVECTOR XM_CALLCONV XMColorRGBToHSL ( FXMVECTOR rgb );
-XMVECTOR XM_CALLCONV XMColorHSLToRGB ( FXMVECTOR hsl );
+XMVECTOR XM_CALLCONV XMColorRGBToHSL     ( FXMVECTOR rgb  );
+XMVECTOR XM_CALLCONV XMColorHSLToRGB     ( FXMVECTOR hsl  );
 
 XMVECTOR XM_CALLCONV XMColorRGBToHSV     ( FXMVECTOR rgb  );
 XMVECTOR XM_CALLCONV XMColorHSVToRGB     ( FXMVECTOR hsv  );
@@ -1466,13 +1466,13 @@ bool XMVerifyCPUSupport();
 XMVECTOR XM_CALLCONV XMFresnelTerm ( FXMVECTOR CosIncidentAngle, FXMVECTOR RefractionIndex );
 
 bool  XMScalarNearEqual( float S1, float S2, float Epsilon );
-float XMScalarModAngle ( float Value);
+float XMScalarModAngle ( float Value );
 
-float XMScalarSin      ( float Value);
-float XMScalarSinEst   ( float Value);
+float XMScalarSin      ( float Value );
+float XMScalarSinEst   ( float Value );
 
-float XMScalarCos      ( float Value);
-float XMScalarCosEst   ( float Value);
+float XMScalarCos      ( float Value );
+float XMScalarCosEst   ( float Value );
 
 void  XMScalarSinCos   ( _Out_ float *pSin, _Out_ float *pCos, float Value );
 void  XMScalarSinCosEst( _Out_ float *pSin, _Out_ float *pCos, float Value );
@@ -1494,8 +1494,8 @@ float XMScalarACosEst  ( float Value );
 #undef XMMax
 #endif
 
-#define XMMin(a, b) { return (a < b) ? a : b; }
-#define XMMax(a, b) { return (a > b) ? a : b; }
+#define XMMin( a, b ) { return (a < b) ? a : b; }
+#define XMMax( a, b ) { return (a > b) ? a : b; }
 
 
 /****************************************************************************
@@ -1524,148 +1524,148 @@ float XMScalarACosEst  ( float Value );
 #endif
 
 
-XMGLOBALCONST XMVECTORF32 g_XMSinCoefficients0 = { { { -0.16666667f, +0.0083333310f, -0.00019840874f, +2.7525562e-06f } } };
-XMGLOBALCONST XMVECTORF32 g_XMSinCoefficients1 = { { { -2.3889859e-08f, -0.16665852f /*Est1*/, +0.0083139502f /*Est2*/, -0.00018524670f /*Est3*/ } } };
-XMGLOBALCONST XMVECTORF32 g_XMCosCoefficients0 = { { { -0.5f, +0.041666638f, -0.0013888378f, +2.4760495e-05f } } };
-XMGLOBALCONST XMVECTORF32 g_XMCosCoefficients1 = { { { -2.6051615e-07f, -0.49992746f /*Est1*/, +0.041493919f /*Est2*/, -0.0012712436f /*Est3*/ } } };
-XMGLOBALCONST XMVECTORF32 g_XMTanCoefficients0 = { { { 1.0f, 0.333333333f, 0.133333333f, 5.396825397e-2f } } };
-XMGLOBALCONST XMVECTORF32 g_XMTanCoefficients1 = { { { 2.186948854e-2f, 8.863235530e-3f, 3.592128167e-3f, 1.455834485e-3f } } };
-XMGLOBALCONST XMVECTORF32 g_XMTanCoefficients2 = { { { 5.900274264e-4f, 2.391290764e-4f, 9.691537707e-5f, 3.927832950e-5f } } };
-XMGLOBALCONST XMVECTORF32 g_XMArcCoefficients0 = { { { +1.5707963050f, -0.2145988016f, +0.0889789874f, -0.0501743046f } } };
-XMGLOBALCONST XMVECTORF32 g_XMArcCoefficients1 = { { { +0.0308918810f, -0.0170881256f, +0.0066700901f, -0.0012624911f } } };
-XMGLOBALCONST XMVECTORF32 g_XMATanCoefficients0 = { { { -0.3333314528f, +0.1999355085f, -0.1420889944f, +0.1065626393f } } };
-XMGLOBALCONST XMVECTORF32 g_XMATanCoefficients1 = { { { -0.0752896400f, +0.0429096138f, -0.0161657367f, +0.0028662257f } } };
-XMGLOBALCONST XMVECTORF32 g_XMATanEstCoefficients0 = { { { +0.999866f, +0.999866f, +0.999866f, +0.999866f } } };
-XMGLOBALCONST XMVECTORF32 g_XMATanEstCoefficients1 = { { { -0.3302995f, +0.180141f, -0.085133f, +0.0208351f } } };
-XMGLOBALCONST XMVECTORF32 g_XMTanEstCoefficients = { { { 2.484f, -1.954923183e-1f, 2.467401101f, XM_1DIVPI } } };
-XMGLOBALCONST XMVECTORF32 g_XMArcEstCoefficients = { { { +1.5707288f, -0.2121144f, +0.0742610f, -0.0187293f } } };
-XMGLOBALCONST XMVECTORF32 g_XMPiConstants0 = { { { XM_PI, XM_2PI, XM_1DIVPI, XM_1DIV2PI } } };
-XMGLOBALCONST XMVECTORF32 g_XMIdentityR0 = { { { 1.0f, 0.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMIdentityR1 = { { { 0.0f, 1.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMIdentityR2 = { { { 0.0f, 0.0f, 1.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMIdentityR3 = { { { 0.0f, 0.0f, 0.0f, 1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR0 = { { { -1.0f, 0.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR1 = { { { 0.0f, -1.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR2 = { { { 0.0f, 0.0f, -1.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR3 = { { { 0.0f, 0.0f, 0.0f, -1.0f } } };
-XMGLOBALCONST XMVECTORU32 g_XMNegativeZero = { { { 0x80000000, 0x80000000, 0x80000000, 0x80000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMNegate3 = { { { 0x80000000, 0x80000000, 0x80000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskXY = { { { 0xFFFFFFFF, 0xFFFFFFFF, 0x00000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMMask3 = { { { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskX = { { { 0xFFFFFFFF, 0x00000000, 0x00000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskY = { { { 0x00000000, 0xFFFFFFFF, 0x00000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskZ = { { { 0x00000000, 0x00000000, 0xFFFFFFFF, 0x00000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskW = { { { 0x00000000, 0x00000000, 0x00000000, 0xFFFFFFFF } } };
-XMGLOBALCONST XMVECTORF32 g_XMOne = { { { 1.0f, 1.0f, 1.0f, 1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMOne3 = { { { 1.0f, 1.0f, 1.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMZero = { { { 0.0f, 0.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMTwo = { { { 2.f, 2.f, 2.f, 2.f } } };
-XMGLOBALCONST XMVECTORF32 g_XMFour = { { { 4.f, 4.f, 4.f, 4.f } } };
-XMGLOBALCONST XMVECTORF32 g_XMSix = { { { 6.f, 6.f, 6.f, 6.f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegativeOne = { { { -1.0f, -1.0f, -1.0f, -1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMOneHalf = { { { 0.5f, 0.5f, 0.5f, 0.5f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegativeOneHalf = { { { -0.5f, -0.5f, -0.5f, -0.5f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegativeTwoPi = { { { -XM_2PI, -XM_2PI, -XM_2PI, -XM_2PI } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegativePi = { { { -XM_PI, -XM_PI, -XM_PI, -XM_PI } } };
-XMGLOBALCONST XMVECTORF32 g_XMHalfPi = { { { XM_PIDIV2, XM_PIDIV2, XM_PIDIV2, XM_PIDIV2 } } };
-XMGLOBALCONST XMVECTORF32 g_XMPi = { { { XM_PI, XM_PI, XM_PI, XM_PI } } };
-XMGLOBALCONST XMVECTORF32 g_XMReciprocalPi = { { { XM_1DIVPI, XM_1DIVPI, XM_1DIVPI, XM_1DIVPI } } };
-XMGLOBALCONST XMVECTORF32 g_XMTwoPi = { { { XM_2PI, XM_2PI, XM_2PI, XM_2PI } } };
-XMGLOBALCONST XMVECTORF32 g_XMReciprocalTwoPi = { { { XM_1DIV2PI, XM_1DIV2PI, XM_1DIV2PI, XM_1DIV2PI } } };
-XMGLOBALCONST XMVECTORF32 g_XMEpsilon = { { { 1.192092896e-7f, 1.192092896e-7f, 1.192092896e-7f, 1.192092896e-7f } } };
-XMGLOBALCONST XMVECTORI32 g_XMInfinity = { { { 0x7F800000, 0x7F800000, 0x7F800000, 0x7F800000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMQNaN = { { { 0x7FC00000, 0x7FC00000, 0x7FC00000, 0x7FC00000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMQNaNTest = { { { 0x007FFFFF, 0x007FFFFF, 0x007FFFFF, 0x007FFFFF } } };
-XMGLOBALCONST XMVECTORI32 g_XMAbsMask = { { { 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF } } };
-XMGLOBALCONST XMVECTORI32 g_XMFltMin = { { { 0x00800000, 0x00800000, 0x00800000, 0x00800000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMFltMax = { { { 0x7F7FFFFF, 0x7F7FFFFF, 0x7F7FFFFF, 0x7F7FFFFF } } };
-XMGLOBALCONST XMVECTORU32 g_XMNegOneMask = { { { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskA8R8G8B8 = { { { 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipA8R8G8B8 = { { { 0x00000000, 0x00000000, 0x00000000, 0x80000000 } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixAA8R8G8B8 = { { { 0.0f, 0.0f, 0.0f, (float)(0x80000000U) } } };
-XMGLOBALCONST XMVECTORF32 g_XMNormalizeA8R8G8B8 = { { { 1.0f / (255.0f * (float)(0x10000)), 1.0f / (255.0f * (float)(0x100)), 1.0f / 255.0f, 1.0f / (255.0f * (float)(0x1000000)) } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskA2B10G10R10 = { { { 0x000003FF, 0x000FFC00, 0x3FF00000, 0xC0000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipA2B10G10R10 = { { { 0x00000200, 0x00080000, 0x20000000, 0x80000000 } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixAA2B10G10R10 = { { { -512.0f, -512.0f * (float)(0x400), -512.0f * (float)(0x100000), (float)(0x80000000U) } } };
-XMGLOBALCONST XMVECTORF32 g_XMNormalizeA2B10G10R10 = { { { 1.0f / 511.0f, 1.0f / (511.0f * (float)(0x400)), 1.0f / (511.0f * (float)(0x100000)), 1.0f / (3.0f * (float)(0x40000000)) } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskX16Y16 = { { { 0x0000FFFF, 0xFFFF0000, 0x00000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMFlipX16Y16 = { { { 0x00008000, 0x00000000, 0x00000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixX16Y16 = { { { -32768.0f, 0.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNormalizeX16Y16 = { { { 1.0f / 32767.0f, 1.0f / (32767.0f * 65536.0f), 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskX16Y16Z16W16 = { { { 0x0000FFFF, 0x0000FFFF, 0xFFFF0000, 0xFFFF0000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMFlipX16Y16Z16W16 = { { { 0x00008000, 0x00008000, 0x00000000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixX16Y16Z16W16 = { { { -32768.0f, -32768.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMSinCoefficients0      = { { { -0.16666667f, +0.0083333310f, -0.00019840874f, +2.7525562e-06f } } };
+XMGLOBALCONST XMVECTORF32 g_XMSinCoefficients1      = { { { -2.3889859e-08f, -0.16665852f /*Est1*/, +0.0083139502f /*Est2*/, -0.00018524670f /*Est3*/ } } };
+XMGLOBALCONST XMVECTORF32 g_XMCosCoefficients0      = { { { -0.5f, +0.041666638f, -0.0013888378f, +2.4760495e-05f } } };
+XMGLOBALCONST XMVECTORF32 g_XMCosCoefficients1      = { { { -2.6051615e-07f, -0.49992746f /*Est1*/, +0.041493919f /*Est2*/, -0.0012712436f /*Est3*/ } } };
+XMGLOBALCONST XMVECTORF32 g_XMTanCoefficients0      = { { { 1.0f, 0.333333333f, 0.133333333f, 5.396825397e-2f } } };
+XMGLOBALCONST XMVECTORF32 g_XMTanCoefficients1      = { { { 2.186948854e-2f, 8.863235530e-3f, 3.592128167e-3f, 1.455834485e-3f } } };
+XMGLOBALCONST XMVECTORF32 g_XMTanCoefficients2      = { { { 5.900274264e-4f, 2.391290764e-4f, 9.691537707e-5f, 3.927832950e-5f } } };
+XMGLOBALCONST XMVECTORF32 g_XMArcCoefficients0      = { { { +1.5707963050f, -0.2145988016f, +0.0889789874f, -0.0501743046f } } };
+XMGLOBALCONST XMVECTORF32 g_XMArcCoefficients1      = { { { +0.0308918810f, -0.0170881256f, +0.0066700901f, -0.0012624911f } } };
+XMGLOBALCONST XMVECTORF32 g_XMATanCoefficients0     = { { { -0.3333314528f, +0.1999355085f, -0.1420889944f, +0.1065626393f } } };
+XMGLOBALCONST XMVECTORF32 g_XMATanCoefficients1     = { { { -0.0752896400f, +0.0429096138f, -0.0161657367f, +0.0028662257f } } };
+XMGLOBALCONST XMVECTORF32 g_XMATanEstCoefficients0  = { { { +0.999866f, +0.999866f, +0.999866f, +0.999866f } } };
+XMGLOBALCONST XMVECTORF32 g_XMATanEstCoefficients1  = { { { -0.3302995f, +0.180141f, -0.085133f, +0.0208351f } } };
+XMGLOBALCONST XMVECTORF32 g_XMTanEstCoefficients    = { { { 2.484f, -1.954923183e-1f, 2.467401101f, XM_1DIVPI } } };
+XMGLOBALCONST XMVECTORF32 g_XMArcEstCoefficients    = { { { +1.5707288f, -0.2121144f, +0.0742610f, -0.0187293f } } };
+XMGLOBALCONST XMVECTORF32 g_XMPiConstants0          = { { { XM_PI, XM_2PI, XM_1DIVPI, XM_1DIV2PI } } };
+XMGLOBALCONST XMVECTORF32 g_XMIdentityR0            = { { { 1.0f, 0.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMIdentityR1            = { { { 0.0f, 1.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMIdentityR2            = { { { 0.0f, 0.0f, 1.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMIdentityR3            = { { { 0.0f, 0.0f, 0.0f, 1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR0         = { { { -1.0f, 0.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR1         = { { { 0.0f, -1.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR2         = { { { 0.0f, 0.0f, -1.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegIdentityR3         = { { { 0.0f, 0.0f, 0.0f, -1.0f } } };
+XMGLOBALCONST XMVECTORU32 g_XMNegativeZero          = { { { 0x80000000, 0x80000000, 0x80000000, 0x80000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMNegate3               = { { { 0x80000000, 0x80000000, 0x80000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskXY                = { { { 0xFFFFFFFF, 0xFFFFFFFF, 0x00000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMMask3                 = { { { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0x00000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskX                 = { { { 0xFFFFFFFF, 0x00000000, 0x00000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskY                 = { { { 0x00000000, 0xFFFFFFFF, 0x00000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskZ                 = { { { 0x00000000, 0x00000000, 0xFFFFFFFF, 0x00000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskW                 = { { { 0x00000000, 0x00000000, 0x00000000, 0xFFFFFFFF } } };
+XMGLOBALCONST XMVECTORF32 g_XMOne                   = { { { 1.0f, 1.0f, 1.0f, 1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMOne3                  = { { { 1.0f, 1.0f, 1.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMZero                  = { { { 0.0f, 0.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMTwo                   = { { { 2.f, 2.f, 2.f, 2.f } } };
+XMGLOBALCONST XMVECTORF32 g_XMFour                  = { { { 4.f, 4.f, 4.f, 4.f } } };
+XMGLOBALCONST XMVECTORF32 g_XMSix                   = { { { 6.f, 6.f, 6.f, 6.f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegativeOne           = { { { -1.0f, -1.0f, -1.0f, -1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMOneHalf               = { { { 0.5f, 0.5f, 0.5f, 0.5f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegativeOneHalf       = { { { -0.5f, -0.5f, -0.5f, -0.5f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegativeTwoPi         = { { { -XM_2PI, -XM_2PI, -XM_2PI, -XM_2PI } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegativePi            = { { { -XM_PI, -XM_PI, -XM_PI, -XM_PI } } };
+XMGLOBALCONST XMVECTORF32 g_XMHalfPi                = { { { XM_PIDIV2, XM_PIDIV2, XM_PIDIV2, XM_PIDIV2 } } };
+XMGLOBALCONST XMVECTORF32 g_XMPi                    = { { { XM_PI, XM_PI, XM_PI, XM_PI } } };
+XMGLOBALCONST XMVECTORF32 g_XMReciprocalPi          = { { { XM_1DIVPI, XM_1DIVPI, XM_1DIVPI, XM_1DIVPI } } };
+XMGLOBALCONST XMVECTORF32 g_XMTwoPi                 = { { { XM_2PI, XM_2PI, XM_2PI, XM_2PI } } };
+XMGLOBALCONST XMVECTORF32 g_XMReciprocalTwoPi       = { { { XM_1DIV2PI, XM_1DIV2PI, XM_1DIV2PI, XM_1DIV2PI } } };
+XMGLOBALCONST XMVECTORF32 g_XMEpsilon               = { { { 1.192092896e-7f, 1.192092896e-7f, 1.192092896e-7f, 1.192092896e-7f } } };
+XMGLOBALCONST XMVECTORI32 g_XMInfinity              = { { { 0x7F800000, 0x7F800000, 0x7F800000, 0x7F800000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMQNaN                  = { { { 0x7FC00000, 0x7FC00000, 0x7FC00000, 0x7FC00000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMQNaNTest              = { { { 0x007FFFFF, 0x007FFFFF, 0x007FFFFF, 0x007FFFFF } } };
+XMGLOBALCONST XMVECTORI32 g_XMAbsMask               = { { { 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF } } };
+XMGLOBALCONST XMVECTORI32 g_XMFltMin                = { { { 0x00800000, 0x00800000, 0x00800000, 0x00800000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMFltMax                = { { { 0x7F7FFFFF, 0x7F7FFFFF, 0x7F7FFFFF, 0x7F7FFFFF } } };
+XMGLOBALCONST XMVECTORU32 g_XMNegOneMask            = { { { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskA8R8G8B8          = { { { 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipA8R8G8B8          = { { { 0x00000000, 0x00000000, 0x00000000, 0x80000000 } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixAA8R8G8B8          = { { { 0.0f, 0.0f, 0.0f, (float)(0x80000000U) } } };
+XMGLOBALCONST XMVECTORF32 g_XMNormalizeA8R8G8B8     = { { { 1.0f / (255.0f * (float)(0x10000)), 1.0f / (255.0f * (float)(0x100)), 1.0f / 255.0f, 1.0f / (255.0f * (float)(0x1000000)) } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskA2B10G10R10       = { { { 0x000003FF, 0x000FFC00, 0x3FF00000, 0xC0000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipA2B10G10R10       = { { { 0x00000200, 0x00080000, 0x20000000, 0x80000000 } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixAA2B10G10R10       = { { { -512.0f, -512.0f * (float)(0x400), -512.0f * (float)(0x100000), (float)(0x80000000U) } } };
+XMGLOBALCONST XMVECTORF32 g_XMNormalizeA2B10G10R10  = { { { 1.0f / 511.0f, 1.0f / (511.0f * (float)(0x400)), 1.0f / (511.0f * (float)(0x100000)), 1.0f / (3.0f * (float)(0x40000000)) } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskX16Y16            = { { { 0x0000FFFF, 0xFFFF0000, 0x00000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMFlipX16Y16            = { { { 0x00008000, 0x00000000, 0x00000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixX16Y16             = { { { -32768.0f, 0.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNormalizeX16Y16       = { { { 1.0f / 32767.0f, 1.0f / (32767.0f * 65536.0f), 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskX16Y16Z16W16      = { { { 0x0000FFFF, 0x0000FFFF, 0xFFFF0000, 0xFFFF0000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMFlipX16Y16Z16W16      = { { { 0x00008000, 0x00008000, 0x00000000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixX16Y16Z16W16       = { { { -32768.0f, -32768.0f, 0.0f, 0.0f } } };
 XMGLOBALCONST XMVECTORF32 g_XMNormalizeX16Y16Z16W16 = { { { 1.0f / 32767.0f, 1.0f / 32767.0f, 1.0f / (32767.0f * 65536.0f), 1.0f / (32767.0f * 65536.0f) } } };
-XMGLOBALCONST XMVECTORF32 g_XMNoFraction = { { { 8388608.0f, 8388608.0f, 8388608.0f, 8388608.0f } } };
-XMGLOBALCONST XMVECTORI32 g_XMMaskByte = { { { 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegateX = { { { -1.0f, 1.0f, 1.0f, 1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegateY = { { { 1.0f, -1.0f, 1.0f, 1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegateZ = { { { 1.0f, 1.0f, -1.0f, 1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMNegateW = { { { 1.0f, 1.0f, 1.0f, -1.0f } } };
-XMGLOBALCONST XMVECTORU32 g_XMSelect0101 = { { { XM_SELECT_0, XM_SELECT_1, XM_SELECT_0, XM_SELECT_1 } } };
-XMGLOBALCONST XMVECTORU32 g_XMSelect1010 = { { { XM_SELECT_1, XM_SELECT_0, XM_SELECT_1, XM_SELECT_0 } } };
-XMGLOBALCONST XMVECTORI32 g_XMOneHalfMinusEpsilon = { { { 0x3EFFFFFD, 0x3EFFFFFD, 0x3EFFFFFD, 0x3EFFFFFD } } };
-XMGLOBALCONST XMVECTORU32 g_XMSelect1000 = { { { XM_SELECT_1, XM_SELECT_0, XM_SELECT_0, XM_SELECT_0 } } };
-XMGLOBALCONST XMVECTORU32 g_XMSelect1100 = { { { XM_SELECT_1, XM_SELECT_1, XM_SELECT_0, XM_SELECT_0 } } };
-XMGLOBALCONST XMVECTORU32 g_XMSelect1110 = { { { XM_SELECT_1, XM_SELECT_1, XM_SELECT_1, XM_SELECT_0 } } };
-XMGLOBALCONST XMVECTORU32 g_XMSelect1011 = { { { XM_SELECT_1, XM_SELECT_0, XM_SELECT_1, XM_SELECT_1 } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixupY16 = { { { 1.0f, 1.0f / 65536.0f, 0.0f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixupY16W16 = { { { 1.0f, 1.0f, 1.0f / 65536.0f, 1.0f / 65536.0f } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipY = { { { 0, 0x80000000, 0, 0 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipZ = { { { 0, 0, 0x80000000, 0 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipW = { { { 0, 0, 0, 0x80000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipYZ = { { { 0, 0x80000000, 0x80000000, 0 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipZW = { { { 0, 0, 0x80000000, 0x80000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMFlipYW = { { { 0, 0x80000000, 0, 0x80000000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMMaskDec4 = { { { 0x3FF, 0x3FF << 10, 0x3FF << 20, ( int )(0xC0000000) } } };
-XMGLOBALCONST XMVECTORI32 g_XMXorDec4 = { { { 0x200, 0x200 << 10, 0x200 << 20, 0 } } };
-XMGLOBALCONST XMVECTORF32 g_XMAddUDec4 = { { { 0, 0, 0, 32768.0f * 65536.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMAddDec4 = { { { -512.0f, -512.0f * 1024.0f, -512.0f * 1024.0f * 1024.0f, 0 } } };
-XMGLOBALCONST XMVECTORF32 g_XMMulDec4 = { { { 1.0f, 1.0f / 1024.0f, 1.0f / (1024.0f * 1024.0f), 1.0f / (1024.0f * 1024.0f * 1024.0f) } } };
-XMGLOBALCONST XMVECTORU32 g_XMMaskByte4 = { { { 0xFF, 0xFF00, 0xFF0000, 0xFF000000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMXorByte4 = { { { 0x80, 0x8000, 0x800000, 0x00000000 } } };
-XMGLOBALCONST XMVECTORF32 g_XMAddByte4 = { { { -128.0f, -128.0f * 256.0f, -128.0f * 65536.0f, 0 } } };
-XMGLOBALCONST XMVECTORF32 g_XMFixUnsigned = { { { 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMMaxInt = { { { 65536.0f * 32768.0f - 128.0f, 65536.0f * 32768.0f - 128.0f, 65536.0f * 32768.0f - 128.0f, 65536.0f * 32768.0f - 128.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMMaxUInt = { { { 65536.0f * 65536.0f - 256.0f, 65536.0f * 65536.0f - 256.0f, 65536.0f * 65536.0f - 256.0f, 65536.0f * 65536.0f - 256.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMUnsignedFix = { { { 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMsrgbScale = { { { 12.92f, 12.92f, 12.92f, 1.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMsrgbA = { { { 0.055f, 0.055f, 0.055f, 0.0f } } };
-XMGLOBALCONST XMVECTORF32 g_XMsrgbA1 = { { { 1.055f, 1.055f, 1.055f, 1.0f } } };
-XMGLOBALCONST XMVECTORI32 g_XMExponentBias = { { { 127, 127, 127, 127 } } };
-XMGLOBALCONST XMVECTORI32 g_XMSubnormalExponent = { { { -126, -126, -126, -126 } } };
-XMGLOBALCONST XMVECTORI32 g_XMNumTrailing = { { { 23, 23, 23, 23 } } };
-XMGLOBALCONST XMVECTORI32 g_XMMinNormal = { { { 0x00800000, 0x00800000, 0x00800000, 0x00800000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMNegInfinity = { { { 0xFF800000, 0xFF800000, 0xFF800000, 0xFF800000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMNegQNaN = { { { 0xFFC00000, 0xFFC00000, 0xFFC00000, 0xFFC00000 } } };
-XMGLOBALCONST XMVECTORI32 g_XMBin128 = { { { 0x43000000, 0x43000000, 0x43000000, 0x43000000 } } };
-XMGLOBALCONST XMVECTORU32 g_XMBinNeg150 = { { { 0xC3160000, 0xC3160000, 0xC3160000, 0xC3160000 } } };
-XMGLOBALCONST XMVECTORI32 g_XM253 = { { { 253, 253, 253, 253 } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst1 = { { { -6.93147182e-1f, -6.93147182e-1f, -6.93147182e-1f, -6.93147182e-1f } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst2 = { { { +2.40226462e-1f, +2.40226462e-1f, +2.40226462e-1f, +2.40226462e-1f } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst3 = { { { -5.55036440e-2f, -5.55036440e-2f, -5.55036440e-2f, -5.55036440e-2f } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst4 = { { { +9.61597636e-3f, +9.61597636e-3f, +9.61597636e-3f, +9.61597636e-3f } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst5 = { { { -1.32823968e-3f, -1.32823968e-3f, -1.32823968e-3f, -1.32823968e-3f } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst6 = { { { +1.47491097e-4f, +1.47491097e-4f, +1.47491097e-4f, +1.47491097e-4f } } };
-XMGLOBALCONST XMVECTORF32 g_XMExpEst7 = { { { -1.08635004e-5f, -1.08635004e-5f, -1.08635004e-5f, -1.08635004e-5f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst0 = { { { +1.442693f, +1.442693f, +1.442693f, +1.442693f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst1 = { { { -0.721242f, -0.721242f, -0.721242f, -0.721242f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst2 = { { { +0.479384f, +0.479384f, +0.479384f, +0.479384f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst3 = { { { -0.350295f, -0.350295f, -0.350295f, -0.350295f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst4 = { { { +0.248590f, +0.248590f, +0.248590f, +0.248590f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst5 = { { { -0.145700f, -0.145700f, -0.145700f, -0.145700f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst6 = { { { +0.057148f, +0.057148f, +0.057148f, +0.057148f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLogEst7 = { { { -0.010578f, -0.010578f, -0.010578f, -0.010578f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLgE = { { { +1.442695f, +1.442695f, +1.442695f, +1.442695f } } };
-XMGLOBALCONST XMVECTORF32 g_XMInvLgE = { { { +6.93147182e-1f, +6.93147182e-1f, +6.93147182e-1f, +6.93147182e-1f } } };
-XMGLOBALCONST XMVECTORF32 g_XMLg10 = { { { +3.321928f, +3.321928f, +3.321928f, +3.321928f } } };
-XMGLOBALCONST XMVECTORF32 g_XMInvLg10 = { { { +3.010299956e-1f, +3.010299956e-1f, +3.010299956e-1f, +3.010299956e-1f } } };
-XMGLOBALCONST XMVECTORF32 g_UByteMax = { { { 255.0f, 255.0f, 255.0f, 255.0f } } };
-XMGLOBALCONST XMVECTORF32 g_ByteMin = { { { -127.0f, -127.0f, -127.0f, -127.0f } } };
-XMGLOBALCONST XMVECTORF32 g_ByteMax = { { { 127.0f, 127.0f, 127.0f, 127.0f } } };
-XMGLOBALCONST XMVECTORF32 g_ShortMin = { { { -32767.0f, -32767.0f, -32767.0f, -32767.0f } } };
-XMGLOBALCONST XMVECTORF32 g_ShortMax = { { { 32767.0f, 32767.0f, 32767.0f, 32767.0f } } };
-XMGLOBALCONST XMVECTORF32 g_UShortMax = { { { 65535.0f, 65535.0f, 65535.0f, 65535.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNoFraction            = { { { 8388608.0f, 8388608.0f, 8388608.0f, 8388608.0f } } };
+XMGLOBALCONST XMVECTORI32 g_XMMaskByte              = { { { 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegateX               = { { { -1.0f, 1.0f, 1.0f, 1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegateY               = { { { 1.0f, -1.0f, 1.0f, 1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegateZ               = { { { 1.0f, 1.0f, -1.0f, 1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMNegateW               = { { { 1.0f, 1.0f, 1.0f, -1.0f } } };
+XMGLOBALCONST XMVECTORU32 g_XMSelect0101            = { { { XM_SELECT_0, XM_SELECT_1, XM_SELECT_0, XM_SELECT_1 } } };
+XMGLOBALCONST XMVECTORU32 g_XMSelect1010            = { { { XM_SELECT_1, XM_SELECT_0, XM_SELECT_1, XM_SELECT_0 } } };
+XMGLOBALCONST XMVECTORI32 g_XMOneHalfMinusEpsilon   = { { { 0x3EFFFFFD, 0x3EFFFFFD, 0x3EFFFFFD, 0x3EFFFFFD } } };
+XMGLOBALCONST XMVECTORU32 g_XMSelect1000            = { { { XM_SELECT_1, XM_SELECT_0, XM_SELECT_0, XM_SELECT_0 } } };
+XMGLOBALCONST XMVECTORU32 g_XMSelect1100            = { { { XM_SELECT_1, XM_SELECT_1, XM_SELECT_0, XM_SELECT_0 } } };
+XMGLOBALCONST XMVECTORU32 g_XMSelect1110            = { { { XM_SELECT_1, XM_SELECT_1, XM_SELECT_1, XM_SELECT_0 } } };
+XMGLOBALCONST XMVECTORU32 g_XMSelect1011            = { { { XM_SELECT_1, XM_SELECT_0, XM_SELECT_1, XM_SELECT_1 } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixupY16              = { { { 1.0f, 1.0f / 65536.0f, 0.0f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixupY16W16           = { { { 1.0f, 1.0f, 1.0f / 65536.0f, 1.0f / 65536.0f } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipY                 = { { { 0, 0x80000000, 0, 0 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipZ                 = { { { 0, 0, 0x80000000, 0 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipW                 = { { { 0, 0, 0, 0x80000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipYZ                = { { { 0, 0x80000000, 0x80000000, 0 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipZW                = { { { 0, 0, 0x80000000, 0x80000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMFlipYW                = { { { 0, 0x80000000, 0, 0x80000000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMMaskDec4              = { { { 0x3FF, 0x3FF << 10, 0x3FF << 20, ( int )(0xC0000000) } } };
+XMGLOBALCONST XMVECTORI32 g_XMXorDec4               = { { { 0x200, 0x200 << 10, 0x200 << 20, 0 } } };
+XMGLOBALCONST XMVECTORF32 g_XMAddUDec4              = { { { 0, 0, 0, 32768.0f * 65536.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMAddDec4               = { { { -512.0f, -512.0f * 1024.0f, -512.0f * 1024.0f * 1024.0f, 0 } } };
+XMGLOBALCONST XMVECTORF32 g_XMMulDec4               = { { { 1.0f, 1.0f / 1024.0f, 1.0f / (1024.0f * 1024.0f), 1.0f / (1024.0f * 1024.0f * 1024.0f) } } };
+XMGLOBALCONST XMVECTORU32 g_XMMaskByte4             = { { { 0xFF, 0xFF00, 0xFF0000, 0xFF000000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMXorByte4              = { { { 0x80, 0x8000, 0x800000, 0x00000000 } } };
+XMGLOBALCONST XMVECTORF32 g_XMAddByte4              = { { { -128.0f, -128.0f * 256.0f, -128.0f * 65536.0f, 0 } } };
+XMGLOBALCONST XMVECTORF32 g_XMFixUnsigned           = { { { 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMMaxInt                = { { { 65536.0f * 32768.0f - 128.0f, 65536.0f * 32768.0f - 128.0f, 65536.0f * 32768.0f - 128.0f, 65536.0f * 32768.0f - 128.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMMaxUInt               = { { { 65536.0f * 65536.0f - 256.0f, 65536.0f * 65536.0f - 256.0f, 65536.0f * 65536.0f - 256.0f, 65536.0f * 65536.0f - 256.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMUnsignedFix           = { { { 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f, 32768.0f * 65536.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMsrgbScale             = { { { 12.92f, 12.92f, 12.92f, 1.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMsrgbA                 = { { { 0.055f, 0.055f, 0.055f, 0.0f } } };
+XMGLOBALCONST XMVECTORF32 g_XMsrgbA1                = { { { 1.055f, 1.055f, 1.055f, 1.0f } } };
+XMGLOBALCONST XMVECTORI32 g_XMExponentBias          = { { { 127, 127, 127, 127 } } };
+XMGLOBALCONST XMVECTORI32 g_XMSubnormalExponent     = { { { -126, -126, -126, -126 } } };
+XMGLOBALCONST XMVECTORI32 g_XMNumTrailing           = { { { 23, 23, 23, 23 } } };
+XMGLOBALCONST XMVECTORI32 g_XMMinNormal             = { { { 0x00800000, 0x00800000, 0x00800000, 0x00800000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMNegInfinity           = { { { 0xFF800000, 0xFF800000, 0xFF800000, 0xFF800000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMNegQNaN               = { { { 0xFFC00000, 0xFFC00000, 0xFFC00000, 0xFFC00000 } } };
+XMGLOBALCONST XMVECTORI32 g_XMBin128                = { { { 0x43000000, 0x43000000, 0x43000000, 0x43000000 } } };
+XMGLOBALCONST XMVECTORU32 g_XMBinNeg150             = { { { 0xC3160000, 0xC3160000, 0xC3160000, 0xC3160000 } } };
+XMGLOBALCONST XMVECTORI32 g_XM253                   = { { { 253, 253, 253, 253 } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst1               = { { { -6.93147182e-1f, -6.93147182e-1f, -6.93147182e-1f, -6.93147182e-1f } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst2               = { { { +2.40226462e-1f, +2.40226462e-1f, +2.40226462e-1f, +2.40226462e-1f } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst3               = { { { -5.55036440e-2f, -5.55036440e-2f, -5.55036440e-2f, -5.55036440e-2f } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst4               = { { { +9.61597636e-3f, +9.61597636e-3f, +9.61597636e-3f, +9.61597636e-3f } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst5               = { { { -1.32823968e-3f, -1.32823968e-3f, -1.32823968e-3f, -1.32823968e-3f } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst6               = { { { +1.47491097e-4f, +1.47491097e-4f, +1.47491097e-4f, +1.47491097e-4f } } };
+XMGLOBALCONST XMVECTORF32 g_XMExpEst7               = { { { -1.08635004e-5f, -1.08635004e-5f, -1.08635004e-5f, -1.08635004e-5f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst0               = { { { +1.442693f, +1.442693f, +1.442693f, +1.442693f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst1               = { { { -0.721242f, -0.721242f, -0.721242f, -0.721242f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst2               = { { { +0.479384f, +0.479384f, +0.479384f, +0.479384f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst3               = { { { -0.350295f, -0.350295f, -0.350295f, -0.350295f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst4               = { { { +0.248590f, +0.248590f, +0.248590f, +0.248590f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst5               = { { { -0.145700f, -0.145700f, -0.145700f, -0.145700f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst6               = { { { +0.057148f, +0.057148f, +0.057148f, +0.057148f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLogEst7               = { { { -0.010578f, -0.010578f, -0.010578f, -0.010578f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLgE                   = { { { +1.442695f, +1.442695f, +1.442695f, +1.442695f } } };
+XMGLOBALCONST XMVECTORF32 g_XMInvLgE                = { { { +6.93147182e-1f, +6.93147182e-1f, +6.93147182e-1f, +6.93147182e-1f } } };
+XMGLOBALCONST XMVECTORF32 g_XMLg10                  = { { { +3.321928f, +3.321928f, +3.321928f, +3.321928f } } };
+XMGLOBALCONST XMVECTORF32 g_XMInvLg10               = { { { +3.010299956e-1f, +3.010299956e-1f, +3.010299956e-1f, +3.010299956e-1f } } };
+XMGLOBALCONST XMVECTORF32 g_UByteMax                = { { { 255.0f, 255.0f, 255.0f, 255.0f } } };
+XMGLOBALCONST XMVECTORF32 g_ByteMin                 = { { { -127.0f, -127.0f, -127.0f, -127.0f } } };
+XMGLOBALCONST XMVECTORF32 g_ByteMax                 = { { { 127.0f, 127.0f, 127.0f, 127.0f } } };
+XMGLOBALCONST XMVECTORF32 g_ShortMin                = { { { -32767.0f, -32767.0f, -32767.0f, -32767.0f } } };
+XMGLOBALCONST XMVECTORF32 g_ShortMax                = { { { 32767.0f, 32767.0f, 32767.0f, 32767.0f } } };
+XMGLOBALCONST XMVECTORF32 g_UShortMax               = { { { 65535.0f, 65535.0f, 65535.0f, 65535.0f } } };
 
 
 /****************************************************************************
@@ -2231,7 +2231,7 @@ typedef struct XMU555
  ****************************************************************************/
 
 float XMConvertHalfToFloat ( HALF Value );
-	
+
 float *XMConvertHalfToFloatStream ( _Out_writes_bytes_ ( sizeof ( float ) + OutputStride * ( HalfCount - 1 ) ) float *pOutputStream ,
 									_In_ size_t OutputStride ,
 									_In_reads_bytes_ ( sizeof ( HALF ) + InputStride * ( HalfCount - 1 ) ) const HALF *pInputStream ,
@@ -2250,37 +2250,34 @@ HALF *XMConvertFloatToHalfStream ( _Out_writes_bytes_ ( sizeof ( HALF ) + Output
  *
  ****************************************************************************/
 
-XMVECTOR    XM_CALLCONV     XMLoadColor ( _In_ const XMCOLOR *pSource );
-
-XMVECTOR    XM_CALLCONV     XMLoadHalf2 ( _In_ const XMHALF2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadShortN2 ( _In_ const XMSHORTN2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadShort2 ( _In_ const XMSHORT2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUShortN2 ( _In_ const XMUSHORTN2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUShort2 ( _In_ const XMUSHORT2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadByteN2 ( _In_ const XMBYTEN2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadByte2 ( _In_ const XMBYTE2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUByteN2 ( _In_ const XMUBYTEN2 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUByte2 ( _In_ const XMUBYTE2 *pSource );
-
-XMVECTOR    XM_CALLCONV     XMLoadU565 ( _In_ const XMU565 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadFloat3PK ( _In_ const XMFLOAT3PK *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadFloat3SE ( _In_ const XMFLOAT3SE *pSource );
-
-XMVECTOR    XM_CALLCONV     XMLoadHalf4 ( _In_ const XMHALF4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadShortN4 ( _In_ const XMSHORTN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadShort4 ( _In_ const XMSHORT4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUShortN4 ( _In_ const XMUSHORTN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUShort4 ( _In_ const XMUSHORT4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadXDecN4 ( _In_ const XMXDECN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUDecN4 ( _In_ const XMUDECN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUDecN4_XR ( _In_ const XMUDECN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUDec4 ( _In_ const XMUDEC4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadByteN4 ( _In_ const XMBYTEN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadByte4 ( _In_ const XMBYTE4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUByteN4 ( _In_ const XMUBYTEN4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUByte4 ( _In_ const XMUBYTE4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadUNibble4 ( _In_ const XMUNIBBLE4 *pSource );
-XMVECTOR    XM_CALLCONV     XMLoadU555 ( _In_ const XMU555 *pSource );
+XMVECTOR XM_CALLCONV XMLoadColor     ( _In_ const XMCOLOR    *pSource );
+XMVECTOR XM_CALLCONV XMLoadHalf2     ( _In_ const XMHALF2    *pSource );
+XMVECTOR XM_CALLCONV XMLoadShortN2   ( _In_ const XMSHORTN2  *pSource );
+XMVECTOR XM_CALLCONV XMLoadShort2    ( _In_ const XMSHORT2   *pSource );
+XMVECTOR XM_CALLCONV XMLoadUShortN2  ( _In_ const XMUSHORTN2 *pSource );
+XMVECTOR XM_CALLCONV XMLoadUShort2   ( _In_ const XMUSHORT2  *pSource );
+XMVECTOR XM_CALLCONV XMLoadByteN2    ( _In_ const XMBYTEN2   *pSource );
+XMVECTOR XM_CALLCONV XMLoadByte2     ( _In_ const XMBYTE2    *pSource );
+XMVECTOR XM_CALLCONV XMLoadUByteN2   ( _In_ const XMUBYTEN2  *pSource );
+XMVECTOR XM_CALLCONV XMLoadUByte2    ( _In_ const XMUBYTE2   *pSource );
+XMVECTOR XM_CALLCONV XMLoadU565      ( _In_ const XMU565     *pSource );
+XMVECTOR XM_CALLCONV XMLoadFloat3PK  ( _In_ const XMFLOAT3PK *pSource );
+XMVECTOR XM_CALLCONV XMLoadFloat3SE  ( _In_ const XMFLOAT3SE *pSource );
+XMVECTOR XM_CALLCONV XMLoadHalf4     ( _In_ const XMHALF4    *pSource );
+XMVECTOR XM_CALLCONV XMLoadShortN4   ( _In_ const XMSHORTN4  *pSource );
+XMVECTOR XM_CALLCONV XMLoadShort4    ( _In_ const XMSHORT4   *pSource );
+XMVECTOR XM_CALLCONV XMLoadUShortN4  ( _In_ const XMUSHORTN4 *pSource );
+XMVECTOR XM_CALLCONV XMLoadUShort4   ( _In_ const XMUSHORT4  *pSource );
+XMVECTOR XM_CALLCONV XMLoadXDecN4    ( _In_ const XMXDECN4   *pSource );
+XMVECTOR XM_CALLCONV XMLoadUDecN4    ( _In_ const XMUDECN4   *pSource );
+XMVECTOR XM_CALLCONV XMLoadUDecN4_XR ( _In_ const XMUDECN4   *pSource );
+XMVECTOR XM_CALLCONV XMLoadUDec4     ( _In_ const XMUDEC4    *pSource );
+XMVECTOR XM_CALLCONV XMLoadByteN4    ( _In_ const XMBYTEN4   *pSource );
+XMVECTOR XM_CALLCONV XMLoadByte4     ( _In_ const XMBYTE4    *pSource );
+XMVECTOR XM_CALLCONV XMLoadUByteN4   ( _In_ const XMUBYTEN4  *pSource );
+XMVECTOR XM_CALLCONV XMLoadUByte4    ( _In_ const XMUBYTE4   *pSource );
+XMVECTOR XM_CALLCONV XMLoadUNibble4  ( _In_ const XMUNIBBLE4 *pSource );
+XMVECTOR XM_CALLCONV XMLoadU555      ( _In_ const XMU555     *pSource );
 
 #pragma warning(push)
 #pragma warning(disable : 4996)
@@ -2291,9 +2288,9 @@ XMVECTOR    XM_CALLCONV     XMLoadU555 ( _In_ const XMU555 *pSource );
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadDecN4 ( _In_ const XMDECN4 *pSource );
-XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadDec4 ( _In_ const XMDEC4 *pSource );
-XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadXDec4 ( _In_ const XMXDEC4 *pSource );
+XMVECTOR XM_DEPRECATED XM_CALLCONV XMLoadDecN4 ( _In_ const XMDECN4 *pSource );
+XMVECTOR XM_DEPRECATED XM_CALLCONV XMLoadDec4  ( _In_ const XMDEC4 *pSource );
+XMVECTOR XM_DEPRECATED XM_CALLCONV XMLoadXDec4 ( _In_ const XMXDEC4 *pSource );
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
@@ -2307,37 +2304,34 @@ XMVECTOR    XM_DEPRECATED XM_CALLCONV XMLoadXDec4 ( _In_ const XMXDEC4 *pSource 
  *
  ****************************************************************************/
 
-void    XM_CALLCONV     XMStoreColor ( _Out_ XMCOLOR *pDestination , _In_ FXMVECTOR V );
-
-void    XM_CALLCONV     XMStoreHalf2 ( _Out_ XMHALF2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreShortN2 ( _Out_ XMSHORTN2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreShort2 ( _Out_ XMSHORT2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUShortN2 ( _Out_ XMUSHORTN2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUShort2 ( _Out_ XMUSHORT2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreByteN2 ( _Out_ XMBYTEN2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreByte2 ( _Out_ XMBYTE2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUByteN2 ( _Out_ XMUBYTEN2 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUByte2 ( _Out_ XMUBYTE2 *pDestination , _In_ FXMVECTOR V );
-
-void    XM_CALLCONV     XMStoreU565 ( _Out_ XMU565 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreFloat3PK ( _Out_ XMFLOAT3PK *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreFloat3SE ( _Out_ XMFLOAT3SE *pDestination , _In_ FXMVECTOR V );
-
-void    XM_CALLCONV     XMStoreHalf4 ( _Out_ XMHALF4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreShortN4 ( _Out_ XMSHORTN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreShort4 ( _Out_ XMSHORT4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUShortN4 ( _Out_ XMUSHORTN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUShort4 ( _Out_ XMUSHORT4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreXDecN4 ( _Out_ XMXDECN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUDecN4 ( _Out_ XMUDECN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUDecN4_XR ( _Out_ XMUDECN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUDec4 ( _Out_ XMUDEC4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreByteN4 ( _Out_ XMBYTEN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreByte4 ( _Out_ XMBYTE4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUByteN4 ( _Out_ XMUBYTEN4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUByte4 ( _Out_ XMUBYTE4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreUNibble4 ( _Out_ XMUNIBBLE4 *pDestination , _In_ FXMVECTOR V );
-void    XM_CALLCONV     XMStoreU555 ( _Out_ XMU555 *pDestination , _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreColor     ( _Out_ XMCOLOR    *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreHalf2     ( _Out_ XMHALF2    *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreShortN2   ( _Out_ XMSHORTN2  *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreShort2    ( _Out_ XMSHORT2   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUShortN2  ( _Out_ XMUSHORTN2 *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUShort2   ( _Out_ XMUSHORT2  *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreByteN2    ( _Out_ XMBYTEN2   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreByte2     ( _Out_ XMBYTE2    *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUByteN2   ( _Out_ XMUBYTEN2  *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUByte2    ( _Out_ XMUBYTE2   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreU565      ( _Out_ XMU565     *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreFloat3PK  ( _Out_ XMFLOAT3PK *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreFloat3SE  ( _Out_ XMFLOAT3SE *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreHalf4     ( _Out_ XMHALF4    *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreShortN4   ( _Out_ XMSHORTN4  *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreShort4    ( _Out_ XMSHORT4   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUShortN4  ( _Out_ XMUSHORTN4 *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUShort4   ( _Out_ XMUSHORT4  *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreXDecN4    ( _Out_ XMXDECN4   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUDecN4    ( _Out_ XMUDECN4   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUDecN4_XR ( _Out_ XMUDECN4   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUDec4     ( _Out_ XMUDEC4    *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreByteN4    ( _Out_ XMBYTEN4   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreByte4     ( _Out_ XMBYTE4    *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUByteN4   ( _Out_ XMUBYTEN4  *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUByte4    ( _Out_ XMUBYTE4   *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreUNibble4  ( _Out_ XMUNIBBLE4 *pDestination, _In_ FXMVECTOR V );
+void XM_CALLCONV XMStoreU555      ( _Out_ XMU555     *pDestination, _In_ FXMVECTOR V );
 
 #pragma warning(push)
 #pragma warning(disable : 4996)
@@ -30739,131 +30733,131 @@ void sh_eval_basis_4 ( REAL x , REAL y , REAL z , REAL b [ 25 ] )
 }
 
 
-// routine generated programmatically for evaluating SH basis for degree 5
-// inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
-// output is vector b with SH basis evaluated at (x,y,z).
-//
-void sh_eval_basis_5(REAL x, REAL y, REAL z, REAL b[36])
-{
-	const REAL z2 = z*z;
+    // routine generated programmatically for evaluating SH basis for degree 5
+    // inputs (x,y,z) are a point on the sphere (i.e., must be unit length)
+    // output is vector b with SH basis evaluated at (x,y,z).
+    //
+    void sh_eval_basis_5(REAL x, REAL y, REAL z, REAL b[36])
+    {
+        const REAL z2 = z*z;
 
 
-	/* m=0 */
+        /* m=0 */
 
-	// l=0
-	const REAL p_0_0 = CONSTANT(0.282094791773878140);
-	b[0] = p_0_0; // l=0,m=0
-	// l=1
-	const REAL p_1_0 = CONSTANT(0.488602511902919920)*z;
-	b[2] = p_1_0; // l=1,m=0
-	// l=2
-	const REAL p_2_0 = CONSTANT(0.946174695757560080)*z2 + CONSTANT(-0.315391565252520050);
-	b[6] = p_2_0; // l=2,m=0
-	// l=3
-	const REAL p_3_0 = z*(CONSTANT(1.865881662950577000)*z2 + CONSTANT(-1.119528997770346200));
-	b[12] = p_3_0; // l=3,m=0
-	// l=4
-	const REAL p_4_0 = CONSTANT(1.984313483298443000)*z*p_3_0 + CONSTANT(-1.006230589874905300)*p_2_0;
-	b[20] = p_4_0; // l=4,m=0
-	// l=5
-	const REAL p_5_0 = CONSTANT(1.989974874213239700)*z*p_4_0 + CONSTANT(-1.002853072844814000)*p_3_0;
-	b[30] = p_5_0; // l=5,m=0
-
-
-	/* m=1 */
-
-	const REAL s1 = y;
-	const REAL c1 = x;
-
-	// l=1
-	const REAL p_1_1 = CONSTANT(-0.488602511902919920);
-	b[1] = p_1_1*s1; // l=1,m=-1
-	b[3] = p_1_1*c1; // l=1,m=+1
-	// l=2
-	const REAL p_2_1 = CONSTANT(-1.092548430592079200)*z;
-	b[5] = p_2_1*s1; // l=2,m=-1
-	b[7] = p_2_1*c1; // l=2,m=+1
-	// l=3
-	const REAL p_3_1 = CONSTANT(-2.285228997322328800)*z2 + CONSTANT(0.457045799464465770);
-	b[11] = p_3_1*s1; // l=3,m=-1
-	b[13] = p_3_1*c1; // l=3,m=+1
-	// l=4
-	const REAL p_4_1 = z*(CONSTANT(-4.683325804901024000)*z2 + CONSTANT(2.007139630671867200));
-	b[19] = p_4_1*s1; // l=4,m=-1
-	b[21] = p_4_1*c1; // l=4,m=+1
-	// l=5
-	const REAL p_5_1 = CONSTANT(2.031009601158990200)*z*p_4_1 + CONSTANT(-0.991031208965114650)*p_3_1;
-	b[29] = p_5_1*s1; // l=5,m=-1
-	b[31] = p_5_1*c1; // l=5,m=+1
+        // l=0
+        const REAL p_0_0 = CONSTANT(0.282094791773878140);
+        b[0] = p_0_0; // l=0,m=0
+        // l=1
+        const REAL p_1_0 = CONSTANT(0.488602511902919920)*z;
+        b[2] = p_1_0; // l=1,m=0
+        // l=2
+        const REAL p_2_0 = CONSTANT(0.946174695757560080)*z2 + CONSTANT(-0.315391565252520050);
+        b[6] = p_2_0; // l=2,m=0
+        // l=3
+        const REAL p_3_0 = z*(CONSTANT(1.865881662950577000)*z2 + CONSTANT(-1.119528997770346200));
+        b[12] = p_3_0; // l=3,m=0
+        // l=4
+        const REAL p_4_0 = CONSTANT(1.984313483298443000)*z*p_3_0 + CONSTANT(-1.006230589874905300)*p_2_0;
+        b[20] = p_4_0; // l=4,m=0
+        // l=5
+        const REAL p_5_0 = CONSTANT(1.989974874213239700)*z*p_4_0 + CONSTANT(-1.002853072844814000)*p_3_0;
+        b[30] = p_5_0; // l=5,m=0
 
 
-	/* m=2 */
+        /* m=1 */
 
-	const REAL s2 = x*s1 + y*c1;
-	const REAL c2 = x*c1 - y*s1;
+        const REAL s1 = y;
+        const REAL c1 = x;
 
-	// l=2
-	const REAL p_2_2 = CONSTANT(0.546274215296039590);
-	b[4] = p_2_2*s2; // l=2,m=-2
-	b[8] = p_2_2*c2; // l=2,m=+2
-	// l=3
-	const REAL p_3_2 = CONSTANT(1.445305721320277100)*z;
-	b[10] = p_3_2*s2; // l=3,m=-2
-	b[14] = p_3_2*c2; // l=3,m=+2
-	// l=4
-	const REAL p_4_2 = CONSTANT(3.311611435151459800)*z2 + CONSTANT(-0.473087347878779980);
-	b[18] = p_4_2*s2; // l=4,m=-2
-	b[22] = p_4_2*c2; // l=4,m=+2
-	// l=5
-	const REAL p_5_2 = z*(CONSTANT(7.190305177459987500)*z2 + CONSTANT(-2.396768392486662100));
-	b[28] = p_5_2*s2; // l=5,m=-2
-	b[32] = p_5_2*c2; // l=5,m=+2
-
-
-	/* m=3 */
-
-	const REAL s3 = x*s2 + y*c2;
-	const REAL c3 = x*c2 - y*s2;
-
-	// l=3
-	const REAL p_3_3 = CONSTANT(-0.590043589926643520);
-	b[9] = p_3_3*s3; // l=3,m=-3
-	b[15] = p_3_3*c3; // l=3,m=+3
-	// l=4
-	const REAL p_4_3 = CONSTANT(-1.770130769779930200)*z;
-	b[17] = p_4_3*s3; // l=4,m=-3
-	b[23] = p_4_3*c3; // l=4,m=+3
-	// l=5
-	const REAL p_5_3 = CONSTANT(-4.403144694917253700)*z2 + CONSTANT(0.489238299435250430);
-	b[27] = p_5_3*s3; // l=5,m=-3
-	b[33] = p_5_3*c3; // l=5,m=+3
+        // l=1
+        const REAL p_1_1 = CONSTANT(-0.488602511902919920);
+        b[1] = p_1_1*s1; // l=1,m=-1
+        b[3] = p_1_1*c1; // l=1,m=+1
+        // l=2
+        const REAL p_2_1 = CONSTANT(-1.092548430592079200)*z;
+        b[5] = p_2_1*s1; // l=2,m=-1
+        b[7] = p_2_1*c1; // l=2,m=+1
+        // l=3
+        const REAL p_3_1 = CONSTANT(-2.285228997322328800)*z2 + CONSTANT(0.457045799464465770);
+        b[11] = p_3_1*s1; // l=3,m=-1
+        b[13] = p_3_1*c1; // l=3,m=+1
+        // l=4
+        const REAL p_4_1 = z*(CONSTANT(-4.683325804901024000)*z2 + CONSTANT(2.007139630671867200));
+        b[19] = p_4_1*s1; // l=4,m=-1
+        b[21] = p_4_1*c1; // l=4,m=+1
+        // l=5
+        const REAL p_5_1 = CONSTANT(2.031009601158990200)*z*p_4_1 + CONSTANT(-0.991031208965114650)*p_3_1;
+        b[29] = p_5_1*s1; // l=5,m=-1
+        b[31] = p_5_1*c1; // l=5,m=+1
 
 
-	/* m=4 */
+        /* m=2 */
 
-	const REAL s4 = x*s3 + y*c3;
-	const REAL c4 = x*c3 - y*s3;
+        const REAL s2 = x*s1 + y*c1;
+        const REAL c2 = x*c1 - y*s1;
 
-	// l=4
-	const REAL p_4_4 = CONSTANT(0.625835735449176030);
-	b[16] = p_4_4*s4; // l=4,m=-4
-	b[24] = p_4_4*c4; // l=4,m=+4
-	// l=5
-	const REAL p_5_4 = CONSTANT(2.075662314881041100)*z;
-	b[26] = p_5_4*s4; // l=5,m=-4
-	b[34] = p_5_4*c4; // l=5,m=+4
+        // l=2
+        const REAL p_2_2 = CONSTANT(0.546274215296039590);
+        b[4] = p_2_2*s2; // l=2,m=-2
+        b[8] = p_2_2*c2; // l=2,m=+2
+        // l=3
+        const REAL p_3_2 = CONSTANT(1.445305721320277100)*z;
+        b[10] = p_3_2*s2; // l=3,m=-2
+        b[14] = p_3_2*c2; // l=3,m=+2
+        // l=4
+        const REAL p_4_2 = CONSTANT(3.311611435151459800)*z2 + CONSTANT(-0.473087347878779980);
+        b[18] = p_4_2*s2; // l=4,m=-2
+        b[22] = p_4_2*c2; // l=4,m=+2
+        // l=5
+        const REAL p_5_2 = z*(CONSTANT(7.190305177459987500)*z2 + CONSTANT(-2.396768392486662100));
+        b[28] = p_5_2*s2; // l=5,m=-2
+        b[32] = p_5_2*c2; // l=5,m=+2
 
 
-	/* m=5 */
+        /* m=3 */
 
-	const REAL s5 = x*s4 + y*c4;
-	const REAL c5 = x*c4 - y*s4;
+        const REAL s3 = x*s2 + y*c2;
+        const REAL c3 = x*c2 - y*s2;
 
-	// l=5
-	const REAL p_5_5 = CONSTANT(-0.656382056840170150);
-	b[25] = p_5_5*s5; // l=5,m=-5
-	b[35] = p_5_5*c5; // l=5,m=+5
-}
+        // l=3
+        const REAL p_3_3 = CONSTANT(-0.590043589926643520);
+        b[9] = p_3_3*s3; // l=3,m=-3
+        b[15] = p_3_3*c3; // l=3,m=+3
+        // l=4
+        const REAL p_4_3 = CONSTANT(-1.770130769779930200)*z;
+        b[17] = p_4_3*s3; // l=4,m=-3
+        b[23] = p_4_3*c3; // l=4,m=+3
+        // l=5
+        const REAL p_5_3 = CONSTANT(-4.403144694917253700)*z2 + CONSTANT(0.489238299435250430);
+        b[27] = p_5_3*s3; // l=5,m=-3
+        b[33] = p_5_3*c3; // l=5,m=+3
+
+
+        /* m=4 */
+
+        const REAL s4 = x*s3 + y*c3;
+        const REAL c4 = x*c3 - y*s3;
+
+        // l=4
+        const REAL p_4_4 = CONSTANT(0.625835735449176030);
+        b[16] = p_4_4*s4; // l=4,m=-4
+        b[24] = p_4_4*c4; // l=4,m=+4
+        // l=5
+        const REAL p_5_4 = CONSTANT(2.075662314881041100)*z;
+        b[26] = p_5_4*s4; // l=5,m=-4
+        b[34] = p_5_4*c4; // l=5,m=+4
+
+
+        /* m=5 */
+
+        const REAL s5 = x*s4 + y*c4;
+        const REAL c5 = x*c4 - y*s4;
+
+        // l=5
+        const REAL p_5_5 = CONSTANT(-0.656382056840170150);
+        b[25] = p_5_5*s5; // l=5,m=-5
+        b[35] = p_5_5*c5; // l=5,m=+5
+    }
 
 #define M_PIjs ( REAL )( 4.0f * atan ( 1.0f ) )
 #define maxang ( REAL )( M_PIjs / 2.0f )
@@ -36177,7 +36171,7 @@ XMMATRIX StereoProjectionFovRH
 	fVirtualProjection *= pStereoParameters->fStereoSeparationFactor; // incorporate developer defined bias
 
 	//
-	// By applying a translation, we are forcing our cameras to be parallel 
+	// By applying a translation, we are forcing our cameras to be parallel
 	//
 
 	float fInvertedAngle = atanf ( fVirtualProjection / ( 2.0f * NearZ ) );
@@ -36185,7 +36179,7 @@ XMMATRIX StereoProjectionFovRH
 	XMMATRIX proj = XMMatrixPerspectiveFovRH ( FovAngleY , AspectRatio , NearZ , FarZ );
 
 	//
-	// By applying a translation, we are forcing our cameras to be parallel 
+	// By applying a translation, we are forcing our cameras to be parallel
 	//
 
 	XMMATRIX patchedProjection;
@@ -36221,15 +36215,11 @@ XMMATRIX StereoProjectionFovRH
 	return patchedProjection;
 }
 
-
-
 /****************************************************************************
  *
- * DirectX Math Library - Digital Signal Processing (DSP) functions for Audio, 
- * primarily Fast Fourier Transform (FFT) 
+ * DirectX Math Library - Digital Signal Processing (DSP) functions for Audio,
+ * primarily Fast Fourier Transform (FFT)
  ****************************************************************************/
-
-
 
 #pragma warning(push)
 #pragma warning(disable: 6001 6262)
